@@ -4,7 +4,7 @@ import ContactForm from "../components/contact/ContactForm";
 
 
 
-function Home() {
+function Contact() {
 
   return (
     <>
@@ -15,4 +15,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default Contact;
