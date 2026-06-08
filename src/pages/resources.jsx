@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
+import { useState } from 'react'
+import ResourcesHero from "../components/resources/Hero";
+import SpeechesSection from "../components/resources/Speech";
+import PressRelease from "../components/resources/Press";
+import DocumentsSection from "../components/resources/Document";
+import MediaKit from "../components/resources/Media";
+import NewsletterSection from "../components/resources/News";
 
-function resources() {
+function About() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div>resources</div>
+    <>
+    <ResourcesHero />
+    <SpeechesSection />
+    <PressRelease />
+    <DocumentsSection />
+    <MediaKit />
+    <NewsletterSection />
+    </>
   )
 }
 
-export default resources
+export default About;
+

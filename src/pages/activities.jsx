@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import { useState } from 'react'
+import RalliesEvents from "../components/activities/Rallies";
+import ParliamentaryWork from "../components/activities/Parliamentary";
+import SocialWelfare from "../components/activities/Socialwelfare";
+import CommunityOutreach from "../components/activities/Community";
+import ActivitiesHero from "../components/activities/HeroSection";
 
-function activities() {
+function Activities() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div>activities</div>
+    <>
+    <ActivitiesHero />
+    <RalliesEvents />
+    <ParliamentaryWork />
+    <SocialWelfare />
+    <CommunityOutreach />
+    </>
   )
 }
 
-export default activities
+export default Activities;
