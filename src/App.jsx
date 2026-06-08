@@ -1,23 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import Header from './components/layouts/Header'
-import Footer from "./components/layouts/Footer"
-import Home from './pages/home'
+import Header from "./components/layouts/Header";
+import Footer from "./components/layouts/Footer";
 
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./pages/home";
+import About from "./pages/about";
+import Activities from "./pages/activities";
+import Campaigns from "./pages/campaigns";
+import News from "./pages/news";
+import Contact from "./pages/contact";
+import Connect from "./pages/connect";
+import Resources from "./pages/resources";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    <Header />
-    <Home />
-    <Footer />
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/activities" element={<Activities />} />
+        <Route path="/campaigns" element={<Campaigns />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/connect" element={<Connect />} />
+      </Routes>
+
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
