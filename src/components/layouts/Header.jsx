@@ -76,7 +76,6 @@ export default function Header() {
                     ? "text-[#F4712E]"
                     : "text-[#FDFAF5]/80 hover:text-[#E2C06A]"
                   }`}
-                style={{ fontFamily: "Raleway, sans-serif" }}
               >
                 {link}
                 <span
@@ -171,7 +170,6 @@ export default function Header() {
           <div className="flex items-center justify-between py-4 mt-1">
             <span
               className="text-[0.7rem] tracking-[0.15em] uppercase text-[#FDFAF5]/40"
-              style={{ fontFamily: "Raleway, sans-serif" }}
             >
               Language
             </span>
