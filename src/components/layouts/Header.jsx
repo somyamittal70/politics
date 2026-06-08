@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
+import ConsultationModal from "./ConsultationModal";
+
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
@@ -10,12 +12,12 @@ const navLinks = [
   { name: "Resources", path: "/resources" },
   { name: "News & Updates", path: "/news" },
   { name: "Contact", path: "/contact" },
-  { name: "Connect", path: "/connect" },
 ];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -48,7 +50,7 @@ export default function Header() {
           </NavLink>
 
           {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-2">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -76,6 +78,28 @@ export default function Header() {
             ))}
           </nav>
 
+          <button
+            onClick={() => setShowModal(true)}
+            className="
+    hidden lg:flex
+    items-center
+    gap-2
+    bg-[#E8541A]
+    hover:bg-[#C8972B]
+    text-white
+    px-6
+    py-3
+    rounded-full
+    font-medium
+    transition-all
+    duration-300
+    hover:scale-105
+    shadow-lg
+  "
+          >
+            Connect With Us
+          </button>
+
           {/* Mobile Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -102,10 +126,32 @@ export default function Header() {
                 {link.name}
               </NavLink>
             ))}
+            <button
+              onClick={() => {
+                setShowModal(true);
+                setMenuOpen(false);
+              }}
+              className="
+    mt-5
+    w-full
+    bg-[#E8541A]
+    hover:bg-[#C8972B]
+    text-white
+    py-3
+    rounded-xl
+    font-semibold
+    transition-all
+  "
+            >
+              Connect With Us
+            </button>
           </div>
         )}
       </header>
-
+      <ConsultationModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+      />
       <div className="h-[70px]" />
     </>
   );

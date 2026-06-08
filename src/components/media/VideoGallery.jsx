@@ -1,329 +1,216 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Play, Clock, Eye } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Play, Eye, Clock3, ArrowRight } from "lucide-react";
+
+const videos = [
+  {
+    id: 1,
+    category: "Speech",
+    title: "National Development Vision 2026",
+    duration: "12:45",
+    views: "1.2M Views",
+    image:
+      "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600",
+    description:
+      "A comprehensive address highlighting infrastructure development, youth empowerment, and future national priorities.",
+  },
+  {
+    id: 2,
+    category: "Conference",
+    title: "Youth Leadership Summit",
+    duration: "08:20",
+    views: "856K Views",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600",
+  },
+  {
+    id: 3,
+    category: "Community",
+    title: "Public Outreach Program",
+    duration: "10:15",
+    views: "742K Views",
+    image:
+      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1600",
+  },
+  {
+    id: 4,
+    category: "Development",
+    title: "Infrastructure Briefing",
+    duration: "15:30",
+    views: "1M Views",
+    image:
+      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1600",
+  },
+  {
+    id: 5,
+    category: "Interview",
+    title: "Exclusive Media Interaction",
+    duration: "09:50",
+    views: "620K Views",
+    image:
+      "https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1600",
+  },
+];
 
 export default function VideoGallery() {
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const categories = [
-    "all",
-    "Speeches",
-    "Interviews",
-    "Conferences",
-    "Announcements",
-    "Events",
-  ];
-
-  const videos = [
-    {
-      id: 1,
-      title: "Address on Education Reform",
-      category: "Speeches",
-      thumbnail:
-        "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=600&auto=format&fit=crop",
-      duration: "32:45",
-      views: "2.3M",
-      date: "June 2026",
-      youtubeId: "dQw4w9WgXcQ",
-    },
-    {
-      id: 2,
-      title: "Media Interview Q&A Session",
-      category: "Interviews",
-      thumbnail:
-        "https://images.unsplash.com/photo-1516321318423-f06f70259b51?q=80&w=600&auto=format&fit=crop",
-      duration: "28:15",
-      views: "1.8M",
-      date: "June 2026",
-      youtubeId: "dQw4w9WgXcQ",
-    },
-    {
-      id: 3,
-      title: "National Conference 2026",
-      category: "Conferences",
-      thumbnail:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop",
-      duration: "45:20",
-      views: "3.1M",
-      date: "June 2026",
-      youtubeId: "dQw4w9WgXcQ",
-    },
-    {
-      id: 4,
-      title: "Infrastructure Development Plans",
-      category: "Announcements",
-      thumbnail:
-        "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?q=80&w=600&auto=format&fit=crop",
-      duration: "22:10",
-      views: "1.5M",
-      date: "May 2026",
-      youtubeId: "dQw4w9WgXcQ",
-    },
-    {
-      id: 5,
-      title: "Youth Empowerment Program Launch",
-      category: "Events",
-      thumbnail:
-        "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600&auto=format&fit=crop",
-      duration: "38:55",
-      views: "2.7M",
-      date: "May 2026",
-      youtubeId: "dQw4w9WgXcQ",
-    },
-    {
-      id: 6,
-      title: "Press Conference Highlights",
-      category: "Speeches",
-      thumbnail:
-        "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=600&auto=format&fit=crop",
-      duration: "25:30",
-      views: "1.9M",
-      date: "May 2026",
-      youtubeId: "dQw4w9WgXcQ",
-    },
-    {
-      id: 7,
-      title: "Healthcare Initiative Discussion",
-      category: "Interviews",
-      thumbnail:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop",
-      duration: "35:40",
-      views: "1.6M",
-      date: "April 2026",
-      youtubeId: "dQw4w9WgXcQ",
-    },
-    {
-      id: 8,
-      title: "Community Engagement Session",
-      category: "Events",
-      thumbnail:
-        "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?q=80&w=600&auto=format&fit=crop",
-      duration: "40:25",
-      views: "2.2M",
-      date: "April 2026",
-      youtubeId: "dQw4w9WgXcQ",
-    },
-  ];
-
-  const filteredVideos =
-    activeFilter === "all"
-      ? videos
-      : videos.filter((video) => video.category === activeFilter);
+  const [activeVideo, setActiveVideo] = useState(videos[0]);
 
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <span
-            className="text-sm font-semibold tracking-widest uppercase"
-            style={{ color: "#C8972B" }}
-          >
-            Video Playlist
-          </span>
-          <h2
-            className="text-5xl font-light mt-4"
-            style={{ color: "#0D1B3E", fontFamily: "Playfair Display, serif" }}
-          >
-            Video Content Library
-          </h2>
-        </motion.div>
+        {/* Heading */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
+          <div>
+            <span className="uppercase tracking-[0.3em] text-[#C8972B] text-sm font-semibold">
+              Video Gallery
+            </span>
 
-        {/* Filter Buttons */}
-        <motion.div
-          className="flex flex-wrap gap-3 mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveFilter(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                activeFilter === category
-                  ? "text-white shadow-lg scale-105"
-                  : "text-gray-700 border-2 hover:border-opacity-100"
-              }`}
+            <h2
+              className="mt-4 text-4xl md:text-5xl text-[#0D1B3E]"
               style={{
-                backgroundColor:
-                  activeFilter === category ? "#C8972B" : "transparent",
-                borderColor: activeFilter === category ? "#C8972B" : "#D4A574",
+                fontFamily: "Playfair Display, serif",
               }}
             >
-              {category}
-            </button>
-          ))}
-        </motion.div>
+              Watch Key Highlights
+            </h2>
+          </div>
 
-        {/* Videos Grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          layout
-        >
-          <AnimatePresence>
-            {filteredVideos.map((video, index) => (
-              <motion.button
-                key={video.id}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ delay: index * 0.05 }}
-                onClick={() => setSelectedVideo(video)}
-                className="group text-left w-full focus:outline-none"
-              >
-                <div className="relative overflow-hidden rounded-[20px] h-56 mb-4">
-                  {/* Thumbnail */}
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                  />
+          <button className="mt-6 md:mt-0 flex items-center gap-2 text-[#E8541A] hover:text-[#C8972B] transition">
+            View All Videos
+            <ArrowRight size={18} />
+          </button>
+        </div>
 
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500" />
-
-                  {/* Play Button */}
-                  <motion.div
-                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  >
-                    <div
-                      className="w-16 h-16 rounded-full flex items-center justify-center"
-                      style={{ backgroundColor: "#C8972B" }}
-                    >
-                      <Play
-                        size={28}
-                        color="white"
-                        fill="white"
-                        className="ml-1"
-                      />
-                    </div>
-                  </motion.div>
-
-                  {/* Duration Badge */}
-                  <div
-                    className="absolute bottom-3 right-3 px-3 py-1 rounded-full text-white text-xs font-semibold"
-                    style={{ backgroundColor: "#E8541A" }}
-                  >
-                    {video.duration}
-                  </div>
-                </div>
-
-                {/* Video Info */}
-                <h4
-                  className="font-semibold text-sm mb-3 line-clamp-2 group-hover:text-[#C8972B] transition"
-                  style={{ color: "#0D1B3E" }}
-                >
-                  {video.title}
-                </h4>
-
-                {/* Meta Stats */}
-                <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
-                  <span
-                    className="font-semibold uppercase tracking-wider"
-                    style={{ color: "#E8541A" }}
-                  >
-                    {video.category}
-                  </span>
-                  <span>{video.date}</span>
-                </div>
-
-                {/* Views & Duration */}
-                <div className="flex gap-4 text-xs text-gray-600">
-                  <div className="flex items-center gap-1">
-                    <Eye size={14} />
-                    {video.views}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock size={14} />
-                    {video.duration}
-                  </div>
-                </div>
-              </motion.button>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-      </div>
-
-      {/* Video Player Modal */}
-      <AnimatePresence>
-        {selectedVideo && (
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Featured Video */}
           <motion.div
-            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+            key={activeVideo.id}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedVideo(null)}
+            className="lg:col-span-2"
           >
-            <div
-              className="relative w-full max-w-5xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedVideo(null)}
-                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition z-10 text-2xl"
-              >
-                ✕
-              </button>
+            <div className="bg-[#F7F2E8] rounded-[32px] overflow-hidden shadow-xl">
+              <div className="relative h-[500px] overflow-hidden">
+                <img
+                  src={activeVideo.image}
+                  alt={activeVideo.title}
+                  className="w-full h-full object-cover"
+                />
 
-              {/* Video Player */}
-              <div className="relative pt-[56.25%] bg-black rounded-lg overflow-hidden">
-                <div className="absolute inset-0">
-                  <iframe
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}?autoplay=1`}
-                    title={selectedVideo.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                {/* Play Button */}
+                <button className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full bg-[#E8541A] flex items-center justify-center hover:scale-110 transition">
+                    <Play size={28} fill="white" className="text-white ml-1" />
+                  </div>
+                </button>
+
+                <div className="absolute bottom-8 left-8 right-8">
+                  <div className="flex gap-5 text-white/80 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Clock3 size={16} />
+                      {activeVideo.duration}
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <Eye size={16} />
+                      {activeVideo.views}
+                    </div>
+                  </div>
+
+                  <h3
+                    className="mt-4 text-3xl text-white"
+                    style={{
+                      fontFamily: "Playfair Display, serif",
+                    }}
+                  >
+                    {activeVideo.title}
+                  </h3>
                 </div>
               </div>
 
-              {/* Video Details Below Player */}
-              <motion.div
-                className="mt-6 text-white"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.1 }}
-              >
-                <span
-                  className="text-sm font-semibold uppercase tracking-widest"
-                  style={{ color: "#C8972B" }}
-                >
-                  {selectedVideo.category}
+              <div className="p-8">
+                <span className="inline-flex px-4 py-2 rounded-full bg-[#E8541A] text-white text-sm">
+                  {activeVideo.category}
                 </span>
-                <h3
-                  className="text-3xl font-light mt-3 mb-3"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  {selectedVideo.title}
-                </h3>
-                <div className="flex gap-6 text-gray-300 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Eye size={16} />
-                    {selectedVideo.views} views
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock size={16} />
-                    {selectedVideo.duration}
-                  </div>
-                  <span>{selectedVideo.date}</span>
-                </div>
-              </motion.div>
+
+                <p className="mt-5 text-gray-600 leading-8">
+                  {activeVideo.description}
+                </p>
+              </div>
             </div>
           </motion.div>
-        )}
-      </AnimatePresence>
+
+          {/* Side Video List */}
+          <div className="space-y-4">
+            {videos.map((video) => (
+              <button
+                key={video.id}
+                onClick={() => setActiveVideo(video)}
+                className={`w-full text-left rounded-2xl overflow-hidden transition-all duration-300 ${
+                  activeVideo.id === video.id ? "bg-[#0D1B3E]" : "bg-[#F7F2E8]"
+                }`}
+              >
+                <div className="flex gap-4 p-4">
+                  <div className="relative">
+                    <img
+                      src={video.image}
+                      alt={video.title}
+                      className="w-28 h-24 rounded-xl object-cover"
+                    />
+
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-[#E8541A] flex items-center justify-center">
+                        <Play
+                          size={12}
+                          fill="white"
+                          className="text-white ml-[2px]"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex-1">
+                    <span
+                      className={`text-xs uppercase tracking-wider ${
+                        activeVideo.id === video.id
+                          ? "text-[#C8972B]"
+                          : "text-[#E8541A]"
+                      }`}
+                    >
+                      {video.category}
+                    </span>
+
+                    <h4
+                      className={`mt-2 font-semibold line-clamp-2 ${
+                        activeVideo.id === video.id
+                          ? "text-white"
+                          : "text-[#0D1B3E]"
+                      }`}
+                      style={{
+                        fontFamily: "Playfair Display, serif",
+                      }}
+                    >
+                      {video.title}
+                    </h4>
+
+                    <p
+                      className={`text-xs mt-3 ${
+                        activeVideo.id === video.id
+                          ? "text-white/60"
+                          : "text-gray-500"
+                      }`}
+                    >
+                      {video.duration} • {video.views}
+                    </p>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -46,7 +46,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-3 mb-8"
+              className="inline-flex items-center gap-3 mb-8 -mt-6"
             >
               <span className="w-3 h-3 rounded-full bg-[#C8972B]" />
 
@@ -148,7 +148,7 @@ export default function Hero() {
             {/* Main Image */}
             <div className="relative rounded-[40px] overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1800&auto=format&fit=crop"
+                src="https://images.pexels.com/photos/35743103/pexels-photo-35743103.jpeg"
                 alt="Media Center"
                 className="w-full h-[600px] object-cover"
               />
