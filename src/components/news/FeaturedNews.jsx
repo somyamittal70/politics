@@ -37,7 +37,7 @@ export default function FeaturedNews() {
           {/* Image */}
           <div className="relative h-[350px] lg:h-auto overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1600&auto=format&fit=crop"
+              src="https://images.pexels.com/photos/3881113/pexels-photo-3881113.jpeg"
               alt="Featured News"
               className="w-full h-full object-cover hover:scale-105 transition duration-700"
             />

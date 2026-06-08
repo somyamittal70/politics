@@ -28,7 +28,7 @@ export default function News() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/10 px-5 py-2 rounded-full mb-8"
+              className="inline-flex mt-4 items-center gap-3 bg-white/10 backdrop-blur-md border border-white/10 px-5 py-2 rounded-full mb-8"
             >
               <Newspaper size={18} className="text-[#C8972B]" />
               <span className="text-[#F5F5F5] text-sm tracking-[0.2em] uppercase">
@@ -40,7 +40,7 @@ export default function News() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-[#F5F5F5] text-5xl md:text-6xl lg:text-7xl leading-tight"
+              className="text-[#F5F5F5] text-5xl md:text-5xl lg:text-6xl leading-tight"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
               Stay Updated With
@@ -84,26 +84,6 @@ export default function News() {
               transition={{ delay: 0.8 }}
               className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16"
             >
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10">
-                <h3 className="text-3xl font-bold text-[#C8972B]">150+</h3>
-                <p className="text-[#F5F5F5]/80 mt-2">
-                  Press Releases
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10">
-                <h3 className="text-3xl font-bold text-[#C8972B]">50+</h3>
-                <p className="text-[#F5F5F5]/80 mt-2">
-                  Public Events
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10">
-                <h3 className="text-3xl font-bold text-[#C8972B]">24/7</h3>
-                <p className="text-[#F5F5F5]/80 mt-2">
-                  News Coverage
-                </p>
-              </div>
             </motion.div>
           </div>
         </div>

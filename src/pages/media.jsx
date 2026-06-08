@@ -1,9 +1,23 @@
-import React from 'react'
+import Hero from '../components/media/Hero';
+import FeaturedVideo from '../components/media/FeaturedVideo';
+import PhotoGallery from '../components/media/PhotoGallery';
+import VideoGallery from '../components/media/VideoGallery';
+import PressConference from '../components/media/PressConference';
+import Interviews from '../components/media/Interviews'
+import MediaDownloads from '../components/media/MediaDownloads'
+import MediaCTA from '../components/media/MediaCTA'
 
-function media() {
+export default function MediaPage() {
   return (
-    <div>media</div>
-  )
+    <>
+      <Hero />
+      <FeaturedVideo />
+      <PhotoGallery />
+      <VideoGallery />
+      <PressConference />
+      {/* <Interviews /> */}
+      <MediaDownloads />
+      <MediaCTA />
+    </>
+  );
 }
-
-export default media
