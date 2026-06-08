@@ -6,7 +6,7 @@ import SocialWelfare from "../components/activities/Socialwelfare";
 import CommunityOutreach from "../components/activities/Community";
 import ActivitiesHero from "../components/activities/HeroSection";
 
-function About() {
+function Activities() {
   const [count, setCount] = useState(0)
 
   return (
@@ -20,4 +20,4 @@ function About() {
   )
 }
 
-export default About;
+export default Activities;
