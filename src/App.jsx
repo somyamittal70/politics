@@ -1,7 +1,6 @@
 import Header from "./components/layouts/Header";
 import Footer from "./components/layouts/Footer";
-import shareButton from "./components/layouts/shareButton"
-
+import ShareButton from "./components/layouts/ShareButton";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home";
@@ -29,7 +28,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       
-      <shareButton/>
+      <ShareButton/>
       <Footer />
     </>
   );
