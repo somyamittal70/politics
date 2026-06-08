@@ -50,16 +50,16 @@ export default function Header() {
           {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
-                onClick={() => setActiveLink(link)}
-                className={`relative font-semibold text-[0.72rem] xl:text-[0.78rem] tracking-[0.08em] xl:tracking-[0.1em] uppercase px-2.5 xl:px-3 py-2 rounded-sm transition-colors duration-200 no-underline group
-                  ${activeLink === link
-                    ? "text-[#F4712E]"
-                    : "text-[#FDFAF5]/80 hover:text-[#E2C06A]"
-                  }`}
-                style={{ fontFamily: "Raleway, sans-serif" }}
+              <NavLink
+                key={link.name}
+                to={link.path}
+                className={({ isActive }) =>
+                  `relative px-3 py-2 text-sm uppercase tracking-wider transition-all duration-300 no-underline ${
+                    isActive
+                      ? "text-[#F4712E]"
+                      : "text-white hover:text-[#E2C06A]"
+                  }`
+                }
               >
                 {({ isActive }) => (
                   <>
@@ -86,44 +86,22 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`lg:hidden flex flex-col bg-[#162547] border-t border-[#C9A84C]/20 px-5 sm:px-8 shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 overflow-hidden
-            ${menuOpen ? "max-h-[520px] opacity-100 py-3" : "max-h-0 opacity-0 py-0 pointer-events-none"}`}
-        >
-          {navLinks.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
-              onClick={() => { setMenuOpen(false); setActiveLink(link); }}
-              className={`flex items-center gap-3 text-[0.82rem] sm:text-[0.88rem] font-semibold tracking-[0.08em] uppercase py-3.5 border-b border-white/[0.06] no-underline transition-colors duration-200 last:border-b-0 group
-                ${activeLink === link ? "text-[#F4712E]" : "text-[#FDFAF5]/80 hover:text-[#E2C06A]"}`}
-              style={{ fontFamily: "Raleway, sans-serif" }}
-            >
-              <span
-                className={`w-[6px] h-[6px] rounded-full bg-[#E8541A] flex-shrink-0 transition-opacity duration-200
-                  ${activeLink === link ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
-              />
-              {link}
-              {activeLink === link && (
-                <span className="ml-auto text-[#F4712E] text-xs">●</span>
-              )}
-            </a>
-          ))}
-
-          {/* Mobile lang toggle inside menu */}
-          <div className="flex items-center justify-between py-4 mt-1">
-            <span
-              className="text-[0.7rem] tracking-[0.15em] uppercase text-[#FDFAF5]/40"
-              style={{ fontFamily: "Raleway, sans-serif" }}
-            >
-              Language
-            </span>
-            <button
-              onClick={() => setLang(lang === "EN" ? "हिं" : "EN")}
-              className="text-[0.72rem] font-bold tracking-[0.15em] text-[#E2C06A] bg-[#C9A84C]/10 border border-[#C9A84C]/30 px-3 py-[5px] rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#C9A84C]/20 hover:border-[#C9A84C]"
-            >
-              {lang === "EN" ? "Switch to हिंदी" : "Switch to EN"}
-            </button>
+        {menuOpen && (
+          <div className="lg:hidden bg-[#162547] px-5 py-4">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                onClick={() => setMenuOpen(false)}
+                className={({ isActive }) =>
+                  `block py-3 border-b border-white/10 no-underline ${
+                    isActive ? "text-[#F4712E]" : "text-white"
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
           </div>
         )}
       </header>

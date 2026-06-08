@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import { useState } from 'react'
+import AboutHero from "../components/about/Hero";
+import PersonalInfo from "../components/about/Info";
+import AchievementsSection from "../components/about/Achievements";
 
-function about() {
+function About() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div>about</div>
+    <>
+    <AboutHero />
+    <PersonalInfo />
+    <AchievementsSection />
+    </>
   )
 }
 
-export default about
+export default About;
