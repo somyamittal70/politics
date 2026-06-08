@@ -1,9 +1,18 @@
-import React from 'react'
 
-function contact() {
+import Hero from "../components/contact/Hero";
+import ContactForm from "../components/contact/ContactForm";
+
+
+
+function Home() {
+
   return (
-    <div>contact</div>
+    <>
+    <Hero />
+    <ContactForm/>
+   
+    </>
   )
 }
 
-export default contact
+export default Home;
