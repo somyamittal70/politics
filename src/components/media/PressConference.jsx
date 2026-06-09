@@ -84,7 +84,7 @@ export default function PressConference() {
             <div className="absolute inset-0 bg-black/20" />
 
             <button className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full bg-[#FC8814] flex items-center justify-center hover:scale-110 transition">
+              <div className="w-20 h-20 rounded-md bg-[#FC8814] flex items-center justify-center hover:scale-110 transition">
                 <Play size={28} fill="white" className="text-white ml-1" />
               </div>
             </button>
@@ -122,7 +122,7 @@ export default function PressConference() {
               {featured.description}
             </p>
 
-            <button className="mt-8 bg-[#333333] hover:bg-[#FC8814] text-white px-8 py-4 rounded-full flex items-center gap-3 transition w-fit">
+            <button className="mt-8 bg-[#333333] hover:bg-[#FC8814] text-white px-8 py-4 rounded-md flex items-center gap-3 transition w-fit">
               Watch Full Conference
               <ArrowRight size={18} />
             </button>

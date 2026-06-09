@@ -225,7 +225,7 @@ export default function CampaignsList() {
   const filtered = active === "All" ? CAMPAIGNS : CAMPAIGNS.filter(c => c.category === active);
 
   return (
-    <section className="relative bg-[#1a1a1a]/92 py-24 overflow-hidden">
+    <section className="relative bg-[#1a1a1a]/60 py-24 overflow-hidden">
       {/* Grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{ backgroundImage: "linear-gradient(#FDFAF5 1px,transparent 1px),linear-gradient(90deg,#FDFAF5 1px,transparent 1px)", backgroundSize: "48px 48px" }} />

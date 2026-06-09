@@ -139,7 +139,7 @@ export default function FeaturedVideo() {
                 key={video.id}
                 onClick={() => setActiveVideo(video)}
                 className={`w-full text-left rounded-2xl overflow-hidden transition-all duration-300
-                ${activeVideo.id === video.id ? "bg-[#0D1B3E]" : "bg-white"}`}
+                ${activeVideo.id === video.id ? "bg-[#333333]/40" : "bg-white"}`}
               >
                 <div className="flex gap-4 p-4">
                   <div className="relative">
@@ -165,7 +165,7 @@ export default function FeaturedVideo() {
                       className={`font-semibold line-clamp-2 ${
                         activeVideo.id === video.id
                           ? "text-white"
-                          : "text-[#0D1B3E]"
+                          : "text-[#333333]"
                       }`}
                       style={{
                         fontFamily: "Playfair Display, serif",
