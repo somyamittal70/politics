@@ -93,10 +93,10 @@ export default function PhotoGallery() {
           className="mb-12"
         >
           <div className="flex items-center gap-3 mb-3">
-            <span className="w-7 h-[2px]" style={{ background: '#C8972B' }} />
+            <span className="w-7 h-[2px]" style={{ background: '#FF9933' }} />
             <span
               className="text-xs font-black uppercase tracking-[0.3em]"
-              style={{ color: '#C8972B', fontFamily: 'Raleway, sans-serif' }}
+              style={{ color: '#FF9933', fontFamily: 'Raleway, sans-serif' }}
             >
               Photo Gallery
             </span>
@@ -105,7 +105,7 @@ export default function PhotoGallery() {
             className="text-4xl sm:text-5xl font-light leading-tight"
             style={{ color: '#0D1B3E', fontFamily: 'Playfair Display, serif' }}
           >
-            Visual <em className="italic" style={{ color: '#C8972B' }}>Moments</em>
+            Visual <em className="italic" style={{ color: '#FF9933' }}>Moments</em>
           </h2>
         </motion.div>
 
@@ -127,7 +127,7 @@ export default function PhotoGallery() {
               {activeFilter === cat ? (
                 <>
                   <span className="relative z-10 text-white">{cat}</span>
-                  <span className="absolute inset-0" style={{ background: '#C8972B' }} />
+                  <span className="absolute inset-0" style={{ background: '#FF9933' }} />
                 </>
               ) : (
                 <>
@@ -236,7 +236,7 @@ export default function PhotoGallery() {
                 <div>
                   <span
                     className="block text-[0.6rem] font-black uppercase tracking-[0.25em] mb-1"
-                    style={{ color: '#C8972B', fontFamily: 'Raleway, sans-serif' }}
+                    style={{ color: '#FF9933', fontFamily: 'Raleway, sans-serif' }}
                   >
                     {selectedImage.category}
                   </span>
@@ -290,7 +290,7 @@ function GalleryCard({ photo, index, onClick, spanClass = '', mobile = false }) 
       <div
         className="absolute top-0 left-0 w-10 h-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
-          background: 'linear-gradient(135deg, #C8972B 40%, transparent 100%)',
+          background: 'linear-gradient(135deg, #FF9933 40%, transparent 100%)',
         }}
       />
 
@@ -298,9 +298,9 @@ function GalleryCard({ photo, index, onClick, spanClass = '', mobile = false }) 
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <div
           className="w-12 h-12 flex items-center justify-center border-2"
-          style={{ borderColor: '#C8972B', background: 'rgba(200,151,43,0.15)' }}
+          style={{ borderColor: '#FF9933', background: 'rgba(200,151,43,0.15)' }}
         >
-          <ZoomIn size={20} color="#C8972B" />
+          <ZoomIn size={20} color="#FF9933" />
         </div>
       </div>
 
@@ -311,11 +311,11 @@ function GalleryCard({ photo, index, onClick, spanClass = '', mobile = false }) 
       >
         {/* Gold left bar */}
         <div className="flex items-start gap-3">
-          <div className="mt-1 w-[3px] h-8 flex-shrink-0" style={{ background: '#C8972B' }} />
+          <div className="mt-1 w-[3px] h-8 flex-shrink-0" style={{ background: '#FF9933' }} />
           <div>
             <span
               className="block text-[0.52rem] font-black uppercase tracking-[0.2em] mb-0.5"
-              style={{ color: '#C8972B', fontFamily: 'Raleway, sans-serif' }}
+              style={{ color: '#FF9933', fontFamily: 'Raleway, sans-serif' }}
             >
               {photo.category}
             </span>

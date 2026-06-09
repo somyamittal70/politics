@@ -163,7 +163,7 @@ export default function HeroSection() {
                   {/* Tag */}
                   <div
                     className="slide-tag inline-flex items-center gap-2 mb-4 md:mb-6
-                      text-[0.72rem] font-bold tracking-[0.22em] uppercase text-[#E2C06A]"
+                      text-[0.72rem] font-bold tracking-[0.22em] uppercase text-[#FF9933]"
                     style={{ fontFamily: "'Playfair', serif" }}
                   >
                     {slide.tag}
@@ -171,7 +171,7 @@ export default function HeroSection() {
 
                   {/* Hindi */}
                   <div
-                    className="text-[clamp(1.2rem,3.5vw,2.4rem)] text-[#E2C06A] leading-[1.4] mb-2 font-normal"
+                    className="text-[clamp(1.2rem,3.5vw,2.4rem)] text-[#FF9933] leading-[1.4] mb-2 font-normal"
                     style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}
                   >
                     {slide.quote}
@@ -219,10 +219,10 @@ export default function HeroSection() {
                     <a
                       href="#contact-us"
                       className="inline-block text-[0.78rem] md:text-[0.82rem] font-bold tracking-[0.14em] uppercase
-                        no-underline text-[#E2C06A] bg-transparent border border-[#C9A84C]/45
+                        no-underline text-[#FF9933] bg-transparent border border-[#C9A84C]/45
                         px-6 md:px-8 py-3 md:py-[0.85rem] cursor-pointer
                         transition-all duration-[250ms] ease-in-out
-                        hover:bg-[#C9A84C]/10 hover:border-[#C9A84C] hover:text-[#C9A84C] hover:-translate-y-[2px]"
+                        hover:bg-[#E8541A]/10 hover:border-[#E8541A] hover:text-[#E8541A] hover:-translate-y-[2px]"
                       style={{ fontFamily: "'Playfair', serif" }}
                     >
                       Get in Touch

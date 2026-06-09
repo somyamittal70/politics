@@ -56,7 +56,7 @@ export default function FeaturedVideo() {
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
           <div>
-            <span className="uppercase tracking-[0.3em] text-[#C8972B] text-sm font-semibold">
+            <span className="uppercase tracking-[0.3em] text-[#FF9933] text-sm font-semibold">
               Featured Videos
             </span>
 
