@@ -281,7 +281,7 @@ export default function Footer() {
 
             {/* Tricolor flag strip */}
             <div className="flex mt-6 rounded-[2px] overflow-hidden h-[5px]">
-              <div className="flex-1 bg-[#fc8814]" />
+              <div className="flex-1 bg-[#E8541A]" />
               <div className="flex-1 bg-[#FFFF]" />
               <div className="flex-1 bg-[#138808]" />
             </div>

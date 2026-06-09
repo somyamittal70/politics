@@ -7,14 +7,14 @@ const TIMELINE_DATA = [
   {
     year: "2024",
     items: [
-      { color: "#E8541A", Icon: Star,     tag: "Flagship",       title: "Viksit Bharat Sampark Yatra",     desc: "Nationwide outreach connecting citizens to the vision of a developed India by 2047 — gram sabhas, town halls, and digital connects." },
+      { color: "#fc8814", Icon: Star,     tag: "Flagship",       title: "Viksit Bharat Sampark Yatra",     desc: "Nationwide outreach connecting citizens to the vision of a developed India by 2047 — gram sabhas, town halls, and digital connects." },
       { color: "#138808", Icon: Leaf,      tag: "Environment",    title: "Ek Ped Maa Ke Naam — Phase II",   desc: "Extended the landmark tree plantation drive with a target of 5 crore additional saplings across urban and rural India." },
     ],
   },
   {
     year: "2023",
     items: [
-      { color: "#E8541A", Icon: Shield,   tag: "Security",       title: "Nasha Mukt Bharat Abhiyan",        desc: "India's largest anti-narcotics campaign mobilising 10 crore citizens across 272 identified districts." },
+      { color: "#fc8814", Icon: Shield,   tag: "Security",       title: "Nasha Mukt Bharat Abhiyan",        desc: "India's largest anti-narcotics campaign mobilising 10 crore citizens across 272 identified districts." },
       { color: "#138808", Icon: Heart,    tag: "Tribal Welfare", title: "Vanvasi Kalyan Sampark",            desc: "Sustained sampark to 800+ villages ensuring last-mile delivery of central welfare schemes." },
     ],
   },
@@ -22,21 +22,21 @@ const TIMELINE_DATA = [
     year: "2022",
     items: [
       { color: "#1A6BB5", Icon: Wifi,     tag: "Digital India",  title: "Cyber Suraksha Abhiyan",           desc: "Nationwide cyber literacy drive training 1 crore citizens through 5000+ workshops." },
-      { color: "#C9A84C", Icon: Globe,    tag: "Diaspora",       title: "Pravasi Bharatiya Connect",        desc: "Cultural and economic outreach to the Indian diaspora across 30+ countries." },
+      { color: "#e8e7e6", Icon: Globe,    tag: "Diaspora",       title: "Pravasi Bharatiya Connect",        desc: "Cultural and economic outreach to the Indian diaspora across 30+ countries." },
     ],
   },
   {
     year: "2021",
     items: [
-      { color: "#E8541A", Icon: Landmark, tag: "Policy",         title: "UAPA Awareness Campaign",          desc: "Informing citizens and institutions about strengthened counter-terrorism legislation." },
-      { color: "#C9A84C", Icon: Users,    tag: "Youth",          title: "Yuva Shakti Samvad",               desc: "Campus dialogues across 500+ universities mentoring emerging leaders and public servants." },
+      { color: "#fc8814", Icon: Landmark, tag: "Policy",         title: "UAPA Awareness Campaign",          desc: "Informing citizens and institutions about strengthened counter-terrorism legislation." },
+      { color: "#e8e7e6", Icon: Users,    tag: "Youth",          title: "Yuva Shakti Samvad",               desc: "Campus dialogues across 500+ universities mentoring emerging leaders and public servants." },
     ],
   },
   {
     year: "2020",
     items: [
       { color: "#138808", Icon: Heart,    tag: "COVID Relief",   title: "Covid Sewa Abhiyan",               desc: "Mass relief mobilisation — distributing rations, medicines, and essentials to 2 crore families during the pandemic." },
-      { color: "#E8541A", Icon: Shield,   tag: "Security",       title: "Border Area Development Drive",    desc: "Direct engagement with communities in border districts — infrastructure, connectivity, and security awareness." },
+      { color: "#fc8814", Icon: Shield,   tag: "Security",       title: "Border Area Development Drive",    desc: "Direct engagement with communities in border districts — infrastructure, connectivity, and security awareness." },
     ],
   },
 ];
@@ -89,7 +89,7 @@ export default function CampaignTimeline() {
         style={{ backgroundImage: "linear-gradient(#FDFAF5 1px,transparent 1px),linear-gradient(90deg,#FDFAF5 1px,transparent 1px)", backgroundSize: "48px 48px" }} />
       {/* Orange glow top-left */}
       <div className="pointer-events-none absolute top-0 left-0 w-[500px] h-[400px] rounded-full opacity-[0.05]"
-        style={{ background: "radial-gradient(circle, #E8541A, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, #fc8814, transparent 70%)" }} />
 
       {/* Watermark */}
       <div className="pointer-events-none select-none absolute top-1/2 right-0 translate-x-1/4 -translate-y-1/2
@@ -103,20 +103,20 @@ export default function CampaignTimeline() {
           <div>
             <motion.div variants={fadeUp(0)} initial="hidden" animate={headerInView ? "show" : "hidden"}
               className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-[2px] bg-[#E8541A]" />
-              <span className="text-[0.6rem] font-black tracking-[0.3em] uppercase text-[#E8541A]"
-                style={{ fontFamily: "Raleway, sans-serif" }}>Campaign Chronicle</span>
+              <span className="w-7 h-[2px]" style={{ background: "#fc8814" }} />
+              <span className="text-[0.6rem] font-black tracking-[0.3em] uppercase"
+                style={{ fontFamily: "Raleway, sans-serif", color: "#fc8814" }}>Campaign Chronicle</span>
               <span className="w-7 h-[2px] bg-[#138808]" />
             </motion.div>
             <motion.h2 variants={fadeUp(0.07)} initial="hidden" animate={headerInView ? "show" : "hidden"}
-              className="text-[2.8rem] md:text-[3.6rem] font-black text-[#FDFAF5] leading-[0.92]"
+              className="text-[2.8rem] md:text-[3.6rem] font-black text-[#FFFFFF] leading-[0.92]"
               style={{ fontFamily: "'Playfair Display', serif" }}>
-              A Decade of<br /><em className="text-[#E8541A] italic">Decisive Action</em>
+              A Decade of<br /><em style={{ color: "#fc8814" }} className="italic">Decisive Action</em>
             </motion.h2>
           </div>
           <motion.p variants={fadeUp(0.14)} initial="hidden" animate={headerInView ? "show" : "hidden"}
-            className="text-[1rem] italic text-[#FDFAF5]/40 leading-[1.9]"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            className="text-[1rem] italic leading-[1.9]"
+            style={{ fontFamily: "'Cormorant Garamond', serif", color: "#e8e7e6", opacity: 0.45 }}>
             A year-by-year chronicle of campaigns, movements, and initiatives — each one a milestone in the journey towards a stronger, more unified Bharat.
           </motion.p>
         </div>
@@ -137,7 +137,7 @@ export default function CampaignTimeline() {
                   <motion.div variants={fadeUp(gi * 0.05)} initial="hidden" animate={gInView ? "show" : "hidden"}
                     className="flex-shrink-0 w-[72px] md:w-[92px] text-right">
                     <span className="text-[1.6rem] md:text-[2rem] font-black leading-none"
-                      style={{ fontFamily: "'Playfair Display', serif", color: gi === 0 ? "#E8541A" : "rgba(253,250,245,0.35)" }}>
+                      style={{ fontFamily: "'Playfair Display', serif", color: gi === 0 ? "#fc8814" : "#e8e7e6", opacity: gi === 0 ? 1 : 0.35 }}>
                       {group.year}
                     </span>
                   </motion.div>
@@ -145,7 +145,7 @@ export default function CampaignTimeline() {
                   {/* Spine dot */}
                   <div className="absolute left-[88px] md:left-[108px] top-2 -translate-x-1/2 z-10">
                     <div className="w-3 h-3 rounded-full border-2 border-[#0D1B3E]"
-                      style={{ background: gi === 0 ? "#E8541A" : "rgba(253,250,245,0.3)" }} />
+                      style={{ background: gi === 0 ? "#fc8814" : "#e8e7e6", opacity: gi === 0 ? 1 : 0.3 }} />
                   </div>
 
                   {/* Cards */}

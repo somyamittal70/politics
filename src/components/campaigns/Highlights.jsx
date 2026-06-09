@@ -6,7 +6,7 @@ import { ArrowRight, Shield, Wifi, Heart } from "lucide-react";
 const HIGHLIGHTS = [
   {
     Icon: Shield,
-    color: "#E8541A",
+    color: "#fc8814",
     label: "National Security",
     year: "2023",
     title: "Nasha Mukt Bharat Abhiyan",
@@ -83,8 +83,8 @@ function SpotlightBlock({ item, index }) {
         </div>
         {/* Pull quote overlay */}
         <div className="absolute bottom-0 left-0 right-0 p-6">
-          <p className="text-[1.05rem] italic text-white/82 leading-[1.6]"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          <p className="text-[1.05rem] italic leading-[1.6]"
+            style={{ fontFamily: "'Cormorant Garamond', serif", color: "#e8e7e6" }}>
             "{item.pull}"
           </p>
         </div>
@@ -167,14 +167,14 @@ export default function CampaignHighlights() {
           <div>
             <motion.div variants={fadeUp(0)} initial="hidden" animate={headerInView ? "show" : "hidden"}
               className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-[2px] bg-[#E8541A]" />
-              <span className="text-[0.6rem] font-black tracking-[0.3em] uppercase text-[#E8541A]"
-                style={{ fontFamily: "Raleway, sans-serif" }}>Campaign Spotlights</span>
+              <span className="w-7 h-[2px]" style={{ background: "#fc8814" }} />
+              <span className="text-[0.6rem] font-black tracking-[0.3em] uppercase"
+                style={{ fontFamily: "Raleway, sans-serif", color: "#fc8814" }}>Campaign Spotlights</span>
             </motion.div>
             <motion.h2 variants={fadeUp(0.07)} initial="hidden" animate={headerInView ? "show" : "hidden"}
               className="text-[2.8rem] md:text-[3.6rem] font-black text-[#1A1410] leading-[0.92]"
               style={{ fontFamily: "'Playfair Display', serif" }}>
-              Campaigns That<br /><em className="text-[#E8541A] italic">Moved Bharat</em>
+              Campaigns That<br /><em style={{ color: "#fc8814" }} className="italic">Moved Bharat</em>
             </motion.h2>
           </div>
           <motion.p variants={fadeUp(0.14)} initial="hidden" animate={headerInView ? "show" : "hidden"}
@@ -191,15 +191,6 @@ export default function CampaignHighlights() {
             <SpotlightBlock key={i} item={item} index={i} />
           ))}
         </div>
-
-        {/* Footer rule */}
-        <div className="flex items-center gap-4 mt-16">
-          <div className="flex-1 h-px bg-[#1A1410]/[0.08]" />
-          <span className="text-[0.52rem] font-black tracking-[0.3em] uppercase text-[#1A1410]/20"
-            style={{ fontFamily: "Raleway, sans-serif" }}>Section III — Campaign Highlights</span>
-          <div className="flex-1 h-px bg-[#1A1410]/[0.08]" />
-        </div>
-
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import { Shield, Wifi, Heart, BookOpen, Globe, Leaf, Landmark, Users } from "luc
 const CAMPAIGNS = [
   {
     id: 1, category: "National Security",
-    color: "#E8541A", accent: "#FFF0EA",
+    color: "#fc8814", accent: "#FFF0EA",
     Icon: Shield,
     year: "2023",
     tag: "Flagship",
@@ -58,7 +58,7 @@ const CAMPAIGNS = [
   },
   {
     id: 5, category: "National Security",
-    color: "#E8541A", accent: "#FFF0EA",
+    color: "#fc8814", accent: "#FFF0EA",
     Icon: Landmark,
     year: "2021",
     tag: "Policy",
@@ -237,20 +237,20 @@ export default function CampaignsList() {
           <div>
             <motion.div variants={fadeUp(0)} initial="hidden" animate={headerInView ? "show" : "hidden"}
               className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-[2px] bg-[#E8541A]" />
-              <span className="text-[0.6rem] font-black tracking-[0.3em] uppercase text-[#E8541A]"
-                style={{ fontFamily: "Raleway, sans-serif" }}>All Campaigns</span>
+              <span className="w-7 h-[2px]" style={{ background: "#fc8814" }} />
+              <span className="text-[0.6rem] font-black tracking-[0.3em] uppercase"
+                style={{ fontFamily: "Raleway, sans-serif", color: "#fc8814" }}>All Campaigns</span>
               <span className="w-7 h-[2px] bg-[#138808]" />
             </motion.div>
             <motion.h2 variants={fadeUp(0.07)} initial="hidden" animate={headerInView ? "show" : "hidden"}
               className="text-[2.8rem] md:text-[3.6rem] font-black text-[#FDFAF5] leading-[0.92]"
               style={{ fontFamily: "'Playfair Display', serif" }}>
-              Every Campaign,<br /><em className="text-[#E8541A] italic">A Promise Kept</em>
+              Every Campaign,<br /><em style={{ color: "#fc8814" }} className="italic">A Promise Kept</em>
             </motion.h2>
           </div>
           <motion.p variants={fadeUp(0.14)} initial="hidden" animate={headerInView ? "show" : "hidden"}
-            className="text-[0.95rem] italic text-[#FDFAF5]/38 leading-[1.9] max-w-xs"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            className="text-[0.95rem] italic leading-[1.9] max-w-xs"
+            style={{ fontFamily: "'Cormorant Garamond', serif", color: "#e8e7e6", opacity: 0.45 }}>
             From tribal welfare to national security — a comprehensive record of campaigns driving change across Bharat.
           </motion.p>
         </div>
@@ -264,8 +264,8 @@ export default function CampaignsList() {
                 transition-all duration-250 overflow-hidden"
               style={{ fontFamily: "Raleway, sans-serif" }}>
               {active === f
-                ? <><span className="relative z-10 text-white">{f}</span><span className="absolute inset-0 bg-[#E8541A]" /></>
-                : <><span className="relative z-10 text-[#FDFAF5]/45 hover:text-[#FDFAF5]/75">{f}</span><span className="absolute inset-0 border border-[#FDFAF5]/14" /></>}
+                ? <><span className="relative z-10 text-white">{f}</span><span className="absolute inset-0" style={{ background: "#fc8814" }} /></>
+                : <><span className="relative z-10" style={{ color: "#e8e7e6", opacity: 0.5 }}>{f}</span><span className="absolute inset-0 border border-white/14" /></>}
             </button>
           ))}
         </motion.div>
@@ -283,15 +283,6 @@ export default function CampaignsList() {
             {filtered.map((item, i) => <CampaignCard key={item.id} item={item} index={i} />)}
           </motion.div>
         </AnimatePresence>
-
-        {/* Footer rule */}
-        <div className="flex items-center gap-4 mt-16">
-          <div className="flex-1 h-px bg-[#FDFAF5]/[0.07]" />
-          <span className="text-[0.52rem] font-black tracking-[0.3em] uppercase text-[#FDFAF5]/18"
-            style={{ fontFamily: "Raleway, sans-serif" }}>Section II — Campaign Registry</span>
-          <div className="flex-1 h-px bg-[#FDFAF5]/[0.07]" />
-        </div>
-
       </div>
     </section>
   );
