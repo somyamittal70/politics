@@ -1,38 +1,93 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Radio, BookOpen, Handshake, Globe, Mic2, UsersRound,
+  Radio,
+  BookOpen,
+  Handshake,
+  Globe,
+  Mic2,
+  UsersRound,
 } from "lucide-react";
 
 /* ─── DATA ─────────────────────────────────────────────── */
 const MACROSTATS = [
-  { num: "500+",  label: "Sampark Events",   color: "#fc8814" },
-  { num: "28",    label: "States Covered",   color: "#fc8814" },
-  { num: "35+",   label: "Yrs of Service",   color: "#138808" },
+  { num: "500+", label: "Sampark Events", color: "#fc8814" },
+  { num: "28", label: "States Covered", color: "#fc8814" },
+  { num: "35+", label: "Yrs of Service", color: "#138808" },
   { num: "10Cr+", label: "People Connected", color: "#fc8814" },
 ];
 
 const TIMELINE = [
-  { id: "01", color: "#fc8814", stat: "200+", statLabel: "Press Interactions", tag: "Media",        title: "Mann Ki Baat & Press Briefings",   desc: "National broadcast & structured press briefings communicating policy directly to citizens." },
-  { id: "02", color: "#fc8814", stat: "50+",  statLabel: "Cultural Events",    tag: "Culture",      title: "Sahitya & Sanskriti Programmes",   desc: "Patron of literary & cultural events celebrating India's civilisational heritage." },
-  { id: "03", color: "#138808", stat: "30+",  statLabel: "Countries Reached",  tag: "Diplomatic",   title: "Diaspora Connect Programmes",      desc: "Engaged Indian diaspora globally — strengthening cultural & economic ties." },
-  { id: "04", color: "#fc8814", stat: "1Cr+", statLabel: "Citizens Engaged",   tag: "Digital India",title: "Cyber Awareness & Safety Drives",  desc: "National campaigns on cyber hygiene & digital literacy reaching millions." },
-  { id: "05", color: "#fc8814", stat: "500+", statLabel: "Campus Visits",      tag: "Youth",        title: "ABVP & Student Union Dialogues",   desc: "Interactive sessions with student bodies — mentoring emerging public servants." },
-  { id: "06", color: "#138808", stat: "800+", statLabel: "Villages Covered",   tag: "Tribal Welfare",title: "Vanvasi Kalyan Sampark",          desc: "Sustained outreach to tribal communities — welfare schemes reaching the last mile." },
+  {
+    id: "01",
+    color: "#fc8814",
+    stat: "200+",
+    statLabel: "Press Interactions",
+    tag: "Media",
+    title: "Mann Ki Baat & Press Briefings",
+    desc: "National broadcast & structured press briefings communicating policy directly to citizens.",
+  },
+  {
+    id: "02",
+    color: "#fc8814",
+    stat: "50+",
+    statLabel: "Cultural Events",
+    tag: "Culture",
+    title: "Sahitya & Sanskriti Programmes",
+    desc: "Patron of literary & cultural events celebrating India's civilisational heritage.",
+  },
+  {
+    id: "03",
+    color: "#138808",
+    stat: "30+",
+    statLabel: "Countries Reached",
+    tag: "Diplomatic",
+    title: "Diaspora Connect Programmes",
+    desc: "Engaged Indian diaspora globally — strengthening cultural & economic ties.",
+  },
+  {
+    id: "04",
+    color: "#fc8814",
+    stat: "1Cr+",
+    statLabel: "Citizens Engaged",
+    tag: "Digital India",
+    title: "Cyber Awareness & Safety Drives",
+    desc: "National campaigns on cyber hygiene & digital literacy reaching millions.",
+  },
+  {
+    id: "05",
+    color: "#fc8814",
+    stat: "500+",
+    statLabel: "Campus Visits",
+    tag: "Youth",
+    title: "ABVP & Student Union Dialogues",
+    desc: "Interactive sessions with student bodies — mentoring emerging public servants.",
+  },
+  {
+    id: "06",
+    color: "#138808",
+    stat: "800+",
+    statLabel: "Villages Covered",
+    tag: "Tribal Welfare",
+    title: "Vanvasi Kalyan Sampark",
+    desc: "Sustained outreach to tribal communities — welfare schemes reaching the last mile.",
+  },
 ];
 
 const BOTTOM_CARDS = [
   {
     color: "#fc8814",
     Icon: Radio,
-    stat: "200+", statLabel: "Media Interactions",
+    stat: "200+",
+    statLabel: "Media Interactions",
     tag: "Media Engagement",
     title: "Mann Ki Baat & Press Briefings",
     desc: "National broadcast programmes and structured press briefings communicating government policies directly to citizens across Bharat.",
     sub: {
       color: "#138808",
       Icon: Globe,
-      stat: "1Cr+", statLabel: "Citizens Engaged",
+      stat: "1Cr+",
+      statLabel: "Citizens Engaged",
       tag: "Digital India",
       title: "Cyber Awareness & Safety Drives",
       desc: "National campaigns on cyber hygiene & digital literacy reaching millions through schools and colleges.",
@@ -41,14 +96,16 @@ const BOTTOM_CARDS = [
   {
     color: "#fc8814",
     Icon: UsersRound,
-    stat: "800+", statLabel: "Villages Covered",
+    stat: "800+",
+    statLabel: "Villages Covered",
     tag: "Tribal Welfare",
     title: "Vanvasi Kalyan Sampark",
     desc: "Sustained outreach to tribal communities across Gujarat and Central India — welfare schemes reaching the last mile.",
     sub: {
       color: "#fc8814",
       Icon: Handshake,
-      stat: "30+", statLabel: "Countries Reached",
+      stat: "30+",
+      statLabel: "Countries Reached",
       tag: "Diplomatic Outreach",
       title: "Diaspora Connect Programmes",
       desc: "Engaged Indian diaspora globally — building cultural and economic ties between NRIs and their motherland.",
@@ -57,9 +114,30 @@ const BOTTOM_CARDS = [
 ];
 
 /* ─── ANIMATION VARIANTS ────────────────────────────────── */
-const fadeUp   = (d = 0) => ({ hidden: { opacity: 0, y: 28 },  show: { opacity: 1, y: 0, transition: { duration: 0.65, delay: d, ease: [0.22, 1, 0.36, 1] } } });
-const fadeLeft = (d = 0) => ({ hidden: { opacity: 0, x: -28 }, show: { opacity: 1, x: 0, transition: { duration: 0.65, delay: d, ease: [0.22, 1, 0.36, 1] } } });
-const fadeRight= (d = 0) => ({ hidden: { opacity: 0, x: 28 },  show: { opacity: 1, x: 0, transition: { duration: 0.65, delay: d, ease: [0.22, 1, 0.36, 1] } } });
+const fadeUp = (d = 0) => ({
+  hidden: { opacity: 0, y: 28 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, delay: d, ease: [0.22, 1, 0.36, 1] },
+  },
+});
+const fadeLeft = (d = 0) => ({
+  hidden: { opacity: 0, x: -28 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.65, delay: d, ease: [0.22, 1, 0.36, 1] },
+  },
+});
+const fadeRight = (d = 0) => ({
+  hidden: { opacity: 0, x: 28 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.65, delay: d, ease: [0.22, 1, 0.36, 1] },
+  },
+});
 
 /* ─── HELPERS ───────────────────────────────────────────── */
 function Tag({ color, children }) {
@@ -79,19 +157,25 @@ function EyebrowLine({ color }) {
 
 /* ─── MAIN COMPONENT ─────────────────────────────────────── */
 export default function CommunityOutreach() {
-  const topRef      = useRef(null);
-  const tlRef       = useRef(null);
-  const bottomRef   = useRef(null);
+  const topRef = useRef(null);
+  const tlRef = useRef(null);
+  const bottomRef = useRef(null);
 
-  const topInView    = useInView(topRef,    { once: true, margin: "-60px" });
-  const tlInView     = useInView(tlRef,     { once: true, margin: "-60px" });
+  const topInView = useInView(topRef, { once: true, margin: "-60px" });
+  const tlInView = useInView(tlRef, { once: true, margin: "-60px" });
   const bottomInView = useInView(bottomRef, { once: true, margin: "-60px" });
 
   return (
     <section
       id="community-outreach"
-      className="relative bg-[#1a1a1a] overflow-hidden py-20 md:py-28"
-    >
+      className="
+      relative
+      bg-[#1a1a1a]
+      overflow-hidden
+      py-16
+      sm:py-20
+      md:py-28
+      "    >
       {/* Grid texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -105,7 +189,9 @@ export default function CommunityOutreach() {
       {/* Ambient glow — bottom right */}
       <div
         className="pointer-events-none absolute bottom-0 right-0 w-[600px] h-[500px] rounded-full opacity-[0.06]"
-        style={{ background: "radial-gradient(circle, #138808, transparent 70%)" }}
+        style={{
+          background: "radial-gradient(circle, #138808, transparent 70%)",
+        }}
       />
 
       {/* Watermark */}
@@ -119,7 +205,6 @@ export default function CommunityOutreach() {
       </div>
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-10 lg:px-16">
-
         {/* ══ TOP STRIP ══ */}
         <div
           ref={topRef}
@@ -147,7 +232,8 @@ export default function CommunityOutreach() {
               variants={fadeUp(0.07)}
               initial="hidden"
               animate={topInView ? "show" : "hidden"}
-              className="text-[2.8rem] md:text-[4rem] font-black text-[#e8e7e6] leading-[0.92]"
+              className="text-[2rem] md:text-[4rem] sm:text-[2.8rem] font-black text-[#e8e7e6] leading-[0.92]"
+  
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Community
@@ -162,8 +248,8 @@ export default function CommunityOutreach() {
               className="mt-4 text-[0.95rem] text-[#e8e7e6]/40 italic leading-[1.9] max-w-sm"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              From tribal hamlets to urban youth, from press briefings to diplomatic
-              corridors — spanning every stratum of Indian society.
+              From tribal hamlets to urban youth, from press briefings to
+              diplomatic corridors — spanning every stratum of Indian society.
             </motion.p>
           </div>
 
@@ -182,20 +268,34 @@ export default function CommunityOutreach() {
             </div>
 
             {/* Stats */}
-            <div className="flex border border-[#e8e7e6]/[0.08]">
+            {/* <div className="flex border border-[#e8e7e6]/[0.08]"> */}
+            <div
+              className="
+                flex
+                overflow-x-auto
+                lg:overflow-visible
+                scrollbar-hide
+                border
+                border-[#e8e7e6]/10
+                w-full
+              "
+            >
               {MACROSTATS.map((s, i) => (
                 <div
                   key={i}
-                  className="px-5 py-3 text-center border-r border-[#e8e7e6]/[0.07] last:border-r-0 min-w-[90px]"
+                  className="px-5 py-3 text-center border-r border-[#e8e7e6]/[0.07] last:border-r-0 min-w-[40px]"
                 >
                   <span
-                    className="block text-[1.4rem] font-black leading-none mb-1"
-                    style={{ fontFamily: "'Playfair Display', serif", color: s.color }}
+                    className="block text-[1.2rem] sm:text-[0.4rem] lg:text-[2rem] font-black leading-none mb-1"
+                    style={{
+                      fontFamily: "'Playfair Display', serif",
+                      color: s.color,
+                    }}
                   >
                     {s.num}
                   </span>
                   <span
-                    className="text-[0.55rem] font-black tracking-[0.16em] uppercase text-[#333333]"
+                    className="text-[0.45rem] lg:text-[0.5rem] font-black tracking-[0.1em] uppercase text-[#333333]"
                     style={{ fontFamily: "Playfair Display, sans-serif" }}
                   >
                     {s.label}
@@ -208,15 +308,38 @@ export default function CommunityOutreach() {
 
         {/* ══ HORIZONTAL TIMELINE STRIP ══ */}
         <div ref={tlRef} className="mb-10">
-          <div className="flex border border-[#e8e7e6]/20 overflow-hidden">
+          {/* <div className="flex border border-[#e8e7e6]/20 overflow-hidden"> */}
+          <div
+            className="
+              flex
+              overflow-x-auto
+              lg:overflow-hidden
+              scrollbar-hide
+              border border-[#e8e7e6]/20
+            "
+          >
             {TIMELINE.map((item, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp(i * 0.07)}
                 initial="hidden"
                 animate={tlInView ? "show" : "hidden"}
-                className="group relative flex-1 p-5 border-r border-[#e8e7e6]/15 last:border-r-0
-                  bg-white hover:bg-[#fafafa] transition-colors duration-300 overflow-hidden"
+                className="
+                group
+                relative
+                shrink-0
+                w-[280px]
+                sm:w-[320px]
+                lg:flex-1
+                p-5
+                border-r
+                border-[#e8e7e6]/15
+                bg-white
+                hover:bg-[#fafafa]
+                transition-colors
+                duration-300
+                overflow-hidden
+              "
               >
                 {/* Index + dot */}
                 <div className="flex items-center justify-between mb-4">
@@ -237,7 +360,10 @@ export default function CommunityOutreach() {
                 <div className="mb-3">
                   <span
                     className="block text-[1.6rem] font-black leading-none mb-1"
-                    style={{ fontFamily: "'Playfair Display', serif", color: item.color }}
+                    style={{
+                      fontFamily: "'Playfair Display', serif",
+                      color: item.color,
+                    }}
                   >
                     {item.stat}
                   </span>
@@ -289,7 +415,17 @@ export default function CommunityOutreach() {
         </div>
 
         {/* ══ BOTTOM ZONE ══ */}
-        <div ref={bottomRef} className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div
+            ref={bottomRef}
+            className="
+              grid
+              grid-cols-1
+              md:grid-cols-2
+              xl:grid-cols-3
+              gap-5
+            "
+          >
+
 
           {/* Quote panel */}
           <motion.div
@@ -310,9 +446,10 @@ export default function CommunityOutreach() {
               className="relative z-10 text-[1.2rem] italic text-[#2a2a2a] leading-[1.6] mt-8"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              My politics is not merely about winning elections. It is about ensuring
-              that every last person — the tribesman in the forest, the farmer in the
-              field, the student in the city — feels that the government is his own.
+              My politics is not merely about winning elections. It is about
+              ensuring that every last person — the tribesman in the forest, the
+              farmer in the field, the student in the city — feels that the
+              government is his own.
             </p>
 
             <div className="flex items-center gap-3 mt-6">
@@ -411,7 +548,9 @@ function DualCard({ item, small = false }) {
       {/* Hover glow */}
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300"
-        style={{ background: `radial-gradient(circle at 15% 85%, ${color}18, transparent 65%)` }}
+        style={{
+          background: `radial-gradient(circle at 15% 85%, ${color}18, transparent 65%)`,
+        }}
       />
     </motion.div>
   );
