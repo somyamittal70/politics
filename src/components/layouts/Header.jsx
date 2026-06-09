@@ -234,7 +234,7 @@ export default function Header() {
         isOpen={showModal}
         onClose={() => setShowModal(false)}
       />
-      <div className="h-[70px]" />
+      <div className="h-[45px]" />
     </>
   );
 }
