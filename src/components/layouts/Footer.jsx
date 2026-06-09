@@ -82,7 +82,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#0D1B3E] overflow-hidden">
+    <footer className="relative bg-[#fc8814] overflow-hidden">
       {/* Top tricolor accent bar */}
       <div
         className="absolute top-0 left-0 right-0 h-[3px]"
@@ -128,7 +128,7 @@ export default function Footer() {
                   AMIT SHAH
                 </p>
                 <p
-                  className="text-[0.58rem] font-bold tracking-[0.18em] uppercase text-[#C9A84C] mt-[3px]"
+                  className="text-[0.58rem] font-bold tracking-[0.18em] uppercase text-[#e8e7e6] mt-[3px]"
                   style={{ fontFamily: "Raleway, sans-serif" }}
                 >
                   Home Minister of India
@@ -138,7 +138,7 @@ export default function Footer() {
 
             {/* Short bio */}
             <p
-              className="text-[0.88rem] text-[#FDFAF5]/45 leading-[1.8] mb-6 max-w-xs"
+              className="text-[0.88rem] text-[#FDFAF5]/85 leading-[1.8] mb-6 max-w-xs"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontStyle: "italic",
@@ -184,7 +184,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     className="group flex items-center gap-2 no-underline
-                      text-[0.83rem] font-semibold text-[#FDFAF5]/50
+                      text-[0.83rem] font-semibold text-[#FDFAF5]/85
                       hover:text-[#C9A84C] transition-colors duration-200"
                     style={{ fontFamily: "Raleway, sans-serif" }}
                   >
@@ -211,7 +211,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     className="group flex items-center gap-2 no-underline
-                      text-[0.83rem] font-semibold text-[#FDFAF5]/50
+                      text-[0.83rem] font-semibold text-[#FDFAF5]/85
                       hover:text-[#C9A84C] transition-colors duration-200"
                     style={{ fontFamily: "Raleway, sans-serif" }}
                   >
@@ -233,7 +233,7 @@ export default function Footer() {
               Stay Updated
             </h4>
             <p
-              className="text-[0.83rem] text-[#FDFAF5]/40 leading-[1.7] mb-4"
+              className="text-[0.83rem] text-[#FDFAF5]/85 leading-[1.7] mb-4"
               style={{ fontFamily: "Raleway, sans-serif" }}
             >
               Subscribe to receive the latest news, speeches, and updates
@@ -245,8 +245,8 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full bg-[#080F22]/60 border border-[#FDFAF5]/10
-                  text-[#FDFAF5] placeholder-[#FDFAF5]/20
+                className="w-full bg-[#e8e7e6] border border-[#FDFAF5]/10
+                  text-[#FDFAF5] placeholder-[#E8541A]
                   px-4 py-[10px] text-[0.82rem] outline-none rounded-[2px]
                   focus:border-[#E8541A] focus:shadow-[0_0_0_3px_rgba(232,84,26,0.1)]
                   transition-all duration-200"
@@ -254,7 +254,7 @@ export default function Footer() {
               />
               <button
                 className="w-full flex items-center justify-center gap-2
-                  bg-[#E8541A] hover:bg-[#F4712E] text-[#FDFAF5]
+                  bg-[#e8e7e6] hover:bg-[#FDFAF5] text-[#F4712E]
                   text-[0.75rem] font-black tracking-[0.18em] uppercase
                   py-[11px] transition-all duration-250 hover:-translate-y-[1px]
                   hover:shadow-[0_6px_20px_rgba(232,84,26,0.3)]"
@@ -281,7 +281,7 @@ export default function Footer() {
 
             {/* Tricolor flag strip */}
             <div className="flex mt-6 rounded-[2px] overflow-hidden h-[5px]">
-              <div className="flex-1 bg-[#FF9933]" />
+              <div className="flex-1 bg-[#fc8814]" />
               <div className="flex-1 bg-[#FFFF]" />
               <div className="flex-1 bg-[#138808]" />
             </div>
@@ -289,12 +289,12 @@ export default function Footer() {
         </div>
 
         {/* ── DIVIDER ── */}
-        <div className="my-10 h-[1px] bg-[#FDFAF5]/[0.07]" />
+        <div className="my-10 h-[1px] bg-[#FDFAF5]/[0.09]" />
 
         {/* ── BOTTOM BAR ── */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p
-            className="text-[0.72rem] text-[#FDFAF5]/30 text-center sm:text-left"
+            className="text-[0.72rem] text-[#FDFAF5]/85 text-center sm:text-left"
             style={{ fontFamily: "Raleway, sans-serif" }}
           >
             © {year} Amit Shah. All rights reserved. &nbsp;|&nbsp; Official
@@ -306,7 +306,7 @@ export default function Footer() {
               <a
                 key={item}
                 href="#"
-                className="text-[0.7rem] font-semibold text-[#FDFAF5]/25
+                className="text-[0.7rem] font-semibold text-[#FDFAF5]/85
                   hover:text-[#C9A84C] no-underline transition-colors duration-200"
                 style={{ fontFamily: "Raleway, sans-serif" }}
               >

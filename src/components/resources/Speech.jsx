@@ -83,7 +83,7 @@ const speeches = [
       "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=700&q=80",
     desc: "Historic speech in Rajya Sabha introducing the J&K Reorganisation Bill, articulating the constitutional and national security rationale.",
   },
-    {
+  {
     id: 7,
     tag: "Parliament",
     title: "Rajya Sabha — J&K Reorganisation",
@@ -95,7 +95,7 @@ const speeches = [
       "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=700&q=80",
     desc: "Historic speech in Rajya Sabha introducing the J&K Reorganisation Bill, articulating the constitutional and national security rationale.",
   },
-    {
+  {
     id: 8,
     tag: "Parliament",
     title: "Rajya Sabha — J&K Reorganisation",
@@ -327,29 +327,55 @@ export default function SpeechesSection() {
         </motion.div>
 
         {/* Filter tabs */}
+        {/* Filter tabs */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-wrap gap-2 mb-10"
+          className="mb-10"
         >
-          {filters.map((f) => (
-            <button
-              key={f}
-              onClick={() => setActive(f)}
-              className={`text-[0.7rem] font-black tracking-[0.14em] uppercase px-4 py-[9px]
-                transition-all duration-200 rounded-sm
-                ${
-                  active === f
-                    ? "bg-[#E8541A] text-[#FDFAF5]"
-                    : "bg-[#0D1B3E]/[0.06] text-[#0D1B3E]/50 hover:bg-[#0D1B3E]/12 hover:text-[#0D1B3E]/80"
-                }`}
-              style={{ fontFamily: "Raleway,sans-serif" }}
-            >
-              {f}
-            </button>
-          ))}
+          <div
+            className="
+      flex
+      gap-3
+      overflow-x-auto
+      lg:flex-wrap
+      scrollbar-hide
+      pb-2
+      snap-x
+    "
+          >
+            {filters.map((f) => (
+              <button
+                key={f}
+                onClick={() => setActive(f)}
+                className={`
+          shrink-0
+          whitespace-nowrap
+          text-[11px]
+          sm:text-xs
+          font-black
+          tracking-[0.14em]
+          uppercase
+          px-5
+          py-3
+          
+          transition-all
+          duration-300
+          snap-start
+          ${
+            active === f
+              ? "bg-[#FC8814] text-white shadow-md"
+              : "bg-[#E8E7E6] text-gray-700 hover:bg-[#FC8814]/10"
+          }
+        `}
+                style={{ fontFamily: "Raleway,sans-serif" }}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         {/* Featured + grid */}

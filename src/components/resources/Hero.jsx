@@ -1,13 +1,11 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-
 import {
   FaMicrophone,
   FaNewspaper,
   FaFileAlt,
   FaImages,
   FaEnvelope,
-  FaSearch,
 } from "react-icons/fa";
 
 const quickLinks = [
@@ -57,7 +55,7 @@ const fadeUp = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.75,
+      duration: 0.8,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -71,82 +69,71 @@ export default function ResourcesHero() {
     offset: ["start start", "end start"],
   });
 
-  const yRaw = useTransform(scrollYProgress, [0, 1], ["0%", "28%"]);
+  const yRaw = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   const ySpring = useSpring(yRaw, {
     stiffness: 80,
     damping: 22,
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
     <section
       ref={ref}
-      className="relative min-h-screen overflow-hidden bg-[#080F22]"
+      className="relative min-h-screen overflow-hidden bg-white"
     >
-      {/* Background */}
-      <motion.div
-        className="absolute inset-0 h-[130%] -top-[15%]"
-        style={{ y: ySpring }}
-      >
+      {/* Background Image */}
+      <motion.div className="absolute inset-0" style={{ y: ySpring }}>
         <img
           src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=1800&q=80"
           alt="Resources"
           className="w-full h-full object-cover"
           style={{
-            filter: "brightness(0.22) saturate(0.65)",
+            filter: "brightness(0.9)",
           }}
         />
       </motion.div>
 
-      {/* Overlay */}
+      {/* White Overlay */}
       <div
         className="absolute inset-0 z-[1]"
         style={{
           background:
-            "linear-gradient(110deg, rgba(8,15,34,0.95) 0%, rgba(8,15,34,0.55) 55%, rgba(8,15,34,0.85) 100%)",
+            "linear-gradient(120deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.90) 55%, rgba(255,255,255,0.95) 100%)",
         }}
       />
 
-      {/* Bottom Fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-40 md:h-56 z-[2]"
-        style={{
-          background: "linear-gradient(to top,#080F22,transparent)",
-        }}
-      />
+      {/* Decorative Shapes */}
+      <div className="absolute inset-0 overflow-hidden z-[2]">
+        <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-[#E8E7E6]/50 blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-[#FC8814]/10 blur-3xl" />
+      </div>
 
-      {/* Tricolor */}
+      {/* Top Accent Line */}
       <motion.div
-        className="absolute top-0 left-0 right-0 h-[3px] z-10"
+        className="absolute top-0 left-0 right-0 h-1 z-20"
         style={{
-          background: "linear-gradient(90deg,#E8541A,#FDFAF5 50%,#138808)",
+          background:
+            "linear-gradient(90deg,#FC8814 0%,#FFFFFF 50%,#FC8814 100%)",
         }}
-        initial={{
-          scaleX: 0,
-          originX: 0,
-        }}
-        animate={{
-          scaleX: 1,
-        }}
-        transition={{
-          duration: 1,
-        }}
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1 }}
       />
 
-      {/* Rings */}
-      {[520, 380, 240].map((size, i) => (
+      {/* Decorative Rings */}
+      {[500, 350, 220].map((size, i) => (
         <motion.div
           key={i}
-          className="absolute right-[6%] top-1/2 -translate-y-1/2 rounded-full hidden xl:block"
+          className="absolute right-[5%] top-1/2 -translate-y-1/2 rounded-full hidden xl:block"
           style={{
             width: size,
             height: size,
-            border: `1px solid rgba(253,250,245,${0.03 + i * 0.015})`,
+            border: `1px solid rgba(252,136,20,${0.08 + i * 0.04})`,
           }}
           initial={{
-            scale: 0.6,
+            scale: 0.8,
             opacity: 0,
           }}
           animate={{
@@ -154,7 +141,7 @@ export default function ResourcesHero() {
             opacity: 1,
           }}
           transition={{
-            duration: 1.2,
+            duration: 1,
             delay: i * 0.15,
           }}
         />
@@ -168,13 +155,13 @@ export default function ResourcesHero() {
           z-10
           max-w-7xl
           mx-auto
-          px-4
+          px-5
           sm:px-6
           lg:px-10
           min-h-screen
           flex
           items-center
-          py-24
+          py-20
         "
       >
         <motion.div
@@ -188,7 +175,7 @@ export default function ResourcesHero() {
             variants={fadeUp}
             className="flex items-center gap-3 mb-6 flex-wrap"
           >
-            <span className="w-8 h-[2px] bg-[#E8541A]" />
+            <span className="w-8 h-[2px] bg-[#FC8814]" />
 
             <span
               className="
@@ -197,13 +184,13 @@ export default function ResourcesHero() {
                 font-black
                 uppercase
                 tracking-[0.35em]
-                text-[#E8541A]
+                text-[#FC8814]
               "
             >
               Official Resources
             </span>
 
-            <span className="w-8 h-[2px] bg-[#138808]" />
+            <span className="w-8 h-[2px] bg-[#FC8814]" />
           </motion.div>
 
           {/* Heading */}
@@ -211,11 +198,12 @@ export default function ResourcesHero() {
             variants={fadeUp}
             className="
               font-black
-              text-[#FDFAF5]
+              text-[#1F2937]
               leading-[1.05]
               mb-6
               text-4xl
               sm:text-5xl
+              md:text-6xl
               lg:text-7xl
             "
             style={{
@@ -224,7 +212,7 @@ export default function ResourcesHero() {
           >
             Media &
             <br />
-            <span className="text-[#E8541A]">Resources</span>
+            <span className="text-[#FC8814]">Resources</span>
           </motion.h1>
 
           {/* Description */}
@@ -233,9 +221,10 @@ export default function ResourcesHero() {
             className="
               text-base
               sm:text-lg
-              text-white/70
+              md:text-xl
+              text-gray-600
               leading-relaxed
-              max-w-xl
+              max-w-2xl
               mb-10
             "
           >
@@ -243,44 +232,58 @@ export default function ResourcesHero() {
             newsletters, and media assets — all in one place.
           </motion.p>
 
-          {/* Quick Links */}
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
-            {quickLinks.map((item) => (
-              <motion.a
-                key={item.label}
-                href={item.href}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.96 }}
-                className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  px-4
-                  py-3
-                  rounded-lg
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  text-white/80
-                  text-xs
-                  sm:text-sm
-                  font-semibold
-                  uppercase
-                  tracking-wide
-                  hover:border-[#E8541A]
-                  hover:bg-[#E8541A]/10
-                  hover:text-white
-                  transition-all
-                "
-              >
-                <span className="text-[#E8541A] text-sm">{item.icon}</span>
+          {/* Mobile Scroll + Desktop Wrap */}
+          <motion.div variants={fadeUp}>
+            <div
+              className="
+                flex
+                gap-3
+                overflow-x-auto
+                lg:flex-wrap
+                scrollbar-hide
+                pb-2
+              "
+            >
+              {quickLinks.map((item) => (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="
+                    shrink-0
+                    inline-flex
+                    items-center
+                    gap-2
+                    px-5
+                    py-3
+                    rounded-xl
+                    border
+                    border-[#FC8814]/20
+                    bg-white
+                    text-gray-700
+                    text-xs
+                    sm:text-sm
+                    font-semibold
+                    uppercase
+                    tracking-wide
+                    shadow-sm
+                    hover:border-[#FC8814]
+                    hover:bg-[#FC8814]
+                    hover:text-white
+                    transition-all
+                    duration-300
+                  "
+                >
+                  <span className="text-[#FC8814] group-hover:text-white">
+                    {item.icon}
+                  </span>
 
-                {item.label}
-              </motion.a>
-            ))}
+                  {item.label}
+                </motion.a>
+              ))}
+            </div>
           </motion.div>
-
-          
         </motion.div>
       </motion.div>
     </section>
