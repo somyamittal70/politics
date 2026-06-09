@@ -49,9 +49,7 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#0D1B3E]/95 backdrop-blur-lg shadow-lg"
-            : "bg-[#0D1B3E]"
+          scrolled ? "bg-[#0D1B3E]/95 backdrop-blur-md" : "bg-[#0D1B3E]"
         }`}
       >
         {/* Top Strip */}
@@ -68,69 +66,62 @@ export default function Header() {
                 🪷
               </div>
 
-              <div className="hidden xs:block">
-                <h2 className="text-white font-bold text-sm md:text-base">
-                  AMIT SHAH
-                </h2>
+            <div>
+              <h2 className="text-white font-bold">AMIT SHAH</h2>
+              <p className="text-[#E2C06A] text-xs">Home Minister of India</p>
+            </div>
+          </NavLink>
 
-                <p className="text-[#E2C06A] text-[10px] md:text-xs">
-                  Home Minister of India
-                </p>
-              </div>
-            </NavLink>
+          {/* Desktop Menu */}
+          <nav className="hidden lg:flex items-center gap-2">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                className={({ isActive }) =>
+                  `relative px-3 py-2 text-sm uppercase tracking-wider transition-all duration-300 no-underline ${
+                    isActive
+                      ? "text-[#F4712E]"
+                      : "text-white hover:text-[#E2C06A]"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    {link.name}
 
-            {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <NavLink
-                  key={link.name}
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `relative px-3 py-2 text-sm font-medium uppercase tracking-wide transition-all duration-300 no-underline ${
-                      isActive
-                        ? "text-[#F4712E]"
-                        : "text-white hover:text-[#E2C06A]"
-                    }`
-                  }
-                >
-                  {({ isActive }) => (
-                    <>
-                      {link.name}
+                    <span
+                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] transition-all duration-300 ${
+                        isActive ? "w-[80%] bg-[#F4712E]" : "w-0 bg-[#E2C06A]"
+                      }`}
+                    />
+                  </>
+                )}
+              </NavLink>
+            ))}
+          </nav>
 
-                      <span
-                        className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] rounded-full transition-all duration-300 ${
-                          isActive ? "w-[75%] bg-[#F4712E]" : "w-0 bg-[#E2C06A]"
-                        }`}
-                      />
-                    </>
-                  )}
-                </NavLink>
-              ))}
-            </nav>
-
-            {/* Desktop CTA */}
-            <button
-              onClick={() => setShowModal(true)}
-              className="
-                hidden xl:flex
-                items-center
-                justify-center
-                bg-[#E8541A]
-                hover:bg-[#C8972B]
-                text-white
-                px-5
-                py-3
-                rounded-full
-                text-sm
-                font-medium
-                transition-all
-                duration-300
-                hover:scale-105
-                shadow-lg
-              "
-            >
-              Connect With Us
-            </button>
+          <button
+            onClick={() => setShowModal(true)}
+            className="
+    hidden lg:flex
+    items-center
+    gap-2
+    bg-[#E8541A]
+    hover:bg-[#C8972B]
+    text-white
+    px-6
+    py-3
+    rounded-full
+    font-medium
+    transition-all
+    duration-300
+    hover:scale-105
+    shadow-lg
+  "
+          >
+            Connect With Us
+          </button>
 
             {/* Mobile Menu Button */}
             <button
@@ -203,9 +194,7 @@ export default function Header() {
         isOpen={showModal}
         onClose={() => setShowModal(false)}
       />
-
-      {/* Navbar Spacer */}
-      <div className="h-[72px]" />
+      <div className="h-[70px]" />
     </>
   );
 }
