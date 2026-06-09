@@ -125,7 +125,7 @@ function SpeechCard({ s, index, inView }) {
       initial="hidden"
       animate={inView ? "show" : "hidden"}
       className="group relative flex flex-col bg-[#FDFAF5] border border-[#EDE5D0] overflow-hidden
-        hover:border-[#E8541A]/35 hover:shadow-[0_12px_40px_rgba(232,84,26,0.1)]
+        hover:border-[#FC8814]/35 hover:shadow-[0_12px_40px_rgba(232,84,26,0.1)]
         transition-all duration-300"
       whileHover={{ y: -4 }}
     >
@@ -149,7 +149,7 @@ function SpeechCard({ s, index, inView }) {
           <motion.div
             className="w-12 h-12 rounded-full flex items-center justify-center
               bg-[#FDFAF5]/20 backdrop-blur-sm border border-[#FDFAF5]/30
-              group-hover:bg-[#E8541A] group-hover:border-[#E8541A]
+              group-hover:bg-[#FC8814] group-hover:border-[#FC8814]
               transition-all duration-300"
             whileHover={{ scale: 1.12 }}
           >
@@ -162,7 +162,7 @@ function SpeechCard({ s, index, inView }) {
         {/* Tag */}
         <div className="absolute top-3 left-3">
           <span
-            className="text-[0.55rem] font-black tracking-[0.2em] uppercase bg-[#E8541A] text-[#FDFAF5] px-2 py-1"
+            className="text-[0.55rem] font-black tracking-[0.2em] uppercase bg-[#FC8814] text-[#FDFAF5] px-2 py-1"
             style={{ fontFamily: "Raleway,sans-serif" }}
           >
             {s.tag}
@@ -197,7 +197,7 @@ function SpeechCard({ s, index, inView }) {
           </span>
         </div>
         <h3
-          className="text-[1rem] font-black text-[#0D1B3E] leading-snug group-hover:text-[#E8541A] transition-colors duration-200"
+          className="text-[1rem] font-black text-[#333333] leading-snug group-hover:text-[#FC8814] transition-colors duration-200"
           style={{ fontFamily: "'Playfair Display',serif" }}
         >
           {s.title}
@@ -210,7 +210,7 @@ function SpeechCard({ s, index, inView }) {
         </p>
         <div className="flex items-center gap-2 pt-3 border-t border-[#EDE5D0] mt-1">
           <button
-            className="text-[0.7rem] font-black tracking-[0.14em] uppercase text-[#E8541A]
+            className="text-[0.7rem] font-black tracking-[0.14em] uppercase text-[#FC8814]
             flex items-center gap-1 group/btn hover:gap-2 transition-all duration-200"
             style={{ fontFamily: "Raleway,sans-serif" }}
           >
@@ -229,7 +229,7 @@ function SpeechCard({ s, index, inView }) {
           <span className="ml-auto">
             <button
               className="w-7 h-7 flex items-center justify-center border border-[#EDE5D0]
-              hover:border-[#E8541A] hover:text-[#E8541A] text-[#7A6E5F] transition-all duration-200 rounded-sm"
+              hover:border-[#FC8814] hover:text-[#FC8814] text-[#7A6E5F] transition-all duration-200 rounded-sm"
             >
               <svg
                 width="12"
@@ -249,7 +249,7 @@ function SpeechCard({ s, index, inView }) {
       </div>
 
       {/* Saffron bottom accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#E8541A] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#FC8814] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
     </motion.div>
   );
 }
@@ -272,7 +272,7 @@ export default function SpeechesSection() {
       <div
         className="pointer-events-none select-none absolute top-1/2 left-1/2
           -translate-x-1/2 -translate-y-1/2 text-[7rem] md:text-[12rem] font-black
-          text-[#0D1B3E]/[0.03] whitespace-nowrap leading-none z-0"
+          text-[#333333]/[0.03] whitespace-nowrap leading-none z-0"
         style={{ fontFamily: "'Playfair Display',serif" }}
       >
         SPEAKS
@@ -289,25 +289,25 @@ export default function SpeechesSection() {
         >
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-[2px] bg-[#E8541A] rounded" />
+              <span className="w-7 h-[2px] bg-[#FC8814] rounded" />
               <span
-                className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#E8541A]"
+                className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#FC8814]"
                 style={{ fontFamily: "Raleway,sans-serif" }}
               >
                 Audio & Video
               </span>
             </div>
             <h2
-              className="text-[2.2rem] md:text-[3rem] font-black text-[#0D1B3E] leading-[1.1]"
+              className="text-[2.2rem] md:text-[3rem] font-black text-[#333333] leading-[1.1]"
               style={{ fontFamily: "'Playfair Display',serif" }}
             >
               Speeches &amp;{" "}
-              <em className="text-[#E8541A] not-italic italic">Addresses</em>
+              <em className="text-[#FC8814] not-italic italic">Addresses</em>
             </h2>
           </div>
           <a
             href="#"
-            className="text-[0.72rem] font-black tracking-[0.16em] uppercase text-[#E8541A]
+            className="text-[0.72rem] font-black tracking-[0.16em] uppercase text-[#FC8814]
             flex items-center gap-2 no-underline hover:gap-3 transition-all duration-200 flex-shrink-0 group"
             style={{ fontFamily: "Raleway,sans-serif" }}
           >
@@ -370,7 +370,7 @@ export default function SpeechesSection() {
               : "bg-[#E8E7E6] text-gray-700 hover:bg-[#FC8814]/10"
           }
         `}
-                style={{ fontFamily: "Raleway,sans-serif" }}
+                style={{ fontFamily: "Playfair Display,sans-serif" }}
               >
                 {f}
               </button>
@@ -396,7 +396,7 @@ export default function SpeechesSection() {
                   animate={inView ? "show" : "hidden"}
                   className="group relative grid grid-cols-1 md:grid-cols-2 border border-[#EDE5D0]
                     bg-[#FDFAF5] overflow-hidden mb-6
-                    hover:border-[#E8541A]/35 hover:shadow-[0_16px_48px_rgba(232,84,26,0.1)]
+                    hover:border-[#FC8814]/35 hover:shadow-[0_16px_48px_rgba(232,84,26,0.1)]
                     transition-all duration-300"
                   whileHover={{ y: -3 }}
                 >
@@ -421,7 +421,7 @@ export default function SpeechesSection() {
                       <motion.div
                         className="w-16 h-16 rounded-full flex items-center justify-center
                           bg-[#FDFAF5]/20 backdrop-blur-sm border border-[#FDFAF5]/30
-                          group-hover:bg-[#E8541A] group-hover:border-[#E8541A] transition-all duration-300"
+                          group-hover:bg-[#FC8814] group-hover:border-[#FC8814] transition-all duration-300"
                         whileHover={{ scale: 1.1 }}
                       >
                         <svg
@@ -436,7 +436,7 @@ export default function SpeechesSection() {
                     </div>
                     <div className="absolute top-4 left-4">
                       <span
-                        className="text-[0.55rem] font-black tracking-[0.2em] uppercase bg-[#C9A84C] text-[#0D1B3E] px-2 py-1"
+                        className="text-[0.55rem] font-black tracking-[0.2em] uppercase bg-[#C9A84C] text-[#333333] px-2 py-1"
                         style={{ fontFamily: "Raleway,sans-serif" }}
                       >
                         Featured
@@ -446,13 +446,13 @@ export default function SpeechesSection() {
                   {/* Content */}
                   <div className="flex flex-col justify-center gap-3 p-7 md:p-10">
                     <span
-                      className="text-[0.6rem] font-black tracking-[0.22em] uppercase text-[#E8541A]"
+                      className="text-[0.6rem] font-black tracking-[0.22em] uppercase text-[#FC8814]"
                       style={{ fontFamily: "Raleway,sans-serif" }}
                     >
                       {featured.tag} · {featured.date}
                     </span>
                     <h3
-                      className="text-[1.5rem] md:text-[1.9rem] font-black text-[#0D1B3E] leading-tight"
+                      className="text-[1.5rem] md:text-[1.9rem] font-black text-[#333333] leading-tight"
                       style={{ fontFamily: "'Playfair Display',serif" }}
                     >
                       {featured.title}
@@ -477,7 +477,7 @@ export default function SpeechesSection() {
                         👁 {featured.views}
                       </span>
                       <button
-                        className="ml-auto text-[0.72rem] font-black tracking-[0.14em] uppercase text-[#E8541A]
+                        className="ml-auto text-[0.72rem] font-black tracking-[0.14em] uppercase text-[#FC8814]
                         flex items-center gap-2 hover:gap-3 transition-all duration-200"
                         style={{ fontFamily: "Raleway,sans-serif" }}
                       >
@@ -507,7 +507,7 @@ export default function SpeechesSection() {
 
               {filtered.length === 0 && (
                 <div
-                  className="text-center py-20 text-[#0D1B3E]/30"
+                  className="text-center py-20 text-[#333333]"
                   style={{ fontFamily: "Raleway,sans-serif" }}
                 >
                   No speeches found in this category.

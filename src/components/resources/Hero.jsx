@@ -81,36 +81,25 @@ export default function ResourcesHero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen overflow-hidden bg-white"
+      className="relative min-h-screen overflow-hidden "
     >
       {/* Background Image */}
-      <motion.div className="absolute inset-0" style={{ y: ySpring }}>
+      <motion.div className="absolute inset-0" >
         <img
           src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=1800&q=80"
           alt="Resources"
           className="w-full h-full object-cover"
-          style={{
-            filter: "brightness(0.9)",
-          }}
+         
         />
       </motion.div>
 
-      {/* White Overlay */}
-      <div
-        className="absolute inset-0 z-[1]"
-        style={{
-          background:
-            "linear-gradient(120deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.90) 55%, rgba(255,255,255,0.95) 100%)",
-        }}
-      />
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-[#1A1A1A]/98" />
+
       
 
-      {/* Decorative Shapes */}
-      <div className="absolute inset-0 overflow-hidden z-[2]">
-        <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-[#E8E7E6]/50 blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-[#FC8814]/10 blur-3xl" />
-      </div>
-
+      
       {/* Top Accent Line */}
       <motion.div
         className="absolute top-0 left-0 right-0 h-1 z-20"
@@ -199,7 +188,7 @@ export default function ResourcesHero() {
             variants={fadeUp}
             className="
               font-black
-              text-[#1F2937]
+              text-[#ffffff]
               leading-[1.05]
               mb-6
               text-4xl
@@ -223,7 +212,7 @@ export default function ResourcesHero() {
               text-base
               sm:text-lg
               md:text-xl
-              text-gray-600
+              text-gray-400
               leading-relaxed
               max-w-2xl
               mb-10

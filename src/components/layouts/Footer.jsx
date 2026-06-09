@@ -32,7 +32,7 @@ const socialLinks = [
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
       </svg>
     ),
-    hoverColor: "hover:bg-[#E1306C] hover:border-[#E1306C]",
+    hoverColor: "hover:bg-[#E1306C] hover:border-[#ee2a7b]",
   },
   {
     label: "Facebook",
@@ -300,7 +300,7 @@ export default function Footer() {
             © {year} Amit Shah. All rights reserved. &nbsp;|&nbsp; Official
             Website
           </p>
-
+          <p className="text-[0.72rem] text-[#FDFAF5]/85 text-center sm:text-left">Developed by Debox Technology</p>
           <div className="flex items-center gap-5">
             {["Privacy Policy", "Disclaimer", "Sitemap"].map((item) => (
               <a
