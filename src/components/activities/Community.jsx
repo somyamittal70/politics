@@ -6,24 +6,24 @@ import {
 
 /* ─── DATA ─────────────────────────────────────────────── */
 const MACROSTATS = [
-  { num: "500+",  label: "Sampark Events",   color: "#E8541A" },
-  { num: "28",    label: "States Covered",   color: "#C9A84C" },
+  { num: "500+",  label: "Sampark Events",   color: "#fc8814" },
+  { num: "28",    label: "States Covered",   color: "#fc8814" },
   { num: "35+",   label: "Yrs of Service",   color: "#138808" },
-  { num: "10Cr+", label: "People Connected", color: "#E8541A" },
+  { num: "10Cr+", label: "People Connected", color: "#fc8814" },
 ];
 
 const TIMELINE = [
-  { id: "01", color: "#E8541A", stat: "200+", statLabel: "Press Interactions", tag: "Media", title: "Mann Ki Baat & Press Briefings", desc: "National broadcast & structured press briefings communicating policy directly to citizens." },
-  { id: "02", color: "#C9A84C", stat: "50+",  statLabel: "Cultural Events",    tag: "Culture", title: "Sahitya & Sanskriti Programmes", desc: "Patron of literary & cultural events celebrating India's civilisational heritage." },
-  { id: "03", color: "#138808", stat: "30+",  statLabel: "Countries Reached",  tag: "Diplomatic", title: "Diaspora Connect Programmes", desc: "Engaged Indian diaspora globally — strengthening cultural & economic ties." },
-  { id: "04", color: "#E8541A", stat: "1Cr+", statLabel: "Citizens Engaged",   tag: "Digital India", title: "Cyber Awareness & Safety Drives", desc: "National campaigns on cyber hygiene & digital literacy reaching millions." },
-  { id: "05", color: "#C9A84C", stat: "500+", statLabel: "Campus Visits",      tag: "Youth", title: "ABVP & Student Union Dialogues", desc: "Interactive sessions with student bodies — mentoring emerging public servants." },
-  { id: "06", color: "#138808", stat: "800+", statLabel: "Villages Covered",   tag: "Tribal Welfare", title: "Vanvasi Kalyan Sampark", desc: "Sustained outreach to tribal communities — welfare schemes reaching the last mile." },
+  { id: "01", color: "#fc8814", stat: "200+", statLabel: "Press Interactions", tag: "Media",        title: "Mann Ki Baat & Press Briefings",   desc: "National broadcast & structured press briefings communicating policy directly to citizens." },
+  { id: "02", color: "#fc8814", stat: "50+",  statLabel: "Cultural Events",    tag: "Culture",      title: "Sahitya & Sanskriti Programmes",   desc: "Patron of literary & cultural events celebrating India's civilisational heritage." },
+  { id: "03", color: "#138808", stat: "30+",  statLabel: "Countries Reached",  tag: "Diplomatic",   title: "Diaspora Connect Programmes",      desc: "Engaged Indian diaspora globally — strengthening cultural & economic ties." },
+  { id: "04", color: "#fc8814", stat: "1Cr+", statLabel: "Citizens Engaged",   tag: "Digital India",title: "Cyber Awareness & Safety Drives",  desc: "National campaigns on cyber hygiene & digital literacy reaching millions." },
+  { id: "05", color: "#fc8814", stat: "500+", statLabel: "Campus Visits",      tag: "Youth",        title: "ABVP & Student Union Dialogues",   desc: "Interactive sessions with student bodies — mentoring emerging public servants." },
+  { id: "06", color: "#138808", stat: "800+", statLabel: "Villages Covered",   tag: "Tribal Welfare",title: "Vanvasi Kalyan Sampark",          desc: "Sustained outreach to tribal communities — welfare schemes reaching the last mile." },
 ];
 
 const BOTTOM_CARDS = [
   {
-    color: "#E8541A",
+    color: "#fc8814",
     Icon: Radio,
     stat: "200+", statLabel: "Media Interactions",
     tag: "Media Engagement",
@@ -39,14 +39,14 @@ const BOTTOM_CARDS = [
     },
   },
   {
-    color: "#C9A84C",
+    color: "#fc8814",
     Icon: UsersRound,
     stat: "800+", statLabel: "Villages Covered",
     tag: "Tribal Welfare",
     title: "Vanvasi Kalyan Sampark",
     desc: "Sustained outreach to tribal communities across Gujarat and Central India — welfare schemes reaching the last mile.",
     sub: {
-      color: "#E8541A",
+      color: "#fc8814",
       Icon: Handshake,
       stat: "30+", statLabel: "Countries Reached",
       tag: "Diplomatic Outreach",
@@ -90,14 +90,14 @@ export default function CommunityOutreach() {
   return (
     <section
       id="community-outreach"
-      className="relative bg-[#0D1B3E] overflow-hidden py-20 md:py-28"
+      className="relative bg-[#1a1a1a] overflow-hidden py-20 md:py-28"
     >
       {/* Grid texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "linear-gradient(#FDFAF5 1px,transparent 1px),linear-gradient(90deg,#FDFAF5 1px,transparent 1px)",
+            "linear-gradient(#e8e7e6 1px,transparent 1px),linear-gradient(90deg,#e8e7e6 1px,transparent 1px)",
           backgroundSize: "48px 48px",
         }}
       />
@@ -112,7 +112,7 @@ export default function CommunityOutreach() {
       <div
         className="pointer-events-none select-none absolute top-1/2 left-1/2
           -translate-x-1/2 -translate-y-1/2 text-[5rem] md:text-[11rem] font-black
-          text-[#FDFAF5]/[0.02] whitespace-nowrap leading-none z-0"
+          text-[#e8e7e6]/[0.02] whitespace-nowrap leading-none z-0"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         OUTREACH
@@ -133,9 +133,9 @@ export default function CommunityOutreach() {
               animate={topInView ? "show" : "hidden"}
               className="flex items-center gap-3 mb-3"
             >
-              <EyebrowLine color="#E8541A" />
+              <EyebrowLine color="#fc8814" />
               <span
-                className="text-[0.62rem] font-black tracking-[0.3em] uppercase text-[#E8541A]"
+                className="text-[0.62rem] font-black tracking-[0.3em] uppercase text-[#fc8814]"
                 style={{ fontFamily: "Raleway, sans-serif" }}
               >
                 Sampark & Seva
@@ -147,19 +147,19 @@ export default function CommunityOutreach() {
               variants={fadeUp(0.07)}
               initial="hidden"
               animate={topInView ? "show" : "hidden"}
-              className="text-[2.8rem] md:text-[4rem] font-black text-[#FDFAF5] leading-[0.92]"
+              className="text-[2.8rem] md:text-[4rem] font-black text-[#e8e7e6] leading-[0.92]"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Community
               <br />
-              <em className="text-[#E8541A] not-italic italic">Outreach</em>
+              <em className="text-[#fc8814] not-italic italic">Outreach</em>
             </motion.h2>
 
             <motion.p
               variants={fadeUp(0.14)}
               initial="hidden"
               animate={topInView ? "show" : "hidden"}
-              className="mt-4 text-[0.95rem] text-[#FDFAF5]/40 italic leading-[1.9] max-w-sm"
+              className="mt-4 text-[0.95rem] text-[#e8e7e6]/40 italic leading-[1.9] max-w-sm"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               From tribal hamlets to urban youth, from press briefings to diplomatic
@@ -177,16 +177,16 @@ export default function CommunityOutreach() {
             {/* Tricolor stripe */}
             <div className="flex gap-[3px] h-[3px] w-20">
               <div className="flex-1 bg-[#FF9933]" />
-              <div className="flex-1 bg-[#FDFAF5]/20" />
+              <div className="flex-1 bg-[#e8e7e6]/20" />
               <div className="flex-1 bg-[#138808]" />
             </div>
 
             {/* Stats */}
-            <div className="flex border border-[#FDFAF5]/[0.08]">
+            <div className="flex border border-[#e8e7e6]/[0.08]">
               {MACROSTATS.map((s, i) => (
                 <div
                   key={i}
-                  className="px-5 py-3 text-center border-r border-[#FDFAF5]/[0.07] last:border-r-0 min-w-[90px]"
+                  className="px-5 py-3 text-center border-r border-[#e8e7e6]/[0.07] last:border-r-0 min-w-[90px]"
                 >
                   <span
                     className="block text-[1.4rem] font-black leading-none mb-1"
@@ -195,7 +195,7 @@ export default function CommunityOutreach() {
                     {s.num}
                   </span>
                   <span
-                    className="text-[0.55rem] font-black tracking-[0.16em] uppercase text-[#FDFAF5]/30"
+                    className="text-[0.55rem] font-black tracking-[0.16em] uppercase text-[#e8e7e6]/30"
                     style={{ fontFamily: "Raleway, sans-serif" }}
                   >
                     {s.label}
@@ -208,21 +208,21 @@ export default function CommunityOutreach() {
 
         {/* ══ HORIZONTAL TIMELINE STRIP ══ */}
         <div ref={tlRef} className="mb-10">
-          <div className="flex border border-[#D6D1C8] overflow-hidden">
+          <div className="flex border border-[#e8e7e6]/20 overflow-hidden">
             {TIMELINE.map((item, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp(i * 0.07)}
                 initial="hidden"
                 animate={tlInView ? "show" : "hidden"}
-                className="group relative flex-1 p-5 border-r border-[#E2DDD5] last:border-r-0
-                  bg-[#FDFAF5] hover:bg-[#F5F0E8] transition-colors duration-300 overflow-hidden"
+                className="group relative flex-1 p-5 border-r border-[#e8e7e6]/15 last:border-r-0
+                  bg-white hover:bg-[#fafafa] transition-colors duration-300 overflow-hidden"
               >
                 {/* Index + dot */}
                 <div className="flex items-center justify-between mb-4">
                   <span
-                    className="text-[0.55rem] font-black tracking-[0.18em] border border-[#C8C3BB]
-                      text-[#8A8278] px-2 py-[3px]"
+                    className="text-[0.55rem] font-black tracking-[0.18em] border border-[#d0d0d0]
+                      text-[#8a8a8a] px-2 py-[3px]"
                     style={{ fontFamily: "Raleway, sans-serif" }}
                   >
                     {item.id}
@@ -242,7 +242,7 @@ export default function CommunityOutreach() {
                     {item.stat}
                   </span>
                   <span
-                    className="text-[0.55rem] font-black tracking-[0.14em] uppercase text-[#6B6560]"
+                    className="text-[0.55rem] font-black tracking-[0.14em] uppercase text-[#6b6b6b]"
                     style={{ fontFamily: "Raleway, sans-serif" }}
                   >
                     {item.statLabel}
@@ -252,14 +252,14 @@ export default function CommunityOutreach() {
                 <Tag color={item.color}>{item.tag}</Tag>
 
                 <h4
-                  className="text-[0.82rem] font-black text-[#1A1410] leading-snug mb-2"
+                  className="text-[0.82rem] font-black text-[#1a1a1a] leading-snug mb-2"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {item.title}
                 </h4>
 
                 <p
-                  className="text-[0.78rem] text-[#4A4540] italic leading-[1.75]"
+                  className="text-[0.78rem] text-[#4a4a4a] italic leading-[1.75]"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   {item.desc}
@@ -277,7 +277,7 @@ export default function CommunityOutreach() {
 
           {/* Connector dots */}
           <div className="relative flex items-center justify-around h-7 mt-0">
-            <div className="absolute inset-x-0 top-1/2 h-px bg-[#FDFAF5]/[0.07]" />
+            <div className="absolute inset-x-0 top-1/2 h-px bg-[#e8e7e6]/[0.07]" />
             {TIMELINE.map((item, i) => (
               <span
                 key={i}
@@ -296,18 +296,18 @@ export default function CommunityOutreach() {
             variants={fadeLeft(0.1)}
             initial="hidden"
             animate={bottomInView ? "show" : "hidden"}
-            className="relative bg-[#FDFAF5] border border-[#D6D1C8] p-8 flex flex-col justify-between overflow-hidden"
+            className="relative bg-white border border-[#e8e7e6] p-8 flex flex-col justify-between overflow-hidden"
           >
             {/* Big quote mark */}
             <span
-              className="absolute top-3 left-4 text-[6rem] leading-none text-[#E8541A]/12 select-none"
+              className="absolute top-3 left-4 text-[6rem] leading-none text-[#fc8814]/12 select-none"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               "
             </span>
 
             <p
-              className="relative z-10 text-[1.2rem] italic text-[#2A2420] leading-[1.6] mt-8"
+              className="relative z-10 text-[1.2rem] italic text-[#2a2a2a] leading-[1.6] mt-8"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               My politics is not merely about winning elections. It is about ensuring
@@ -316,9 +316,9 @@ export default function CommunityOutreach() {
             </p>
 
             <div className="flex items-center gap-3 mt-6">
-              <div className="w-8 h-[2px] bg-[#E8541A]" />
+              <div className="w-8 h-[2px] bg-[#fc8814]" />
               <span
-                className="text-[0.58rem] font-black tracking-[0.18em] uppercase text-[#6B6560]"
+                className="text-[0.58rem] font-black tracking-[0.18em] uppercase text-[#6b6b6b]"
                 style={{ fontFamily: "Raleway, sans-serif" }}
               >
                 Amit Shah — Jan Sampark Abhiyan, 2023
@@ -328,7 +328,7 @@ export default function CommunityOutreach() {
             {/* Bottom tricolor stripe */}
             <div className="absolute bottom-0 left-0 right-0 h-[3px] flex">
               <div className="flex-1 bg-[#FF9933]" />
-              <div className="flex-1 bg-[#D6D1C8]" />
+              <div className="flex-1 bg-[#e8e7e6]" />
               <div className="flex-1 bg-[#138808]" />
             </div>
           </motion.div>
@@ -342,9 +342,7 @@ export default function CommunityOutreach() {
               animate={bottomInView ? "show" : "hidden"}
               className="flex flex-col gap-5"
             >
-              {/* Primary card */}
               <DualCard item={card} />
-              {/* Sub card */}
               <DualCard item={card.sub} small />
             </motion.div>
           ))}
@@ -360,8 +358,8 @@ function DualCard({ item, small = false }) {
   return (
     <motion.div
       whileHover={{ y: -3 }}
-      className="group relative bg-[#FDFAF5] border border-[#D6D1C8] overflow-hidden
-        hover:border-[#B8B3AA] hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]
+      className="group relative bg-white border border-[#e8e7e6] overflow-hidden
+        hover:border-[#d0d0d0] hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]
         transition-all duration-300 p-5"
     >
       {/* Left color bar */}
@@ -373,7 +371,7 @@ function DualCard({ item, small = false }) {
       {/* Icon + stat */}
       <div className="flex items-start justify-between mb-4">
         <div
-          className="w-10 h-10 flex items-center justify-center border border-[#D6D1C8] bg-white"
+          className="w-10 h-10 flex items-center justify-center border border-[#e8e7e6] bg-white"
           style={{ color }}
         >
           <Icon size={18} strokeWidth={1.5} />
@@ -386,7 +384,7 @@ function DualCard({ item, small = false }) {
             {stat}
           </span>
           <span
-            className="text-[0.55rem] font-black tracking-[0.14em] uppercase text-[#6B6560]"
+            className="text-[0.55rem] font-black tracking-[0.14em] uppercase text-[#6b6b6b]"
             style={{ fontFamily: "Raleway, sans-serif" }}
           >
             {statLabel}
@@ -397,14 +395,14 @@ function DualCard({ item, small = false }) {
       <Tag color={color}>{tag}</Tag>
 
       <h4
-        className={`font-black text-[#1A1410] leading-snug mb-2 ${small ? "text-[0.88rem]" : "text-[1rem]"}`}
+        className={`font-black text-[#1a1a1a] leading-snug mb-2 ${small ? "text-[0.88rem]" : "text-[1rem]"}`}
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         {title}
       </h4>
 
       <p
-        className="text-[0.82rem] text-[#4A4540] italic leading-[1.78]"
+        className="text-[0.82rem] text-[#4a4a4a] italic leading-[1.78]"
         style={{ fontFamily: "'Cormorant Garamond', serif" }}
       >
         {desc}

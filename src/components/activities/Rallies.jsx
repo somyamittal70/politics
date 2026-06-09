@@ -11,7 +11,7 @@ const featured = {
   image:
     "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
   tag: "Flagship Rally",
-  color: "#E8541A",
+  color: "#fc8814",
 };
 
 const events = [
@@ -23,7 +23,7 @@ const events = [
     image:
       "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80",
     tag: "Party Event",
-    color: "#E8541A",
+    color: "#fc8814",
   },
   {
     title: "National Security Conclave",
@@ -33,7 +33,7 @@ const events = [
     image:
       "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80",
     tag: "Conclave",
-    color: "#C9A84C",
+    color: "#fc8814",
   },
   {
     title: "Jan Sampark Abhiyan",
@@ -53,7 +53,7 @@ const events = [
     image:
       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&q=80",
     tag: "Youth Rally",
-    color: "#E8541A",
+    color: "#fc8814",
   },
   {
     title: "Kisan Samman Rally",
@@ -87,8 +87,8 @@ function EventCard({ event, index, inView }) {
       variants={fadeUp(index * 0.1)}
       initial="hidden"
       animate={inView ? "show" : "hidden"}
-      className="group relative overflow-hidden bg-[#FDFAF5] border border-[#EDE5D0]
-        hover:border-[#E8541A]/30 hover:shadow-[0_10px_32px_rgba(232,84,26,0.1)]
+      className="group relative overflow-hidden bg-white border border-[#e8e7e6]
+        hover:border-[#fc8814]/30 hover:shadow-[0_10px_32px_rgba(252,136,20,0.1)]
         transition-all duration-400"
       whileHover={{ y: -4 }}
     >
@@ -100,12 +100,12 @@ function EventCard({ event, index, inView }) {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
           style={{ filter: "saturate(0.85)" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3E]/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/60 via-transparent to-transparent" />
 
         {/* Tag */}
         <div className="absolute top-3 left-3">
           <span
-            className="text-[0.55rem] font-black tracking-[0.2em] uppercase text-[#FDFAF5] px-2 py-[3px]"
+            className="text-[0.55rem] font-black tracking-[0.2em] uppercase text-white px-2 py-[3px]"
             style={{
               fontFamily: "Raleway, sans-serif",
               background: event.color,
@@ -125,7 +125,7 @@ function EventCard({ event, index, inView }) {
         />
 
         <h4
-          className="text-[1rem] font-black text-[#0D1B3E] leading-snug mb-3"
+          className="text-[1rem] font-black text-[#1a1a1a] leading-snug mb-3"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           {event.title}
@@ -133,39 +133,27 @@ function EventCard({ event, index, inView }) {
 
         <div className="flex flex-col gap-[6px]">
           <div className="flex items-center gap-2">
-            <MapPin
-              size={11}
-              className="text-[#E8541A] shrink-0"
-              strokeWidth={2}
-            />
+            <MapPin size={11} className="text-[#fc8814] shrink-0" strokeWidth={2} />
             <span
-              className="text-[0.72rem] text-[#3D3526]/60"
+              className="text-[0.72rem] text-[#3a3a3a]/60"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               {event.location}
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <Calendar
-              size={11}
-              className="text-[#E8541A] shrink-0"
-              strokeWidth={2}
-            />
+            <Calendar size={11} className="text-[#fc8814] shrink-0" strokeWidth={2} />
             <span
-              className="text-[0.72rem] text-[#3D3526]/60"
+              className="text-[0.72rem] text-[#3a3a3a]/60"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               {event.date}
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <Users
-              size={11}
-              className="text-[#E8541A] shrink-0"
-              strokeWidth={2}
-            />
+            <Users size={11} className="text-[#fc8814] shrink-0" strokeWidth={2} />
             <span
-              className="text-[0.72rem] font-semibold text-[#0D1B3E]"
+              className="text-[0.72rem] font-semibold text-[#1a1a1a]"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               {event.attendees} Attendees
@@ -183,23 +171,19 @@ export default function RalliesEvents() {
   const gridRef = useRef(null);
 
   const headerInView = useInView(headerRef, { once: true, margin: "-80px" });
-  const featuredInView = useInView(featuredRef, {
-    once: true,
-    margin: "-80px",
-  });
+  const featuredInView = useInView(featuredRef, { once: true, margin: "-80px" });
   const gridInView = useInView(gridRef, { once: true, margin: "-80px" });
 
   return (
     <section
       id="rallies-events"
-      className="relative bg-[#F7F2E8] overflow-hidden py-20 md:py-28"
+      className="relative bg-[#f5f5f5] overflow-hidden py-20 md:py-28"
     >
       {/* Dot texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, #0D1B3E 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, #1a1a1a 1px, transparent 1px)",
           backgroundSize: "30px 30px",
         }}
       />
@@ -208,13 +192,14 @@ export default function RalliesEvents() {
       <div
         className="pointer-events-none select-none absolute top-1/2 left-1/2
           -translate-x-1/2 -translate-y-1/2 text-[7rem] md:text-[13rem] font-black
-          text-[#0D1B3E]/[0.03] whitespace-nowrap leading-none z-0"
+          text-[#1a1a1a]/[0.03] whitespace-nowrap leading-none z-0"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         EVENTS
       </div>
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-10 lg:px-16">
+
         {/* ── HEADER ── */}
         <div
           ref={headerRef}
@@ -227,9 +212,9 @@ export default function RalliesEvents() {
               animate={headerInView ? "show" : "hidden"}
               className="flex items-center gap-3 mb-3"
             >
-              <span className="w-7 h-[2px] bg-[#E8541A] rounded" />
+              <span className="w-7 h-[2px] bg-[#fc8814] rounded" />
               <span
-                className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#E8541A]"
+                className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#fc8814]"
                 style={{ fontFamily: "Raleway, sans-serif" }}
               >
                 On the Ground
@@ -240,13 +225,11 @@ export default function RalliesEvents() {
               variants={fadeUp(0.08)}
               initial="hidden"
               animate={headerInView ? "show" : "hidden"}
-              className="text-[2.8rem] md:text-[3.8rem] lg:text-[4.2rem] font-black text-[#0D1B3E] leading-[0.93]"
+              className="text-[2.8rem] md:text-[3.8rem] lg:text-[4.2rem] font-black text-[#1a1a1a] leading-[0.93]"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Rallies &<br />
-              <em className="text-[#E8541A] not-italic italic">
-                Public Events
-              </em>
+              <em className="text-[#fc8814] not-italic italic">Public Events</em>
             </motion.h2>
           </div>
           <div>
@@ -257,14 +240,14 @@ export default function RalliesEvents() {
               className="flex gap-[3px] mb-4 h-[3px] w-24"
             >
               <div className="flex-1 bg-[#FF9933]" />
-              <div className="flex-1 bg-[#FDFAF5] border-t border-b border-[#EDE5D0]" />
+              <div className="flex-1 bg-[#e8e7e6] border-t border-b border-[#e8e7e6]" />
               <div className="flex-1 bg-[#138808]" />
             </motion.div>
             <motion.p
               variants={fadeUp(0.2)}
               initial="hidden"
               animate={headerInView ? "show" : "hidden"}
-              className="text-[1.05rem] text-[#3D3526]/60 leading-[1.9] italic"
+              className="text-[1.05rem] text-[#3a3a3a]/60 leading-[1.9] italic"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Amit Shah has addressed millions across India — from sprawling
@@ -283,7 +266,7 @@ export default function RalliesEvents() {
             className="relative overflow-hidden group"
           >
             {/* Shadow offset */}
-            <div className="absolute -bottom-3 -right-3 left-3 top-3 bg-[#E8541A]/15 z-0" />
+            <div className="absolute -bottom-3 -right-3 left-3 top-3 bg-[#fc8814]/15 z-0" />
 
             <div className="relative z-[1] grid grid-cols-1 lg:grid-cols-2">
               {/* Image */}
@@ -297,13 +280,13 @@ export default function RalliesEvents() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   style={{ filter: "saturate(0.85)" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#FDFAF5] hidden lg:block" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3E]/50 to-transparent lg:hidden" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white hidden lg:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/50 to-transparent lg:hidden" />
 
                 {/* Tag */}
                 <div className="absolute top-5 left-5">
                   <span
-                    className="text-[0.58rem] font-black tracking-[0.22em] uppercase text-[#FDFAF5] px-3 py-[5px] bg-[#E8541A]"
+                    className="text-[0.58rem] font-black tracking-[0.22em] uppercase text-white px-3 py-[5px] bg-[#fc8814]"
                     style={{ fontFamily: "Raleway, sans-serif" }}
                   >
                     {featured.tag}
@@ -316,16 +299,16 @@ export default function RalliesEvents() {
                 variants={fadeUp(0.18)}
                 initial="hidden"
                 animate={featuredInView ? "show" : "hidden"}
-                className="bg-[#FDFAF5] border border-[#EDE5D0] border-l-0 p-8 md:p-10 flex flex-col justify-center gap-5"
+                className="bg-white border border-[#e8e7e6] border-l-0 p-8 md:p-10 flex flex-col justify-center gap-5"
               >
                 <div className="flex gap-[3px] h-[3px] w-16">
                   <div className="flex-1 bg-[#FF9933]" />
-                  <div className="flex-1 bg-[#FDFAF5] border-t border-b border-[#EDE5D0]" />
+                  <div className="flex-1 bg-[#e8e7e6] border-t border-b border-[#e8e7e6]" />
                   <div className="flex-1 bg-[#138808]" />
                 </div>
 
                 <h3
-                  className="text-[1.8rem] md:text-[2.2rem] font-black text-[#0D1B3E] leading-[1.05]"
+                  className="text-[1.8rem] md:text-[2.2rem] font-black text-[#1a1a1a] leading-[1.05]"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {featured.title}
@@ -338,13 +321,9 @@ export default function RalliesEvents() {
                     { icon: Users, val: featured.attendees + " Attendees" },
                   ].map((m, i) => (
                     <div key={i} className="flex items-center gap-2">
-                      <m.icon
-                        size={13}
-                        className="text-[#E8541A]"
-                        strokeWidth={2}
-                      />
+                      <m.icon size={13} className="text-[#fc8814]" strokeWidth={2} />
                       <span
-                        className="text-[0.8rem] text-[#3D3526]/65"
+                        className="text-[0.8rem] text-[#3a3a3a]/65"
                         style={{ fontFamily: "'Cormorant Garamond', serif" }}
                       >
                         {m.val}
@@ -354,7 +333,7 @@ export default function RalliesEvents() {
                 </div>
 
                 <p
-                  className="text-[0.97rem] text-[#3D3526]/65 leading-[1.85] italic"
+                  className="text-[0.97rem] text-[#3a3a3a]/65 leading-[1.85] italic"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   {featured.desc}
@@ -362,14 +341,14 @@ export default function RalliesEvents() {
 
                 <div className="flex items-center gap-2 mt-1 group/btn w-fit cursor-pointer">
                   <span
-                    className="text-[0.65rem] font-black tracking-[0.2em] uppercase text-[#E8541A]"
+                    className="text-[0.65rem] font-black tracking-[0.2em] uppercase text-[#fc8814]"
                     style={{ fontFamily: "Raleway, sans-serif" }}
                   >
                     View All Events
                   </span>
                   <ArrowRight
                     size={14}
-                    className="text-[#E8541A] transition-transform duration-200 group-hover/btn:translate-x-1"
+                    className="text-[#fc8814] transition-transform duration-200 group-hover/btn:translate-x-1"
                   />
                 </div>
               </motion.div>

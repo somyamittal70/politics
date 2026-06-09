@@ -39,14 +39,14 @@ function SectionHeader({ label, title, accent }) {
     <div ref={ref}>
       <motion.div variants={fadeUp(0)} initial="hidden" animate={inView ? "show" : "hidden"}
         className="flex items-center gap-3 mb-3">
-        <span className="w-7 h-[2px] bg-[#E8541A] rounded" />
-        <span className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#E8541A]"
+        <span className="w-7 h-[2px] bg-[#fc8814] rounded" />
+        <span className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#fc8814]"
           style={{ fontFamily: "Raleway, sans-serif" }}>{label}</span>
       </motion.div>
       <motion.h2 variants={fadeUp(0.08)} initial="hidden" animate={inView ? "show" : "hidden"}
-        className="text-[2.2rem] md:text-[3rem] font-black text-[#0D1B3E] leading-[1.1]"
+        className="text-[2.2rem] md:text-[3rem] font-black text-[#1a1a1a] leading-[1.1]"
         style={{ fontFamily: "'Playfair Display', serif" }}>
-        {title} <em className="text-[#E8541A] not-italic italic">{accent}</em>
+        {title} <em className="text-[#fc8814] not-italic italic">{accent}</em>
       </motion.h2>
     </div>
   );
@@ -62,12 +62,12 @@ export default function PersonalInfo() {
   const tlInView     = useInView(tlRef,     { once: true, margin: "-80px" });
 
   return (
-    <section id="personal-info" className="relative bg-[#F7F2E8] overflow-hidden py-20 md:py-28">
+    <section id="personal-info" className="relative bg-[#f5f5f5] overflow-hidden py-20 md:py-28">
 
       {/* Watermark */}
       <div className="pointer-events-none select-none absolute top-1/2 left-1/2
           -translate-x-1/2 -translate-y-1/2 text-[8rem] md:text-[13rem] font-black
-          text-[#0D1B3E]/[0.03] whitespace-nowrap leading-none z-0"
+          text-[#1a1a1a]/[0.03] whitespace-nowrap leading-none z-0"
         style={{ fontFamily: "'Playfair Display', serif" }}>
         LIFE
       </div>
@@ -81,7 +81,7 @@ export default function PersonalInfo() {
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.035]"
             style={{
-              backgroundImage: "radial-gradient(circle, #0D1B3E 1px, transparent 1px)",
+              backgroundImage: "radial-gradient(circle, #1a1a1a 1px, transparent 1px)",
               backgroundSize: "28px 28px",
             }}
           />
@@ -93,7 +93,7 @@ export default function PersonalInfo() {
             animate={bioInView ? "show" : "hidden"}
             className="pointer-events-none select-none absolute top-0 right-0
               text-[10rem] md:text-[16rem] font-black leading-none
-              text-[#0D1B3E]/[0.04] pr-4"
+              text-[#1a1a1a]/[0.04] pr-4"
             style={{ fontFamily: "'Playfair Display', serif", lineHeight: 0.85 }}
           >
             01
@@ -107,14 +107,14 @@ export default function PersonalInfo() {
             className="flex items-center gap-4 mb-8"
           >
             <span
-              className="text-[0.6rem] font-black tracking-[0.35em] uppercase text-[#FDFAF5] bg-[#E8541A] px-3 py-[5px]"
+              className="text-[0.6rem] font-black tracking-[0.35em] uppercase text-white bg-[#fc8814] px-3 py-[5px]"
               style={{ fontFamily: "Raleway, sans-serif" }}
             >
               Cover Story
             </span>
-            <div className="flex-1 h-[1px] bg-[#0D1B3E]/15" />
+            <div className="flex-1 h-[1px] bg-[#1a1a1a]/15" />
             <span
-              className="text-[0.6rem] font-bold tracking-[0.25em] uppercase text-[#0D1B3E]/30"
+              className="text-[0.6rem] font-bold tracking-[0.25em] uppercase text-[#1a1a1a]/30"
               style={{ fontFamily: "Raleway, sans-serif" }}
             >
               Personal Profile
@@ -136,12 +136,12 @@ export default function PersonalInfo() {
                 className="absolute -left-4 top-[8%] bottom-[8%] w-[4px] rounded z-10"
                 style={{
                   background:
-                    "linear-gradient(to bottom,#FF9933 0%,#FF9933 33%,#FDFAF5 33%,#FDFAF5 66%,#138808 66%,#138808 100%)",
+                    "linear-gradient(to bottom,#FF9933 0%,#FF9933 33%,#e8e7e6 33%,#e8e7e6 66%,#138808 66%,#138808 100%)",
                 }}
               />
 
               {/* Shadow offset block */}
-              <div className="absolute -bottom-3 -right-3 left-3 top-3 bg-[#E8541A]/20 z-0" />
+              <div className="absolute -bottom-3 -right-3 left-3 top-3 bg-[#fc8814]/20 z-0" />
 
               {/* Image */}
               <div className="relative z-[1] overflow-hidden">
@@ -153,7 +153,7 @@ export default function PersonalInfo() {
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.6 }}
                 />
-                <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0D1B3E]/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#1a1a1a]/60 to-transparent" />
 
                 {/* Floating "Since 1980" */}
                 <motion.div
@@ -163,13 +163,13 @@ export default function PersonalInfo() {
                   transition={{ delay: 0.55, duration: 0.6 }}
                 >
                   <span
-                    className="text-[0.58rem] font-black tracking-[0.3em] uppercase text-[#FDFAF5]/60 block mb-[2px]"
+                    className="text-[0.58rem] font-black tracking-[0.3em] uppercase text-[#e8e7e6]/60 block mb-[2px]"
                     style={{ fontFamily: "Raleway, sans-serif" }}
                   >
                     In Public Life Since
                   </span>
                   <span
-                    className="text-[2rem] font-black text-[#E8541A] leading-none"
+                    className="text-[2rem] font-black text-[#fc8814] leading-none"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     1980
@@ -182,7 +182,7 @@ export default function PersonalInfo() {
                 variants={fadeUp(0.4)}
                 initial="hidden"
                 animate={bioInView ? "show" : "hidden"}
-                className="text-[0.72rem] text-[#0D1B3E]/40 mt-3 leading-snug italic pl-1"
+                className="text-[0.72rem] text-[#1a1a1a]/40 mt-3 leading-snug italic pl-4"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
                 Amit Shah — Union Home Minister & Senior BJP Leader. Gandhinagar, Gujarat.
@@ -199,22 +199,22 @@ export default function PersonalInfo() {
                 animate={bioInView ? "show" : "hidden"}
               >
                 <p
-                  className="text-[0.6rem] font-black tracking-[0.3em] uppercase text-[#E8541A] mb-2"
+                  className="text-[0.6rem] font-black tracking-[0.3em] uppercase text-[#fc8814] mb-2"
                   style={{ fontFamily: "Raleway, sans-serif" }}
                 >
                   Who He Is
                 </p>
                 <h2
-                  className="text-[2.6rem] md:text-[3.4rem] lg:text-[4rem] font-black text-[#0D1B3E] leading-[0.95] mb-1"
+                  className="text-[2.6rem] md:text-[3.4rem] lg:text-[4rem] font-black text-[#1a1a1a] leading-[0.95] mb-1"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   The Man <br />
-                  Behind the <em className="text-[#E8541A] italic not-italic">Mission</em>
+                  Behind the <em className="text-[#fc8814] italic not-italic">Mission</em>
                 </h2>
                 <div className="flex items-center gap-3 mt-4">
-                  <div className="w-8 h-[2px] bg-[#E8541A]" />
+                  <div className="w-8 h-[2px] bg-[#fc8814]" />
                   <span
-                    className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#0D1B3E]/40"
+                    className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#1a1a1a]/40"
                     style={{ fontFamily: "Raleway, sans-serif" }}
                   >
                     Amit Anil Chandra Shah · Born 22 Oct 1964
@@ -227,16 +227,16 @@ export default function PersonalInfo() {
                 variants={fadeUp(0.2)}
                 initial="hidden"
                 animate={bioInView ? "show" : "hidden"}
-                className="relative border-l-[3px] border-[#C9A84C] pl-6 py-3 bg-[#C9A84C]/[0.06]"
+                className="relative border-l-[3px] border-[#fc8814] pl-6 py-3 bg-[#fc8814]/[0.06]"
               >
                 <span
-                  className="absolute -top-4 -left-1 text-[5rem] leading-none text-[#C9A84C]/25 select-none"
+                  className="absolute -top-4 -left-1 text-[5rem] leading-none text-[#fc8814]/25 select-none"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   "
                 </span>
                 <p
-                  className="text-[1.15rem] md:text-[1.25rem] text-[#162547] leading-relaxed italic relative z-[1]"
+                  className="text-[1.15rem] md:text-[1.25rem] text-[#1a1a1a] leading-relaxed italic relative z-[1]"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   Born in the city of dreams, shaped by the land of Sardar Patel — Amit Shah's
@@ -252,7 +252,7 @@ export default function PersonalInfo() {
                 className="columns-1 sm:columns-2 gap-6"
               >
                 <p
-                  className="text-[1rem] text-[#3D3526] leading-[1.9] mb-4 break-inside-avoid"
+                  className="text-[1rem] text-[#3a3a3a] leading-[1.9] mb-4 break-inside-avoid"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   Amit Shah was born on October 22, 1964, in Mumbai, Maharashtra, to a Gujarati family
@@ -260,7 +260,7 @@ export default function PersonalInfo() {
                   strong values of discipline, nationalism, and seva.
                 </p>
                 <p
-                  className="text-[1rem] text-[#3D3526] leading-[1.9] break-inside-avoid"
+                  className="text-[1rem] text-[#3a3a3a] leading-[1.9] break-inside-avoid"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   He completed his graduation in Biochemistry from Gujarat University. Though he began
@@ -275,7 +275,7 @@ export default function PersonalInfo() {
                 variants={fadeUp(0.36)}
                 initial="hidden"
                 animate={bioInView ? "show" : "hidden"}
-                className="border-t border-b border-[#0D1B3E]/10 py-4 flex flex-wrap gap-x-8 gap-y-2"
+                className="border-t border-b border-[#1a1a1a]/10 py-4 flex flex-wrap gap-x-8 gap-y-2"
               >
                 {[
                   { label: "Hometown",     value: "Mansa, Gujarat" },
@@ -286,13 +286,13 @@ export default function PersonalInfo() {
                 ].map((f, i) => (
                   <div key={i} className="flex items-baseline gap-2">
                     <span
-                      className="text-[0.55rem] font-black tracking-[0.2em] uppercase text-[#E8541A]"
+                      className="text-[0.55rem] font-black tracking-[0.2em] uppercase text-[#fc8814]"
                       style={{ fontFamily: "Raleway, sans-serif" }}
                     >
                       {f.label}
                     </span>
                     <span
-                      className="text-[0.82rem] font-semibold text-[#0D1B3E]"
+                      className="text-[0.82rem] font-semibold text-[#1a1a1a]"
                       style={{ fontFamily: "'Playfair Display', serif" }}
                     >
                       {f.value}
@@ -302,23 +302,6 @@ export default function PersonalInfo() {
               </motion.div>
             </div>
           </div>
-
-          {/* Bottom rule */}
-          <motion.div
-            variants={fadeUp(0.45)}
-            initial="hidden"
-            animate={bioInView ? "show" : "hidden"}
-            className="mt-14 flex items-center gap-4"
-          >
-            <div className="flex-1 h-[1px] bg-[#0D1B3E]/12" />
-            <span
-              className="text-[0.55rem] font-black tracking-[0.3em] uppercase text-[#0D1B3E]/25"
-              style={{ fontFamily: "Raleway, sans-serif" }}
-            >
-              Personal Story — Section I
-            </span>
-            <div className="flex-1 h-[1px] bg-[#0D1B3E]/12" />
-          </motion.div>
         </div>
 
         {/* ── DETAILS GRID ── */}
@@ -335,13 +318,13 @@ export default function PersonalInfo() {
               <motion.div
                 key={i}
                 variants={fadeUp(0)}
-                className="group bg-[#FDFAF5] border border-[#EDE5D0] p-5 rounded-sm
-                  hover:border-[#E8541A]/40 hover:shadow-[0_8px_24px_rgba(232,84,26,0.08)]
+                className="group bg-white border border-[#e8e7e6] p-5 rounded-sm
+                  hover:border-[#fc8814]/40 hover:shadow-[0_8px_24px_rgba(252,136,20,0.08)]
                   transition-all duration-300 hover:-translate-y-1"
               >
-                <p className="text-[0.58rem] font-black tracking-[0.22em] uppercase text-[#E8541A] mb-2"
+                <p className="text-[0.58rem] font-black tracking-[0.22em] uppercase text-[#fc8814] mb-2"
                   style={{ fontFamily: "Raleway, sans-serif" }}>{d.label}</p>
-                <p className="text-[0.9rem] font-semibold text-[#0D1B3E] leading-snug"
+                <p className="text-[0.9rem] font-semibold text-[#1a1a1a] leading-snug"
                   style={{ fontFamily: "'Playfair Display', serif" }}>{d.value}</p>
               </motion.div>
             ))}
@@ -355,7 +338,7 @@ export default function PersonalInfo() {
           <div className="relative mt-12">
             {/* Vertical line */}
             <motion.div
-              className="absolute left-[11px] md:left-1/2 top-0 bottom-0 w-[2px] bg-[#EDE5D0] hidden sm:block"
+              className="absolute left-[11px] md:left-1/2 top-0 bottom-0 w-[2px] bg-[#e8e7e6] hidden sm:block"
               initial={{ scaleY: 0, originY: 0 }}
               animate={tlInView ? { scaleY: 1 } : {}}
               transition={{ duration: 1.2, ease: [0.22,1,0.36,1], delay: 0.2 }}
@@ -377,16 +360,16 @@ export default function PersonalInfo() {
                     {/* Card */}
                     <div className={`flex-1 sm:max-w-[calc(50%-2rem)] ${isLeft ? "sm:text-right sm:pr-4" : "sm:text-left sm:pl-4 sm:ml-auto"}`}>
                       <motion.div
-                        className="bg-[#FDFAF5] border border-[#EDE5D0] p-5 rounded-sm
-                          hover:border-[#E8541A]/30 hover:shadow-[0_6px_20px_rgba(232,84,26,0.07)]
+                        className="bg-white border border-[#e8e7e6] p-5 rounded-sm
+                          hover:border-[#fc8814]/30 hover:shadow-[0_6px_20px_rgba(252,136,20,0.07)]
                           transition-all duration-300 group"
                         whileHover={{ y: -3 }}
                       >
-                        <span className="text-[0.58rem] font-black tracking-[0.22em] uppercase text-[#E8541A] block mb-1"
+                        <span className="text-[0.58rem] font-black tracking-[0.22em] uppercase text-[#fc8814] block mb-1"
                           style={{ fontFamily: "Raleway, sans-serif" }}>{item.year}</span>
-                        <h4 className="text-[1.05rem] font-black text-[#0D1B3E] mb-1"
+                        <h4 className="text-[1.05rem] font-black text-[#1a1a1a] mb-1"
                           style={{ fontFamily: "'Playfair Display', serif" }}>{item.title}</h4>
-                        <p className="text-[0.88rem] text-[#7A6E5F] leading-relaxed"
+                        <p className="text-[0.88rem] text-[#5a5a5a] leading-relaxed"
                           style={{ fontFamily: "'Cormorant Garamond', serif" }}>{item.desc}</p>
                       </motion.div>
                     </div>
@@ -394,12 +377,12 @@ export default function PersonalInfo() {
                     {/* Center dot */}
                     <motion.div
                       className="hidden sm:flex absolute left-1/2 top-5 -translate-x-1/2 w-6 h-6 rounded-full
-                        border-2 border-[#E8541A] bg-[#F7F2E8] items-center justify-center z-10"
+                        border-2 border-[#fc8814] bg-[#f5f5f5] items-center justify-center z-10"
                       initial={{ scale: 0 }}
                       animate={tlInView ? { scale: 1 } : {}}
                       transition={{ delay: 0.3 + i * 0.1, type: "spring", stiffness: 200 }}
                     >
-                      <span className="w-[8px] h-[8px] rounded-full bg-[#E8541A]" />
+                      <span className="w-[8px] h-[8px] rounded-full bg-[#fc8814]" />
                     </motion.div>
 
                     {/* Spacer */}

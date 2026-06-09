@@ -92,7 +92,6 @@ export default function ActivitiesHero() {
   const inView = useInView(heroRef, { once: true, margin: "-40px" });
   const [activeTab, setActiveTab] = useState("Overview");
 
-  /* Placeholder bg — replace src with your actual image path */
   const BG_IMAGE =
     "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=1800&q=80";
 
@@ -109,24 +108,24 @@ export default function ActivitiesHero() {
           alt=""
           className="w-full h-full object-cover object-center"
         />
-        {/* dark navy primary overlay */}
-        <div className="absolute inset-0 bg-[#0A1628]/80" />
-        {/* left-side vignette — content readability */}
+        {/* dark primary overlay */}
+        <div className="absolute inset-0 bg-[#1a1a1a]/80" />
+        {/* left-side vignette */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(105deg, rgba(10,22,40,0.97) 0%, rgba(10,22,40,0.82) 45%, rgba(10,22,40,0.30) 100%)",
+              "linear-gradient(105deg, rgba(26,26,26,0.97) 0%, rgba(26,26,26,0.82) 45%, rgba(26,26,26,0.30) 100%)",
           }}
         />
-        {/* bottom fade into page */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0A1628] to-transparent" />
+        {/* bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#1a1a1a] to-transparent" />
         {/* subtle grid texture */}
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage:
-              "linear-gradient(#FDFAF5 1px,transparent 1px),linear-gradient(90deg,#FDFAF5 1px,transparent 1px)",
+              "linear-gradient(#e8e7e6 1px,transparent 1px),linear-gradient(90deg,#e8e7e6 1px,transparent 1px)",
             backgroundSize: "52px 52px",
           }}
         />
@@ -165,9 +164,9 @@ export default function ActivitiesHero() {
           animate={inView ? "show" : "hidden"}
           className="flex items-center gap-3 mb-5"
         >
-          <span className="w-8 h-[2px] bg-[#E8541A] rounded" />
+          <span className="w-8 h-[2px] bg-[#fc8814] rounded" />
           <span
-            className="text-[0.65rem] font-black tracking-[0.32em] uppercase text-[#E8541A]"
+            className="text-[0.65rem] font-black tracking-[0.32em] uppercase text-[#fc8814]"
             style={{ fontFamily: "Raleway, sans-serif" }}
           >
             Activities & Initiatives
@@ -181,7 +180,7 @@ export default function ActivitiesHero() {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             className="text-[3rem] sm:text-[5rem] md:text-[7rem] lg:text-[9.5rem]
-              font-black leading-[0.88] text-white"
+              font-black leading-[0.88] text-[#e8e7e6]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Activities
