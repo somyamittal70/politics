@@ -61,12 +61,12 @@ export default function VideoGallery() {
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
           <div>
-            <span className="uppercase tracking-[0.3em] text-[#C8972B] text-sm font-semibold">
+            <span className="uppercase tracking-[0.3em] text-[#FC8814] text-sm font-semibold">
               Video Gallery
             </span>
 
             <h2
-              className="mt-4 text-4xl md:text-5xl text-[#0D1B3E]"
+              className="mt-4 text-4xl md:text-5xl text-[#333333]"
               style={{
                 fontFamily: "Playfair Display, serif",
               }}
@@ -75,7 +75,7 @@ export default function VideoGallery() {
             </h2>
           </div>
 
-          <button className="mt-6 md:mt-0 flex items-center gap-2 text-[#E8541A] hover:text-[#C8972B] transition">
+          <button className="mt-6 md:mt-0 flex items-center gap-2 text-[#FC8814] hover:text-[#FC8814] transition">
             View All Videos
             <ArrowRight size={18} />
           </button>
@@ -101,7 +101,7 @@ export default function VideoGallery() {
 
                 {/* Play Button */}
                 <button className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-[#E8541A] flex items-center justify-center hover:scale-110 transition">
+                  <div className="w-20 h-20 rounded-full bg-[#FC8814] flex items-center justify-center hover:scale-110 transition">
                     <Play size={28} fill="white" className="text-white ml-1" />
                   </div>
                 </button>
@@ -131,7 +131,7 @@ export default function VideoGallery() {
               </div>
 
               <div className="p-8">
-                <span className="inline-flex px-4 py-2 rounded-full bg-[#E8541A] text-white text-sm">
+                <span className="inline-flex px-4 py-2 rounded-full bg-[#FC8814] text-white text-sm">
                   {activeVideo.category}
                 </span>
 
@@ -149,7 +149,7 @@ export default function VideoGallery() {
                 key={video.id}
                 onClick={() => setActiveVideo(video)}
                 className={`w-full text-left rounded-2xl overflow-hidden transition-all duration-300 ${
-                  activeVideo.id === video.id ? "bg-[#0D1B3E]" : "bg-[#F7F2E8]"
+                  activeVideo.id === video.id ? "bg-[#1a1a1a]/60" : "bg-[#F7F2E8]"
                 }`}
               >
                 <div className="flex gap-4 p-4">
@@ -161,7 +161,7 @@ export default function VideoGallery() {
                     />
 
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-[#E8541A] flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-[#FC8814] flex items-center justify-center">
                         <Play
                           size={12}
                           fill="white"
@@ -175,8 +175,8 @@ export default function VideoGallery() {
                     <span
                       className={`text-xs uppercase tracking-wider ${
                         activeVideo.id === video.id
-                          ? "text-[#C8972B]"
-                          : "text-[#E8541A]"
+                          ? "text-[#FC8814]"
+                          : "text-[#FC8814]"
                       }`}
                     >
                       {video.category}
@@ -186,7 +186,7 @@ export default function VideoGallery() {
                       className={`mt-2 font-semibold line-clamp-2 ${
                         activeVideo.id === video.id
                           ? "text-white"
-                          : "text-[#0D1B3E]"
+                          : "text-[#333333]"
                       }`}
                       style={{
                         fontFamily: "Playfair Display, serif",

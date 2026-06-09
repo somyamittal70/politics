@@ -130,14 +130,14 @@ export default function AchievementsSection() {
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="w-7 h-[2px] bg-[#fc8814] rounded" />
             <span className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#fc8814]"
-              style={{ fontFamily: "Raleway, sans-serif" }}>Key Accomplishments</span>
+              style={{ fontFamily: "Playfair Display, sans-serif" }}>Key Accomplishments</span>
             <span className="w-7 h-[2px] bg-[#138808] rounded" />
           </div>
           <h2 className="text-[2.2rem] md:text-[3rem] lg:text-[3.5rem] font-black text-[#e8e7e6] leading-[1.1]"
             style={{ fontFamily: "'Playfair Display', serif" }}>
             Milestones & <em className="text-[#fc8814] not-italic italic">Achievements</em>
           </h2>
-          <p className="text-[1rem] text-[#e8e7e6]/40 mt-3 max-w-lg mx-auto leading-relaxed italic"
+          <p className="text-[1rem] text-[#333333] mt-3 max-w-lg mx-auto leading-relaxed italic"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             A legacy built through decades of relentless public service, bold decisions, and unwavering commitment.
           </p>
@@ -162,7 +162,7 @@ export default function AchievementsSection() {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ background: "radial-gradient(circle at 50% 50%, rgba(252,136,20,0.06), transparent 70%)" }} />
 
-                <Icon size={28} className="text-[#e8e7e6]/50" strokeWidth={1.5} />
+                <Icon size={28} className="text-[#333333]" strokeWidth={1.5} />
 
                 <span className="text-[2.6rem] md:text-[3rem] font-black text-[#fc8814] leading-none"
                   style={{ fontFamily: "'Playfair Display', serif" }}>

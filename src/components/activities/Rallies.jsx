@@ -107,7 +107,7 @@ function EventCard({ event, index, inView }) {
           <span
             className="text-[0.55rem] font-black tracking-[0.2em] uppercase text-white px-2 py-[3px]"
             style={{
-              fontFamily: "Raleway, sans-serif",
+              fontFamily: "Playfair Display, sans-serif",
               background: event.color,
             }}
           >
@@ -125,7 +125,7 @@ function EventCard({ event, index, inView }) {
         />
 
         <h4
-          className="text-[1rem] font-black text-[#1a1a1a] leading-snug mb-3"
+          className="text-[12px] font-black text-[#333333] leading-snug mb-3"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           {event.title}
@@ -225,7 +225,7 @@ export default function RalliesEvents() {
               variants={fadeUp(0.08)}
               initial="hidden"
               animate={headerInView ? "show" : "hidden"}
-              className="text-[2.8rem] md:text-[3.8rem] lg:text-[4.2rem] font-black text-[#1a1a1a] leading-[0.93]"
+              className="text-[1rem] md:text-[2.8rem] lg:text-[3.2rem] font-black text-[#333333] leading-[0.93]"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Rallies &<br />
@@ -248,7 +248,7 @@ export default function RalliesEvents() {
               initial="hidden"
               animate={headerInView ? "show" : "hidden"}
               className="text-[1.05rem] text-[#3a3a3a]/60 leading-[1.9] italic"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              style={{ fontFamily: "'Playfar Display', serif" }}
             >
               Amit Shah has addressed millions across India — from sprawling
               maidan rallies to intimate booth-level sammelans. Each event a
@@ -287,7 +287,7 @@ export default function RalliesEvents() {
                 <div className="absolute top-5 left-5">
                   <span
                     className="text-[0.58rem] font-black tracking-[0.22em] uppercase text-white px-3 py-[5px] bg-[#fc8814]"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
+                    style={{ fontFamily: "Playfair Display, sans-serif" }}
                   >
                     {featured.tag}
                   </span>
@@ -324,7 +324,7 @@ export default function RalliesEvents() {
                       <m.icon size={13} className="text-[#fc8814]" strokeWidth={2} />
                       <span
                         className="text-[0.8rem] text-[#3a3a3a]/65"
-                        style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                        style={{ fontFamily: "'Playfair Display', serif" }}
                       >
                         {m.val}
                       </span>
@@ -334,7 +334,7 @@ export default function RalliesEvents() {
 
                 <p
                   className="text-[0.97rem] text-[#3a3a3a]/65 leading-[1.85] italic"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {featured.desc}
                 </p>
@@ -342,7 +342,7 @@ export default function RalliesEvents() {
                 <div className="flex items-center gap-2 mt-1 group/btn w-fit cursor-pointer">
                   <span
                     className="text-[0.65rem] font-black tracking-[0.2em] uppercase text-[#fc8814]"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
+                    style={{ fontFamily: "Playfair Display, sans-serif" }}
                   >
                     View All Events
                   </span>

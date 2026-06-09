@@ -103,6 +103,7 @@ export default function ResourcesHero() {
             "linear-gradient(120deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.90) 55%, rgba(255,255,255,0.95) 100%)",
         }}
       />
+      
 
       {/* Decorative Shapes */}
       <div className="absolute inset-0 overflow-hidden z-[2]">

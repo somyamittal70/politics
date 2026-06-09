@@ -3,7 +3,6 @@ import {
   FaFacebookF,
   FaInstagram,
   FaYoutube,
-  FaLinkedinIn,
 } from "react-icons/fa";
 import { MapPin, Phone, Mail } from "lucide-react";
 
@@ -19,7 +18,7 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="uppercase tracking-[0.3em] text-[#C8972B] text-sm font-semibold">
+          <p className="uppercase tracking-[0.3em] text-[#FC8814] text-sm font-semibold">
             Contact Us
           </p>
 
@@ -30,7 +29,7 @@ export default function ContactSection() {
             Let's Connect
           </h2>
 
-          <div className="w-20 h-[3px] bg-[#E8541A] mx-auto mt-5 rounded-full" />
+          <div className="w-20 h-[3px] bg-[#FC8814] mx-auto mt-5 rounded-full" />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-10">
@@ -53,13 +52,13 @@ export default function ContactSection() {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full h-14 rounded-xl border border-[#C8972B]/20 px-4 outline-none focus:border-[#E8541A]"
+                  className="w-full h-14 rounded-xl border border-[#FC8814]/20 px-4 outline-none focus:border-[#FC8814]"
                 />
 
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full h-14 rounded-xl border border-[#C8972B]/20 px-4 outline-none focus:border-[#E8541A]"
+                  className="w-full h-14 rounded-xl border border-[#FC8814]/20 px-4 outline-none focus:border-[#FC8814]"
                 />
               </div>
 
@@ -67,10 +66,10 @@ export default function ContactSection() {
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="w-full h-14 rounded-xl border border-[#C8972B]/20 px-4 outline-none focus:border-[#E8541A]"
+                  className="w-full h-14 rounded-xl border border-[#FC8814]/20 px-4 outline-none focus:border-[#FC8814]"
                 />
 
-                <select className="w-full h-14 rounded-xl border border-[#C8972B]/20 px-4 outline-none focus:border-[#E8541A]">
+                <select className="w-full h-14 rounded-xl border border-[#FC8814]/20 px-4 outline-none focus:border-[#FC8814]">
                   <option>Select Location</option>
                   <option>Delhi</option>
                   <option>Gujarat</option>
@@ -80,7 +79,7 @@ export default function ContactSection() {
                 </select>
               </div>
 
-              <select className="w-full h-14 rounded-xl border border-[#C8972B]/20 px-4 outline-none focus:border-[#E8541A]">
+              <select className="w-full h-14 rounded-xl border border-[#FC8814]/20 px-4 outline-none focus:border-[#FC8814]">
                 <option>Select Subject</option>
                 <option>General Inquiry</option>
                 <option>Campaign Support</option>
@@ -92,12 +91,12 @@ export default function ContactSection() {
               <textarea
                 rows="6"
                 placeholder="Write your message..."
-                className="w-full rounded-xl border border-[#C8972B]/20 p-4 outline-none resize-none focus:border-[#E8541A]"
+                className="w-full rounded-xl border border-[#FC8814]/20 p-4 outline-none resize-none focus:border-[#FC8814]"
               />
 
               <button
                 type="submit"
-                className="w-full bg-[#E8541A] hover:bg-[#C8972B] text-white h-14 rounded-xl font-semibold tracking-wide transition-all duration-300"
+                className="w-full bg-[#FC8814] hover:bg-[#FC8814] text-white h-14  font-semibold tracking-wide transition-all duration-300"
               >
                 SUBMIT MESSAGE
               </button>
@@ -132,9 +131,9 @@ export default function ContactSection() {
 
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <MapPin className="text-[#E8541A] mt-1" />
+                  <MapPin className="text-[#FC8814] mt-1" />
                   <div>
-                    <h4 className="font-semibold text-[#C8972B]">
+                    <h4 className="font-semibold text-[#FC8814]">
                       Office Address
                     </h4>
                     <p className="text-gray-600">
@@ -145,17 +144,17 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex gap-4">
-                  <Phone className="text-[#E8541A]" />
+                  <Phone className="text-[#FC8814]" />
                   <div>
-                    <h4 className="font-semibold text-[#C8972B]">Phone</h4>
+                    <h4 className="font-semibold text-[#FC8814]">Phone</h4>
                     <p className="text-gray-600">+91 98765 43210</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <Mail className="text-[#E8541A]" />
+                  <Mail className="text-[#FC8814]" />
                   <div>
-                    <h4 className="font-semibold text-[#C8972B]">Email</h4>
+                    <h4 className="font-semibold text-[#FC8814]">Email</h4>
                     <p className="text-gray-600">contact@example.com</p>
                   </div>
                 </div>
@@ -163,45 +162,40 @@ export default function ContactSection() {
 
               {/* Social */}
               <div className="mt-8">
-                <h4 className="text-lg font-semibold text-[#C8972B] mb-4">
+                <h4 className="text-lg font-semibold text-[#FC8814] mb-4">
                   Follow Us
                 </h4>
 
                 <div className="flex gap-4">
                   <a
                     href="#"
-                    className="w-12 h-12 rounded-full bg-[#E8541A] text-white flex items-center justify-center hover:bg-[#C8972B] hover:scale-110 transition-all duration-300"
+                    className="w-12 h-12 rounded-full bg-[#FC8814] text-white flex items-center justify-center hover:bg-[#FC8814] hover:scale-110 transition-all duration-300"
                   >
                     <FaFacebookF size={18} />
                   </a>
 
                   <a
                     href="#"
-                    className="w-12 h-12 rounded-full bg-[#E8541A] text-white flex items-center justify-center hover:bg-[#C8972B] hover:scale-110 transition-all duration-300"
+                    className="w-12 h-12 rounded-full bg-[#FC8814] text-white flex items-center justify-center hover:bg-[#FC8814] hover:scale-110 transition-all duration-300"
                   >
                     <FaInstagram size={18} />
                   </a>
 
                   <a
                     href="#"
-                    className="w-12 h-12 rounded-full bg-[#E8541A] text-white flex items-center justify-center hover:bg-[#C8972B] hover:scale-110 transition-all duration-300"
+                    className="w-12 h-12 rounded-full bg-[#FC8814] text-white flex items-center justify-center hover:bg-[#FC8814] hover:scale-110 transition-all duration-300"
                   >
                     <FaXTwitter size={18} />
                   </a>
 
                   <a
                     href="#"
-                    className="w-12 h-12 rounded-full bg-[#E8541A] text-white flex items-center justify-center hover:bg-[#C8972B] hover:scale-110 transition-all duration-300"
+                    className="w-12 h-12 rounded-full bg-[#FC8814] text-white flex items-center justify-center hover:bg-[#FC8814] hover:scale-110 transition-all duration-300"
                   >
                     <FaYoutube size={18} />
                   </a>
 
-                  <a
-                    href="#"
-                    className="w-12 h-12 rounded-full bg-[#E8541A] text-white flex items-center justify-center hover:bg-[#C8972B] hover:scale-110 transition-all duration-300"
-                  >
-                    <FaLinkedinIn size={18} />
-                  </a>
+                  
                 </div>
               </div>
             </div>

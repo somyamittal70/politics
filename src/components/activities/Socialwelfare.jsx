@@ -135,7 +135,7 @@ export default function SocialWelfare() {
               <span className="w-7 h-[2px] bg-[#138808] rounded" />
             </motion.div>
             <motion.h2 variants={fadeUp(0.08)} initial="hidden" animate={headerInView ? "show" : "hidden"}
-              className="text-[2.8rem] md:text-[3.8rem] lg:text-[4.2rem] font-black text-[#1a1a1a] leading-[0.93]"
+              className="text-[2.8rem] md:text-[3.8rem] lg:text-[4.2rem] font-black text-[#3a3a3a] leading-[0.93]"
               style={{ fontFamily: "'Playfair Display', serif" }}>
               Social<br /><em className="text-[#fc8814] not-italic italic">Welfare</em>
             </motion.h2>
@@ -173,7 +173,7 @@ export default function SocialWelfare() {
                   ${i < 2 ? "border-b border-[#e8e7e6] lg:border-b-0" : ""}`}
               >
                 <Icon size={20} className="text-[#138808] mb-1" strokeWidth={1.5} />
-                <span className="text-[2.8rem] md:text-[3.2rem] font-black text-[#1a1a1a] leading-none"
+                <span className="text-[2.8rem] md:text-[3.2rem] font-black text-[#3a3a3a] leading-none"
                   style={{ fontFamily: "'Playfair Display', serif" }}>
                   <Counter target={s.num} suffix={s.suffix} inView={statsInView} />
                 </span>
@@ -217,15 +217,15 @@ export default function SocialWelfare() {
                     <Icon size={20} strokeWidth={1.5} />
                   </div>
                   <span className="text-[0.6rem] font-black tracking-[0.2em] text-[#1a1a1a]/20"
-                    style={{ fontFamily: "Raleway, sans-serif" }}>{item.index}</span>
+                    style={{ fontFamily: "Playfair Display, sans-serif" }}>{item.index}</span>
                 </div>
 
                 {/* Tag */}
                 <span className="text-[0.58rem] font-black tracking-[0.22em] uppercase block mb-2"
-                  style={{ fontFamily: "Raleway, sans-serif", color: item.color }}>{item.tag}</span>
+                  style={{ fontFamily: "Playfair Display, sans-serif", color: item.color }}>{item.tag}</span>
 
                 {/* Title */}
-                <h4 className="text-[1.08rem] font-black text-[#1a1a1a] leading-snug mb-2"
+                <h4 className="text-[1.08rem] font-black text-[#3A3A3A] leading-snug mb-2"
                   style={{ fontFamily: "'Playfair Display', serif" }}>{item.title}</h4>
 
                 {/* Impact badge */}
@@ -233,7 +233,7 @@ export default function SocialWelfare() {
                   style={{ borderColor: item.color + "40", background: item.color + "0d" }}>
                   <span className="text-[0.6rem] font-black tracking-[0.15em] uppercase"
                     style={{ fontFamily: "Raleway, sans-serif", color: item.color }}>Impact:</span>
-                  <span className="text-[0.7rem] font-bold text-[#1a1a1a]"
+                  <span className="text-[0.7rem] font-bold text-[#3a3a3a]"
                     style={{ fontFamily: "'Playfair Display', serif" }}>{item.impact}</span>
                 </div>
 

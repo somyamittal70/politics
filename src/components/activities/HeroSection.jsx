@@ -99,7 +99,7 @@ export default function ActivitiesHero() {
     <section
       ref={heroRef}
       className="relative w-full min-h-screen flex flex-col overflow-hidden"
-      style={{ fontFamily: "sans-serif" }}
+      style={{ fontFamily: "Playfair Display,sans-serif" }}
     >
       {/* ── BACKGROUND IMAGE + OVERLAYS ── */}
       <div className="absolute inset-0 z-0">
@@ -109,7 +109,7 @@ export default function ActivitiesHero() {
           className="w-full h-full object-cover object-center"
         />
         {/* dark primary overlay */}
-        <div className="absolute inset-0 bg-[#1a1a1a]/80" />
+        <div className="absolute inset-0 bg-[#1a1a1a]/92" />
         {/* left-side vignette */}
         <div
           className="absolute inset-0"
@@ -167,7 +167,7 @@ export default function ActivitiesHero() {
           <span className="w-8 h-[2px] bg-[#fc8814] rounded" />
           <span
             className="text-[0.65rem] font-black tracking-[0.32em] uppercase text-[#fc8814]"
-            style={{ fontFamily: "Raleway, sans-serif" }}
+            style={{ fontFamily: "Playfair Display, sans-serif" }}
           >
             Activities & Initiatives
           </span>
@@ -179,7 +179,7 @@ export default function ActivitiesHero() {
             variants={fadeUp(0.08)}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
-            className="text-[3rem] sm:text-[5rem] md:text-[7rem] lg:text-[9.5rem]
+            className="text-[1rem] sm:text-[2rem] md:text-[4rem] lg:text-[6.5rem]
               font-black leading-[0.88] text-[#e8e7e6]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >

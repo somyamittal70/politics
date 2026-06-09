@@ -21,14 +21,14 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#0D1B3E]">
+    <section className="relative overflow-hidden bg-[#1a1a1a]">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0D1B3E] via-[#10275A] to-[#0D1B3E]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#1a1a1a] to-[#1a1a1a]" />
 
       {/* Blur Effects */}
-      <div className="absolute top-10 right-0 w-40 sm:w-64 lg:w-[500px] h-40 sm:h-64 lg:h-[500px] bg-[#C8972B]/10 blur-[80px] lg:blur-[120px] rounded-full" />
+      <div className="absolute top-10 right-0 w-40 sm:w-64 lg:w-[500px] h-40 sm:h-64 lg:h-[500px] bg-[#FC8814]/10 blur-[80px] lg:blur-[120px] rounded-full" />
 
-      <div className="absolute bottom-0 left-0 w-40 sm:w-64 lg:w-[400px] h-40 sm:h-64 lg:h-[400px] bg-[#E8541A]/10 blur-[80px] lg:blur-[120px] rounded-full" />
+      <div className="absolute bottom-0 left-0 w-40 sm:w-64 lg:w-[400px] h-40 sm:h-64 lg:h-[400px] bg-[#FC8814]/10 blur-[80px] lg:blur-[120px] rounded-full" />
 
       {/* Grid Pattern */}
       <div
@@ -49,9 +49,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-3 mb-6"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#C8972B]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FC8814]" />
 
-              <span className="uppercase tracking-[0.25em] text-[#C8972B] text-xs sm:text-sm font-semibold">
+              <span className="uppercase tracking-[0.25em] text-[#FC8814] text-xs sm:text-sm font-semibold">
                 Media Center
               </span>
             </motion.div>
@@ -73,7 +73,7 @@ export default function Hero() {
               }}
             >
               Stories That
-              <span className="block text-[#C8972B]">Shape The Nation</span>
+              <span className="block text-[#FC8814]">Shape The Nation</span>
             </motion.h1>
 
             <motion.p
@@ -112,8 +112,8 @@ export default function Hero() {
               <button
                 className="
                   w-full sm:w-auto
-                  bg-[#C8972B]
-                  hover:bg-[#E8541A]
+                  bg-[#FC8814]
+                  hover:bg-[#FC8814]
                   text-white
                   px-6 lg:px-8
                   py-3.5 lg:py-4
@@ -130,9 +130,9 @@ export default function Hero() {
               <button
                 className="
                   w-full sm:w-auto
-                  border border-[#C8972B]
+                  border border-[#FC8814]
                   text-white
-                  hover:bg-[#C8972B]
+                  hover:bg-[#FC8814]
                   px-6 lg:px-8
                   py-3.5 lg:py-4
                   rounded-full
@@ -164,7 +164,7 @@ export default function Hero() {
                       p-4 lg:p-5
                     "
                   >
-                    <Icon size={22} className="text-[#C8972B]" />
+                    <Icon size={22} className="text-[#FC8814]" />
 
                     <h3 className="text-xl lg:text-2xl font-bold text-white mt-3">
                       {item.number}
@@ -204,7 +204,7 @@ export default function Hero() {
               <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                 <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl lg:rounded-3xl p-4 sm:p-5 lg:p-6">
                   <div className="flex items-center gap-3 sm:gap-4">
-                    <button className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#E8541A] flex items-center justify-center hover:scale-110 transition">
+                    <button className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FC8814] flex items-center justify-center hover:scale-110 transition">
                       <Play
                         size={18}
                         fill="white"
@@ -213,7 +213,7 @@ export default function Hero() {
                     </button>
 
                     <div>
-                      <p className="text-[#C8972B] text-xs uppercase tracking-wider">
+                      <p className="text-[#FC8814] text-xs uppercase tracking-wider">
                         Featured Video
                       </p>
 
@@ -245,7 +245,7 @@ export default function Hero() {
                 shadow-xl
               "
             >
-              <p className="text-[#E8541A] text-4xl font-bold">1M+</p>
+              <p className="text-[#FC8814] text-4xl font-bold">1M+</p>
 
               <p className="text-gray-600 mt-1">Monthly Views</p>
             </motion.div>

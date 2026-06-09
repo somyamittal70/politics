@@ -14,16 +14,16 @@ export default function News() {
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[#0D1B3E]/85" />
+      <div className="absolute inset-0 bg-[#1A1A1A]/92" />
 
       {/* Decorative Blur */}
-      <div className="absolute top-10 right-0 sm:right-10 lg:right-20 w-40 h-40 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-[#C8972B]/10 blur-3xl" />
+      <div className="absolute top-10 right-0 sm:right-10 lg:right-20 w-40 h-40 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-[#FC8814]/10 blur-3xl" />
 
-      <div className="absolute bottom-0 left-0 sm:left-6 lg:left-10 w-48 h-48 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-[#E8541A]/10 blur-3xl" />
+      <div className="absolute bottom-0 left-0 sm:left-6 lg:left-10 w-48 h-48 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-[#FC8814]/10 blur-3xl" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-24 sm:py-28 lg:py-32">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl -mt-6">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -41,14 +41,14 @@ export default function News() {
               px-4
               sm:px-5
               py-2
-              rounded-full
+            
               mb-6
               sm:mb-8
             "
           >
             <Newspaper
               size={16}
-              className="text-[#C8972B] sm:w-[18px] sm:h-[18px]"
+              className="text-[#FC8814] sm:w-[18px] sm:h-[18px]"
             />
 
             <span
@@ -84,7 +84,7 @@ export default function News() {
             }}
           >
             Stay Updated With
-            <span className="block text-[#C8972B] mt-1 sm:mt-2">
+            <span className="block text-[#FC8814] mt-1 sm:mt-2">
               Latest Announcements
             </span>
           </motion.h1>
@@ -130,13 +130,13 @@ export default function News() {
               className="
                 w-full
                 sm:w-auto
-                bg-[#E8541A]
-                hover:bg-[#C8972B]
+                bg-[#FC8814]
+                hover:bg-[#FC8814]
                 text-white
                 px-6
                 sm:px-8
                 py-4
-                rounded-full
+                
                 flex
                 items-center
                 justify-center
@@ -155,14 +155,14 @@ export default function News() {
                 w-full
                 sm:w-auto
                 border
-                border-[#C8972B]
+                border-[#FC8814]
                 text-white
-                hover:bg-[#C8972B]
+                hover:bg-[#FC8814]
                 hover:text-black
                 px-6
                 sm:px-8
                 py-4
-                rounded-full
+             
                 transition-all
                 duration-300
               "
@@ -187,21 +187,21 @@ export default function News() {
             "
           >
             <div className="border border-white/10 bg-white/5 backdrop-blur-md rounded-xl p-4 sm:p-5">
-              <h3 className="text-[#C8972B] text-2xl sm:text-3xl font-bold">
+              <h3 className="text-[#FC8814] text-2xl sm:text-3xl font-bold">
                 250+
               </h3>
               <p className="text-white/70 text-sm mt-1">News Articles</p>
             </div>
 
             <div className="border border-white/10 bg-white/5 backdrop-blur-md rounded-xl p-4 sm:p-5">
-              <h3 className="text-[#C8972B] text-2xl sm:text-3xl font-bold">
+              <h3 className="text-[#FC8814] text-2xl sm:text-3xl font-bold">
                 120+
               </h3>
               <p className="text-white/70 text-sm mt-1">Press Releases</p>
             </div>
 
             <div className="border border-white/10 bg-white/5 backdrop-blur-md rounded-xl p-4 sm:p-5 col-span-2 md:col-span-1">
-              <h3 className="text-[#C8972B] text-2xl sm:text-3xl font-bold">
+              <h3 className="text-[#FC8814] text-2xl sm:text-3xl font-bold">
                 50+
               </h3>
               <p className="text-white/70 text-sm mt-1">Media Events</p>

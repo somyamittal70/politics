@@ -165,13 +165,13 @@ export default function MediaDownloads() {
         >
           <span 
             className="text-sm font-semibold tracking-widest uppercase"
-            style={{ color: '#C8972B' }}
+            style={{ color: '#FC8814' }}
           >
             Media Resources
           </span>
           <h2
             className="text-5xl font-light mt-4"
-            style={{ color: '#0D1B3E', fontFamily: 'Playfair Display, serif' }}
+            style={{ color: '#333333', fontFamily: 'Playfair Display, serif' }}
           >
             Downloads & Media Kit
           </h2>
@@ -201,7 +201,7 @@ export default function MediaDownloads() {
                       isActive ? 'shadow-lg' : 'hover:shadow-md'
                     }`}
                     style={{
-                      backgroundColor: isActive ? '#C8972B' : 'white',
+                      backgroundColor: isActive ? '#FC8814' : 'white',
                       color: isActive ? 'white' : '#0D1B3E',
                     }}
                   >
@@ -228,7 +228,7 @@ export default function MediaDownloads() {
                   className="p-3 rounded-lg"
                   style={{ backgroundColor: '#F7F2E8' }}
                 >
-                  <CurrentIcon size={28} style={{ color: '#C8972B' }} />
+                  <CurrentIcon size={28} style={{ color: '#FC8814' }} />
                 </div>
                 <div>
                   <h3
@@ -254,7 +254,7 @@ export default function MediaDownloads() {
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-grow">
                         <h4
-                          className="text-lg font-semibold mb-2 group-hover:text-[#C8972B] transition"
+                          className="text-lg font-semibold mb-2 group-hover:text-[#FC8814] transition"
                           style={{ color: '#0D1B3E' }}
                         >
                           {item.title}
@@ -265,7 +265,7 @@ export default function MediaDownloads() {
                             className="px-3 py-1 rounded-full"
                             style={{
                               backgroundColor: '#F7F2E8',
-                              color: '#C8972B',
+                              color: '#FC8814',
                               fontWeight: 500,
                             }}
                           >
@@ -281,7 +281,7 @@ export default function MediaDownloads() {
                       <motion.button
                         className="flex-shrink-0 p-4 rounded-lg flex items-center justify-center transition-all duration-300"
                         style={{
-                          backgroundColor: '#C8972B',
+                          backgroundColor: '#FC8814',
                           color: 'white',
                         }}
                         whileHover={{ scale: 1.08 }}

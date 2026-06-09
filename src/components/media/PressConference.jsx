@@ -52,12 +52,12 @@ export default function PressConference() {
           viewport={{ once: true }}
           className="mb-14"
         >
-          <span className="uppercase tracking-[0.3em] text-[#C8972B] text-sm font-semibold">
+          <span className="uppercase tracking-[0.3em] text-[#FC8814] text-sm font-semibold">
             Official Media Briefings
           </span>
 
           <h2
-            className="mt-4 text-4xl md:text-5xl text-[#0D1B3E]"
+            className="mt-4 text-4xl md:text-5xl text-[#333333]"
             style={{
               fontFamily: "Playfair Display, serif",
             }}
@@ -84,7 +84,7 @@ export default function PressConference() {
             <div className="absolute inset-0 bg-black/20" />
 
             <button className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full bg-[#E8541A] flex items-center justify-center hover:scale-110 transition">
+              <div className="w-20 h-20 rounded-full bg-[#FC8814] flex items-center justify-center hover:scale-110 transition">
                 <Play size={28} fill="white" className="text-white ml-1" />
               </div>
             </button>
@@ -92,13 +92,13 @@ export default function PressConference() {
 
           {/* Content */}
           <div className="p-8 md:p-10 flex flex-col justify-center">
-            <div className="inline-flex items-center gap-2 text-[#E8541A] font-semibold">
+            <div className="inline-flex items-center gap-2 text-[#FC8814] font-semibold">
               <Mic size={18} />
               Featured Conference
             </div>
 
             <h3
-              className="mt-4 text-3xl md:text-4xl text-[#0D1B3E]"
+              className="mt-4 text-3xl md:text-4xl text-[#333333]"
               style={{
                 fontFamily: "Playfair Display, serif",
               }}
@@ -122,7 +122,7 @@ export default function PressConference() {
               {featured.description}
             </p>
 
-            <button className="mt-8 bg-[#0D1B3E] hover:bg-[#E8541A] text-white px-8 py-4 rounded-full flex items-center gap-3 transition w-fit">
+            <button className="mt-8 bg-[#333333] hover:bg-[#FC8814] text-white px-8 py-4 rounded-full flex items-center gap-3 transition w-fit">
               Watch Full Conference
               <ArrowRight size={18} />
             </button>
@@ -147,14 +147,14 @@ export default function PressConference() {
                   className="w-full h-full object-cover"
                 />
 
-                <div className="absolute top-4 left-4 bg-[#E8541A] text-white text-xs px-3 py-1 rounded-full">
+                <div className="absolute top-4 left-4 bg-[#FC8814] text-white text-xs px-3 py-1 rounded-full">
                   Press Briefing
                 </div>
               </div>
 
               <div className="p-6">
                 <h4
-                  className="text-xl text-[#0D1B3E]"
+                  className="text-xl text-[#333333]"
                   style={{
                     fontFamily: "Playfair Display, serif",
                   }}
@@ -174,7 +174,7 @@ export default function PressConference() {
                   </div>
                 </div>
 
-                <button className="mt-5 text-[#E8541A] flex items-center gap-2 hover:text-[#C8972B] transition">
+                <button className="mt-5 text-[#FC8814] flex items-center gap-2 hover:text-[#FC8814] transition">
                   View Details
                   <ArrowRight size={16} />
                 </button>

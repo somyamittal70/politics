@@ -136,7 +136,7 @@ export default function CommunityOutreach() {
               <EyebrowLine color="#fc8814" />
               <span
                 className="text-[0.62rem] font-black tracking-[0.3em] uppercase text-[#fc8814]"
-                style={{ fontFamily: "Raleway, sans-serif" }}
+                style={{ fontFamily: "Playfair Display, sans-serif" }}
               >
                 Sampark & Seva
               </span>
@@ -195,8 +195,8 @@ export default function CommunityOutreach() {
                     {s.num}
                   </span>
                   <span
-                    className="text-[0.55rem] font-black tracking-[0.16em] uppercase text-[#e8e7e6]/30"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
+                    className="text-[0.55rem] font-black tracking-[0.16em] uppercase text-[#333333]"
+                    style={{ fontFamily: "Playfair Display, sans-serif" }}
                   >
                     {s.label}
                   </span>
@@ -223,7 +223,7 @@ export default function CommunityOutreach() {
                   <span
                     className="text-[0.55rem] font-black tracking-[0.18em] border border-[#d0d0d0]
                       text-[#8a8a8a] px-2 py-[3px]"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
+                    style={{ fontFamily: "Playfair Display, sans-serif" }}
                   >
                     {item.id}
                   </span>
@@ -242,8 +242,8 @@ export default function CommunityOutreach() {
                     {item.stat}
                   </span>
                   <span
-                    className="text-[0.55rem] font-black tracking-[0.14em] uppercase text-[#6b6b6b]"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
+                    className="text-[0.55rem] font-black tracking-[0.14em] uppercase text-[#333333]"
+                    style={{ fontFamily: "Playfair Display, sans-serif" }}
                   >
                     {item.statLabel}
                   </span>
@@ -252,7 +252,7 @@ export default function CommunityOutreach() {
                 <Tag color={item.color}>{item.tag}</Tag>
 
                 <h4
-                  className="text-[0.82rem] font-black text-[#1a1a1a] leading-snug mb-2"
+                  className="text-[0.82rem] font-black text-[#333333] leading-snug mb-2"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {item.title}
