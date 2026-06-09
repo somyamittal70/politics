@@ -116,23 +116,10 @@ export default function CampaignsHero() {
           alt=""
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[#0A1628]/82" />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(108deg,rgba(10,22,40,0.97) 0%,rgba(10,22,40,0.78) 48%,rgba(10,22,40,0.28) 100%)",
-          }}
-        />
+        <div className="absolute inset-0 bg-[#1a1a1a]/92" />
+       
         <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[#0A1628] to-transparent" />
-        <div
-          className="absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#FDFAF5 1px,transparent 1px),linear-gradient(90deg,#FDFAF5 1px,transparent 1px)",
-            backgroundSize: "52px 52px",
-          }}
-        />
+       
       </div>
 
       {/* Top tricolor */}
