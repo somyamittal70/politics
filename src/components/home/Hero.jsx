@@ -164,7 +164,7 @@ export default function HeroSection() {
                   <div
                     className="slide-tag inline-flex items-center gap-2 mb-4 md:mb-6
                       text-[0.72rem] font-bold tracking-[0.22em] uppercase text-[#E2C06A]"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
+                    style={{ fontFamily: "'Playfair', serif" }}
                   >
                     {slide.tag}
                   </div>
@@ -199,7 +199,7 @@ export default function HeroSection() {
                   <p
                     className="text-[clamp(0.9rem,1.8vw,1.25rem)] text-[#FDFAF5]/70
                       leading-[1.65] max-w-[480px] mb-7 md:mb-10 tracking-[0.02em]"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                    style={{ fontFamily: "'Playfair', serif" }}
                   >
                     {slide.sub}
                   </p>
@@ -212,7 +212,7 @@ export default function HeroSection() {
                         no-underline text-[#FDFAF5] bg-[#E8541A] border-none px-6 md:px-8 py-3 md:py-[0.85rem] cursor-pointer
                         transition-all duration-[250ms] ease-in-out
                         hover:bg-[#F4712E] hover:-translate-y-[2px]"
-                      style={{ fontFamily: "Raleway, sans-serif" }}
+                      style={{ fontFamily: "'Playfair', serif" }}
                     >
                       Know More
                     </a>
@@ -223,7 +223,7 @@ export default function HeroSection() {
                         px-6 md:px-8 py-3 md:py-[0.85rem] cursor-pointer
                         transition-all duration-[250ms] ease-in-out
                         hover:bg-[#C9A84C]/10 hover:border-[#C9A84C] hover:text-[#C9A84C] hover:-translate-y-[2px]"
-                      style={{ fontFamily: "Raleway, sans-serif" }}
+                      style={{ fontFamily: "'Playfair', serif" }}
                     >
                       Get in Touch
                     </a>
@@ -307,7 +307,7 @@ export default function HeroSection() {
           />
           <span
             className="text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-[#FDFAF5]/35"
-            style={{ writingMode: "vertical-rl", fontFamily: "Raleway, sans-serif" }}
+            style={{ writingMode: "vertical-rl", fontFamily: "'Playfair', serif" }}
           >
             Scroll
           </span>

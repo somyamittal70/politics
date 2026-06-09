@@ -59,19 +59,20 @@ const milestones = [
   },
 ];
 
+// #fc8814 = primary orange | #e8e7e6 = light grey | #FFFFFF = white | #1a1a1a = dark
 const TAG_COLORS = {
-  "Early Life":      { dot: "#E8541A", text: "#C03E10" },
-  "Political Entry": { dot: "#138808", text: "#0e6006" },
-  "Family":          { dot: "#C9A84C", text: "#9a7a28" },
-  "RSS & BJP":       { dot: "#E8541A", text: "#C03E10" },
-  "Gujarat":         { dot: "#138808", text: "#0e6006" },
-  "Parliament":      { dot: "#0D1B3E", text: "#0D1B3E" },
-  "Cabinet":         { dot: "#C9A84C", text: "#9a7a28" },
+  "Early Life":      { dot: "#fc8814", text: "#e07710" },
+  "Political Entry": { dot: "#1a1a1a", text: "#1a1a1a" },
+  "Family":          { dot: "#fc8814", text: "#e07710" },
+  "RSS & BJP":       { dot: "#fc8814", text: "#e07710" },
+  "Gujarat":         { dot: "#1a1a1a", text: "#1a1a1a" },
+  "Parliament":      { dot: "#fc8814", text: "#e07710" },
+  "Cabinet":         { dot: "#1a1a1a", text: "#1a1a1a" },
 };
 
 export default function JourneySection() {
-  const [current, setCurrent]       = useState(0);
-  const [animDir, setAnimDir]       = useState("next");
+  const [current, setCurrent]         = useState(0);
+  const [animDir, setAnimDir]         = useState("next");
   const [progressKey, setProgressKey] = useState(0);
   const timerRef = useRef(null);
   const dotRefs  = useRef([]);
@@ -101,8 +102,7 @@ export default function JourneySection() {
     startTimer();
   };
 
-  const nav = (d) =>
-    goTo((current + d + milestones.length) % milestones.length);
+  const nav = (d) => goTo((current + d + milestones.length) % milestones.length);
 
   const m  = milestones[current];
   const tc = TAG_COLORS[m.tag] || TAG_COLORS["Early Life"];
@@ -126,20 +126,18 @@ export default function JourneySection() {
         }
         .anim-next { animation: fadeUp   0.38s ease both; }
         .anim-prev { animation: fadeDown 0.38s ease both; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
 
-      {/*
-        KEY FIX: position:relative + overflow:hidden on the section
-        so nothing bleeds outside horizontally at any viewport width.
-        NO absolute elements use vw units or right-0 without being
-        clipped by this container.
-      */}
-      <section
-        className="bg-white py-10 sm:py-14 md:py-20 relative"
-        style={{ overflow: "hidden" }}
-      >
+      <section className="bg-[#FFFFFF] py-10 sm:py-14 md:py-20 relative overflow-hidden">
 
-        {/* ── Content wrapper — never wider than viewport ── */}
+        {/* Subtle bg blob */}
+        <div className="pointer-events-none absolute top-0 left-0 w-[40%] h-[50%] rounded-full opacity-40"
+          style={{ background: "radial-gradient(circle, rgba(252,136,20,0.06) 0%, transparent 70%)" }} />
+        <div className="pointer-events-none absolute bottom-0 right-0 w-[35%] h-[45%] rounded-full opacity-40"
+          style={{ background: "radial-gradient(circle, rgba(232,231,230,0.6) 0%, transparent 70%)" }} />
+
         <div
           className="relative z-10 w-full mx-auto"
           style={{ maxWidth: 1240, paddingLeft: "clamp(1rem,4vw,3.5rem)", paddingRight: "clamp(1rem,4vw,3.5rem)" }}
@@ -149,33 +147,31 @@ export default function JourneySection() {
           <div className="flex items-end justify-between mb-8 sm:mb-12 md:mb-14 gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-2 flex-wrap">
-                <span className="block w-5 h-[2px] rounded bg-[#E8541A] flex-shrink-0" />
-                <span className="text-[0.58rem] sm:text-[0.6rem] font-black tracking-[0.28em] uppercase text-[#E8541A] whitespace-nowrap">
+                <span className="block w-5 h-[2px] rounded bg-[#fc8814] flex-shrink-0" />
+                <span className="text-[0.58rem] sm:text-[0.6rem] font-black tracking-[0.28em] uppercase text-[#fc8814] whitespace-nowrap">
                   A Life of Service
                 </span>
-                <span className="block w-5 h-[2px] rounded bg-[#138808] flex-shrink-0" />
+                <span className="block w-5 h-[2px] rounded bg-[#e8e7e6] flex-shrink-0" />
               </div>
               <h2
-                className="font-black text-[#0D1B3E] leading-none"
-                style={{
-                  fontFamily: "'Georgia', serif",
-                  fontSize:   "clamp(1.8rem, 5vw, 3.4rem)",
-                }}
+                className="font-black text-[#1a1a1a] leading-none"
+                style={{ fontSize: "clamp(1.8rem, 5vw, 3.4rem)" }}
               >
-                The&nbsp;<span className="italic text-[#E8541A]">Journey</span>
+                The&nbsp;<span className="italic text-[#fc8814]">Journey</span>
               </h2>
             </div>
 
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="hidden sm:block text-[0.65rem] font-bold tracking-widest text-[#0D1B3E]/30 mr-1">
+              <span className="hidden sm:block text-[0.65rem] font-bold tracking-widest text-[#1a1a1a]/30 mr-1">
                 {String(current + 1).padStart(2, "0")}&nbsp;/&nbsp;{String(milestones.length).padStart(2, "0")}
               </span>
               {[-1, 1].map((d) => (
                 <button
                   key={d}
                   onClick={() => nav(d)}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#0D1B3E]/20 flex items-center justify-center
-                    text-[#0D1B3E]/50 hover:bg-[#E8541A] hover:border-[#E8541A] hover:text-white transition-all duration-200 text-base"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#e8e7e6] flex items-center justify-center
+                    text-[#1a1a1a]/40 hover:bg-[#fc8814] hover:border-[#fc8814] hover:text-white
+                    transition-all duration-200 text-base"
                 >
                   {d === -1 ? "←" : "→"}
                 </button>
@@ -184,13 +180,9 @@ export default function JourneySection() {
           </div>
 
           {/* ── MAIN CARD ── */}
-          {/*
-            Using flex-col (mobile) → flex-row (lg) instead of CSS grid
-            so there's no grid blowout on narrow screens.
-          */}
           <div
-            className="flex flex-col lg:flex-row rounded-xl overflow-hidden border border-[#0D1B3E]/[0.07]"
-            style={{ boxShadow: "0 8px 50px rgba(13,27,62,0.10)" }}
+            className="flex flex-col lg:flex-row rounded-xl overflow-hidden border border-[#e8e7e6]"
+            style={{ boxShadow: "0 8px 50px rgba(252,136,20,0.08)" }}
           >
 
             {/* IMAGE SIDE */}
@@ -202,87 +194,82 @@ export default function JourneySection() {
                 key={current}
                 src={m.img}
                 alt={m.heading}
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.04]"
+                className="absolute inset-0 w-full h-full object-cover object-center
+                  transition-transform duration-700 hover:scale-[1.04]"
               />
-              {/* overlay */}
+              {/* Overlay — dark with orange tint */}
               <div
                 className="absolute inset-0"
-                style={{ background: "linear-gradient(140deg,rgba(8,15,34,0.70) 0%,rgba(8,15,34,0.12) 55%,transparent 100%)" }}
+                style={{ background: "linear-gradient(140deg, rgba(26,26,26,0.72) 0%, rgba(252,136,20,0.12) 55%, transparent 100%)" }}
               />
 
-              {/* year */}
+              {/* Year */}
               <div className="absolute top-4 left-4 sm:top-6 sm:left-6">
                 <span
                   key={`yr-${current}`}
                   className={`font-black text-white leading-none drop-shadow-lg ${animDir === "next" ? "anim-next" : "anim-prev"}`}
-                  style={{
-                    fontFamily: "'Georgia', serif",
-                    fontSize:   "clamp(2.2rem, 6vw, 4.5rem)",
-                  }}
+                  style={{ fontSize: "clamp(2.2rem, 6vw, 4.5rem)" }}
                 >
                   {m.year}
                 </span>
               </div>
 
-              {/* tag */}
+              {/* Tag badge */}
               <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
                 <span
                   key={`tag-${current}`}
-                  className={`inline-block text-[0.58rem] sm:text-[0.6rem] font-black tracking-[0.2em] uppercase px-3 py-[5px] rounded-full ${animDir === "next" ? "anim-next" : "anim-prev"}`}
-                  style={{ background: tc.dot, color: "#fff", animationDelay: "0.05s" }}
+                  className={`inline-block text-[0.58rem] sm:text-[0.6rem] font-black tracking-[0.2em] uppercase
+                    px-3 py-[5px] rounded-full ${animDir === "next" ? "anim-next" : "anim-prev"}`}
+                  style={{ background: "#fc8814", color: "#FFFFFF", animationDelay: "0.05s" }}
                 >
                   {m.tag}
                 </span>
               </div>
 
-              {/* progress bar */}
+              {/* Progress bar */}
               <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/10">
                 <div
                   key={progressKey}
                   className="j-prog h-full"
-                  style={{ background: "linear-gradient(90deg,#E8541A,#C9A84C,#138808)" }}
+                  style={{ background: "linear-gradient(90deg, #fc8814, #e8e7e6, #fc8814)" }}
                 />
               </div>
             </div>
 
             {/* CONTENT SIDE */}
-            <div className="flex-1 bg-white flex flex-col justify-between p-6 sm:p-8 md:p-10">
+            <div className="flex-1 bg-[#FFFFFF] flex flex-col justify-between p-6 sm:p-8 md:p-10">
 
               <div
                 key={`content-${current}`}
                 className={animDir === "next" ? "anim-next" : "anim-prev"}
               >
                 <p
-                  className="text-[0.58rem] sm:text-[0.62rem] font-black tracking-[0.26em] uppercase mb-3"
-                  style={{ color: tc.dot }}
+                  className="text-[0.58rem] sm:text-[0.62rem] font-black tracking-[0.26em] uppercase mb-3 text-[#fc8814]"
                 >
                   {m.sub}
                 </p>
 
                 <h3
-                  className="font-black text-[#0D1B3E] leading-[1.12] mb-4"
-                  style={{
-                    fontFamily: "'Georgia', serif",
-                    fontSize:   "clamp(1.35rem, 3.5vw, 2.2rem)",
-                  }}
+                  className="font-black text-[#1a1a1a] leading-[1.12] mb-4"
+                  style={{ fontSize: "clamp(1.35rem, 3.5vw, 2.2rem)" }}
                 >
                   {m.heading}
                 </h3>
 
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="h-[2px] w-8 rounded" style={{ background: tc.dot }} />
-                  <div className="w-[5px] h-[5px] rounded-full bg-[#C9A84C]" />
-                  <div className="h-px flex-1 bg-[#0D1B3E]/10 rounded" />
+                  <div className="h-[2px] w-8 rounded bg-[#fc8814]" />
+                  <div className="w-[5px] h-[5px] rounded-full bg-[#fc8814]/40" />
+                  <div className="h-px flex-1 bg-[#e8e7e6] rounded" />
                 </div>
 
-                <p className="text-[0.88rem] sm:text-[0.95rem] text-[#0D1B3E]/60 leading-[1.85]">
+                <p className="text-[0.88rem] sm:text-[0.95rem] text-[#1a1a1a]/55 leading-[1.85]">
                   {m.body}
                 </p>
               </div>
 
-              {/* footer */}
-              <div className="flex items-center justify-between pt-6 mt-6 border-t border-[#0D1B3E]/[0.07]">
-                {/* pill dots */}
+              {/* Footer */}
+              <div className="flex items-center justify-between pt-6 mt-6 border-t border-[#e8e7e6]">
+                {/* Pill dots */}
                 <div className="flex items-center gap-[6px] flex-wrap">
                   {milestones.map((_, i) => (
                     <button
@@ -292,7 +279,7 @@ export default function JourneySection() {
                       style={{
                         width:      i === current ? 20 : 6,
                         height:     6,
-                        background: i === current ? tc.dot : "rgba(13,27,62,0.15)",
+                        background: i === current ? "#fc8814" : "rgba(26,26,26,0.12)",
                         flexShrink: 0,
                       }}
                     />
@@ -300,8 +287,9 @@ export default function JourneySection() {
                 </div>
 
                 <button
-                  className="group flex items-center gap-2 text-[0.68rem] sm:text-[0.72rem] font-black tracking-[0.14em] uppercase transition-colors duration-200 flex-shrink-0 ml-4"
-                  style={{ color: tc.dot }}
+                  className="group flex items-center gap-2 text-[0.68rem] sm:text-[0.72rem]
+                    font-black tracking-[0.14em] uppercase text-[#fc8814]
+                    hover:text-[#e07710] transition-colors duration-200 flex-shrink-0 ml-4"
                 >
                   Read More
                   <svg
@@ -318,13 +306,12 @@ export default function JourneySection() {
 
           {/* ── YEAR STRIP ── */}
           <div className="mt-6 sm:mt-8 relative">
-            {/* track line */}
-            <div className="absolute top-[9px] left-0 right-0 h-px bg-[#0D1B3E]/10 z-0" />
+            {/* Track line */}
+            <div className="absolute top-[9px] left-0 right-0 h-px bg-[#e8e7e6] z-0" />
 
             <div className="flex items-start overflow-x-auto hide-scroll relative z-10 p-2">
               {milestones.map((ms, i) => {
                 const isActive = i === current;
-                const tc2 = TAG_COLORS[ms.tag] || TAG_COLORS["Early Life"];
                 return (
                   <button
                     key={ms.year}
@@ -333,13 +320,13 @@ export default function JourneySection() {
                     className="flex flex-col items-center gap-1.5 transition-all duration-200 flex-shrink-0"
                     style={{ width: `${100 / milestones.length}%`, minWidth: 72 }}
                   >
-                    {/* dot */}
+                    {/* Dot */}
                     <div
                       className="w-[18px] h-[18px] rounded-full border-2 flex items-center justify-center transition-all duration-300"
                       style={{
-                        borderColor:     isActive ? tc2.dot : "rgba(13,27,62,0.18)",
-                        backgroundColor: isActive ? tc2.dot : "#fff",
-                        boxShadow:       isActive ? `0 0 0 3px ${tc2.dot}30` : "none",
+                        borderColor:     isActive ? "#fc8814" : "#e8e7e6",
+                        backgroundColor: isActive ? "#fc8814" : "#FFFFFF",
+                        boxShadow:       isActive ? "0 0 0 3px rgba(252,136,20,0.22)" : "none",
                         transform:       isActive ? "scale(1.2)" : "scale(1)",
                       }}
                     >
@@ -348,14 +335,15 @@ export default function JourneySection() {
 
                     <span
                       className="text-[0.65rem] font-black tracking-wider transition-colors duration-200"
-                      style={{ color: isActive ? tc2.dot : "rgba(13,27,62,0.28)" }}
+                      style={{ color: isActive ? "#fc8814" : "rgba(26,26,26,0.28)" }}
                     >
                       {ms.year}
                     </span>
 
                     <span
-                      className="text-[0.58rem] font-medium leading-tight text-center px-1 transition-colors duration-200 hidden sm:block"
-                      style={{ color: isActive ? "#0D1B3E" : "rgba(13,27,62,0.3)" }}
+                      className="text-[0.58rem] font-medium leading-tight text-center px-1
+                        transition-colors duration-200 hidden sm:block"
+                      style={{ color: isActive ? "#1a1a1a" : "rgba(26,26,26,0.28)" }}
                     >
                       {ms.heading}
                     </span>

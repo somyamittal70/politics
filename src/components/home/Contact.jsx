@@ -185,7 +185,7 @@ export default function ContactSection() {
           <div className="mb-12 md:mb-16">
             <div
               className="flex items-center gap-3 mb-3"
-              style={{ fontFamily: "Raleway, sans-serif" }}
+              style={{ fontFamily: "'Playfair', serif"}}
             >
               <span className="w-7 h-[2px] bg-[#E8541A] rounded" />
               <span className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#E8541A]">
@@ -309,7 +309,7 @@ export default function ContactSection() {
                 </h3>
                 <p
                   className="text-[0.82rem] text-gray/500 mb-7"
-                  style={{ fontFamily: "Raleway, sans-serif" }}
+                  style={{ fontFamily: "'Playfair', serif" }}
                 >
                   Fill the form below and our team will get back to you shortly.
                 </p>
@@ -371,7 +371,7 @@ export default function ContactSection() {
                           onFocus={() => setFocused("email")}
                           onBlur={() => setFocused("")}
                           className={inputStyle("email")}
-                          style={{ fontFamily: "Raleway, sans-serif" }}
+                          style={{ fontFamily: "'Playfair', serif" }}
                           required
                         />
                       </div>
