@@ -161,10 +161,10 @@ function CampaignCard({ item, index }) {
             <span className="text-[3.5rem] font-black leading-none"
               style={{ fontFamily: "'Playfair Display', serif", color: item.color }}>{item.reach}</span>
             <span className="text-[0.6rem] font-black tracking-[0.2em] uppercase text-[#6B6560]"
-              style={{ fontFamily: "Raleway, sans-serif" }}>{item.reachLabel}</span>
+              style={{ fontFamily: "Playfair Display, sans-serif" }}>{item.reachLabel}</span>
             <div className="mt-4 w-12 h-[2px]" style={{ background: item.color }} />
             <span className="text-[0.58rem] font-bold text-[#8A8278]"
-              style={{ fontFamily: "Raleway, sans-serif" }}>{item.states} · {item.year}</span>
+              style={{ fontFamily: "Playfair Display, sans-serif" }}>{item.states} · {item.year}</span>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100
@@ -225,7 +225,7 @@ export default function CampaignsList() {
   const filtered = active === "All" ? CAMPAIGNS : CAMPAIGNS.filter(c => c.category === active);
 
   return (
-    <section className="relative bg-[#0D1B3E] py-24 overflow-hidden">
+    <section className="relative bg-[#1a1a1a]/60 py-24 overflow-hidden">
       {/* Grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{ backgroundImage: "linear-gradient(#FDFAF5 1px,transparent 1px),linear-gradient(90deg,#FDFAF5 1px,transparent 1px)", backgroundSize: "48px 48px" }} />
@@ -262,7 +262,7 @@ export default function CampaignsList() {
             <button key={f} onClick={() => setActive(f)}
               className="relative px-5 py-2 text-[0.6rem] font-black tracking-[0.18em] uppercase
                 transition-all duration-250 overflow-hidden"
-              style={{ fontFamily: "Raleway, sans-serif" }}>
+              style={{ fontFamily: "Playfair Display, sans-serif" }}>
               {active === f
                 ? <><span className="relative z-10 text-white">{f}</span><span className="absolute inset-0" style={{ background: "#fc8814" }} /></>
                 : <><span className="relative z-10" style={{ color: "#e8e7e6", opacity: 0.5 }}>{f}</span><span className="absolute inset-0 border border-white/14" /></>}
