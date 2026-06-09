@@ -11,25 +11,49 @@ export default function BreakingNews() {
   ];
 
   return (
-    <section className="bg-[#0D1B3E] overflow-hidden border-y border-[#C8972B]/20">
-      <div className="flex items-center">
-        {/* Left Label */}
-        <div className="bg-[#E8541A] px-6 py-4 flex items-center gap-2 shrink-0">
-          <Megaphone size={18} className="text-white" />
+    <section className="bg-white border-y border-[#E8E7E6] overflow-hidden">
+      <div className="flex items-center min-h-[56px] md:min-h-[64px]">
+        {/* Breaking Label */}
+        <div
+          className="
+            shrink-0
+            bg-[#FC8814]
+            px-4
+            sm:px-5
+            md:px-6
+            py-4
+            flex
+            items-center
+            gap-2
+            h-full
+          "
+        >
+          <Megaphone size={18} className="text-white flex-shrink-0" />
 
-          <span className="text-white font-semibold uppercase tracking-wider text-sm">
+          <span
+            className="
+              text-white
+              font-bold
+              uppercase
+              tracking-wider
+              text-[11px]
+              sm:text-xs
+              md:text-sm
+              whitespace-nowrap
+            "
+          >
             Breaking News
           </span>
         </div>
 
-        {/* Ticker */}
+        {/* News Ticker */}
         <div className="relative overflow-hidden flex-1">
           <motion.div
             animate={{
               x: ["0%", "-100%"],
             }}
             transition={{
-              duration: 25,
+              duration: 30,
               repeat: Infinity,
               ease: "linear",
             }}
@@ -38,11 +62,35 @@ export default function BreakingNews() {
             {[...newsItems, ...newsItems].map((item, index) => (
               <div
                 key={index}
-                className="flex items-center text-[#F5F5F5] px-10 py-4"
+                className="
+                  flex
+                  items-center
+                  px-6
+                  md:px-10
+                  py-4
+                "
               >
-                <span className="w-2 h-2 rounded-full bg-[#C8972B] mr-4" />
+                <span
+                  className="
+                    w-2
+                    h-2
+                    rounded-full
+                    bg-[#FC8814]
+                    mr-4
+                    flex-shrink-0
+                  "
+                />
 
-                <span className="font-medium">{item}</span>
+                <span
+                  className="
+                    text-[#4B5563]
+                    font-medium
+                    text-sm
+                    md:text-[15px]
+                  "
+                >
+                  {item}
+                </span>
               </div>
             ))}
           </motion.div>

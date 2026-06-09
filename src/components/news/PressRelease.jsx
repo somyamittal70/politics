@@ -34,35 +34,41 @@ const releases = [
 
 export default function PressRelease() {
   return (
-    <section className="py-20 bg-[#F7F2E8] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-20 md:py-28 bg-[#FFFFFF] overflow-hidden">
+      <div className="max-w-6xl mx-auto px-5 md:px-8 lg:px-12">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14 md:mb-20"
         >
-          <span className="uppercase tracking-[0.3em] text-[#C8972B] text-sm font-semibold">
+          <span
+            className="uppercase tracking-[0.3em] text-[#FC8814] text-[0.65rem] md:text-[0.7rem] font-black"
+            style={{ fontFamily: "Raleway,sans-serif" }}
+          >
             Official Updates
           </span>
 
           <h2
-            className="mt-3 text-4xl md:text-5xl text-[#0D1B3E]"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            className="mt-3 md:mt-4 text-3xl md:text-4xl lg:text-5xl text-[#333333] leading-tight"
+            style={{ fontFamily: "'Playfair Display',serif" }}
           >
-            Press Releases
+            Press <em className="text-[#FC8814] not-italic italic">Releases</em>
           </h2>
 
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <p
+            className="mt-4 md:mt-5 text-[#666666] max-w-2xl mx-auto text-sm md:text-base leading-7"
+            style={{ fontFamily: "Raleway,sans-serif" }}
+          >
             Stay informed with official statements and important announcements.
           </p>
         </motion.div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Center Line */}
-          <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-[#E8541A] via-[#C8972B] to-[#E8541A]" />
+          {/* Center Line - Desktop Only */}
+          <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-[#FC8814] via-[#FC8814]/50 to-[#FC8814]" />
 
           {releases.map((item, index) => (
             <motion.div
@@ -76,78 +82,99 @@ export default function PressRelease() {
                 x: 0,
               }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className={`relative mb-6 md:mb-8 flex items-center ${
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`relative mb-6 md:mb-10 flex items-center ${
                 index % 2 === 0 ? "md:justify-start" : "md:justify-end"
               }`}
             >
-              {/* Timeline Dot */}
-              <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-[#E8541A] items-center justify-center shadow-md z-10">
-                <FileText size={16} className="text-[#E8541A]" />
+              {/* Timeline Dot - Desktop */}
+              <motion.div
+                whileHover={{ scale: 1.15 }}
+                className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#FFFFFF] border-2 border-[#FC8814] items-center justify-center shadow-lg hover:shadow-xl transition-shadow z-10"
+              >
+                <FileText
+                  size={18}
+                  className="text-[#FC8814]"
+                  strokeWidth={2}
+                />
+              </motion.div>
+
+              {/* Mobile Timeline Dot */}
+              <div className="md:hidden absolute -left-5 top-0 w-8 h-8 rounded-full bg-[#FFFFFF] border-2 border-[#FC8814] flex items-center justify-center shadow-md z-10">
+                <div className="w-2 h-2 rounded-full bg-[#FC8814]" />
               </div>
 
               {/* Card */}
-              <div
+              <motion.div
+                whileHover={{
+                  y: -4,
+                  shadow: "0 20px 40px rgba(252, 136, 20, 0.15)",
+                }}
                 className="
                   w-full md:w-[45%]
-                  bg-white
-                  border border-[#C8972B]/10
-                  rounded-3xl
+                  bg-[#FFFFFF]
+                  border border-[#E8E7E6]
+                  rounded-2xl md:rounded-3xl
                   shadow-md
                   hover:shadow-xl
-                  transition-all duration-300
+                  transition-all
+                  duration-300
                   overflow-hidden
+                  md:ml-6
                 "
               >
-                {/* Top Accent */}
-                <div className="h-1 bg-gradient-to-r from-[#E8541A] to-[#C8972B]" />
+                {/* Top Accent Bar */}
+                <div className="h-[2px] bg-[#FC8814]" />
 
-                <div className="p-5 md:p-6">
-                  {/* Date */}
-                  <span className="inline-flex px-3 py-1 rounded-full bg-[#F7F2E8] text-[#C8972B] text-xs font-semibold">
+                <div className="p-5 md:p-6 lg:p-7">
+                  {/* Date Badge */}
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="inline-flex px-3 py-1.5 rounded-full bg-[#FC8814]/8 text-[#FC8814] text-[0.65rem] md:text-[0.7rem] font-black tracking-wider uppercase border border-[#FC8814]/20"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
                     {item.date}
-                  </span>
+                  </motion.span>
 
                   {/* Title */}
                   <h3
-                    className="mt-3 text-lg md:text-xl text-[#0D1B3E] leading-snug"
-                    style={{
-                      fontFamily: "Playfair Display, serif",
-                    }}
+                    className="mt-3 md:mt-4 text-base md:text-lg lg:text-xl text-[#333333] leading-snug font-black"
+                    style={{ fontFamily: "'Playfair Display',serif" }}
                   >
                     {item.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 text-gray-600 text-sm leading-6 line-clamp-2">
+                  <p
+                    className="mt-3 md:mt-4 text-[#666666] text-[0.85rem] md:text-sm leading-6 line-clamp-2"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
                     {item.description}
                   </p>
 
                   {/* Button */}
-                  <button className="group mt-4 flex items-center gap-2 text-[#E8541A] text-sm font-medium hover:text-[#C8972B] transition">
+                  <motion.button
+                    whileHover={{ x: 4 }}
+                    className="group mt-4 md:mt-5 flex items-center gap-2 text-[#FC8814] text-[0.7rem] md:text-[0.75rem] font-black tracking-[0.08em] uppercase hover:text-[#333333] transition-colors duration-200"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
                     Read More
                     <ArrowRight
-                      size={16}
-                      className="group-hover:translate-x-1 transition-transform"
+                      size={14}
+                      strokeWidth={2.5}
+                      className="group-hover:translate-x-1 transition-transform duration-200"
                     />
-                  </button>
+                  </motion.button>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
+
+          {/* Mobile Timeline Line */}
+          <div className="md:hidden absolute -left-4 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FC8814] via-[#FC8814]/50 to-[#E8E7E6]" />
         </div>
 
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center mt-10"
-        >
-          <button className="bg-[#0D1B3E] hover:bg-[#E8541A] text-white px-8 py-3 rounded-full transition-all duration-300">
-            View All Press Releases
-          </button>
-        </motion.div>
+        
       </div>
     </section>
   );

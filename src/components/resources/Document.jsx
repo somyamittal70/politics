@@ -48,8 +48,7 @@ const documents = [
     pages: 88,
     type: "PDF",
     date: "Dec 2023",
-    icon: "🔐",
-    color: "#E8541A",
+    color: "#FC8814",
   },
   {
     id: 2,
@@ -59,7 +58,6 @@ const documents = [
     pages: 32,
     type: "PDF",
     date: "Jan 2020",
-    icon: "⚖️",
     color: "#C9A84C",
   },
   {
@@ -70,7 +68,6 @@ const documents = [
     pages: 240,
     type: "PDF",
     date: "Mar 2024",
-    icon: "📊",
     color: "#138808",
   },
   {
@@ -81,8 +78,7 @@ const documents = [
     pages: 56,
     type: "PDF",
     date: "Aug 2019",
-    icon: "🏔",
-    color: "#E8541A",
+    color: "#FC8814",
   },
   {
     id: 5,
@@ -92,7 +88,6 @@ const documents = [
     pages: 44,
     type: "PDF",
     date: "Feb 2024",
-    icon: "💰",
     color: "#C9A84C",
   },
   {
@@ -103,7 +98,6 @@ const documents = [
     pages: 180,
     type: "PDF",
     date: "Jan 2024",
-    icon: "📈",
     color: "#138808",
   },
   {
@@ -114,8 +108,7 @@ const documents = [
     pages: 112,
     type: "PDF",
     date: "Dec 2023",
-    icon: "🎙",
-    color: "#E8541A",
+    color: "#FC8814",
   },
   {
     id: 8,
@@ -125,7 +118,6 @@ const documents = [
     pages: 24,
     type: "PDF",
     date: "Aug 2019",
-    icon: "📋",
     color: "#C9A84C",
   },
   {
@@ -136,7 +128,6 @@ const documents = [
     pages: 48,
     type: "PDF",
     date: "Feb 2024",
-    icon: "⚓",
     color: "#138808",
   },
 ];
@@ -182,20 +173,20 @@ export default function DocumentsSection() {
           className="mb-10"
         >
           <div className="flex items-center gap-3 mb-3">
-            <span className="w-7 h-[2px] bg-[#E8541A] rounded" />
+            <span className="w-7 h-[2px] bg-[#FC8814] rounded" />
             <span
-              className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#E8541A]"
+              className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#FC8814]"
               style={{ fontFamily: "Raleway,sans-serif" }}
             >
               Official Downloads
             </span>
           </div>
           <h2
-            className="text-[2.2rem] md:text-[3rem] font-black text-[#0D1B3E] leading-[1.1]"
+            className="text-[2.2rem] md:text-[3rem] font-black text-[#333333] leading-[1.1]"
             style={{ fontFamily: "'Playfair Display',serif" }}
           >
             Documents &amp;{" "}
-            <em className="text-[#E8541A] not-italic italic">Reports</em>
+            <em className="text-[#FC8814] not-italic italic">Reports</em>
           </h2>
         </motion.div>
 
@@ -278,7 +269,7 @@ export default function DocumentsSection() {
               initial="hidden"
               animate={inView ? "show" : "hidden"}
               className="group flex items-start gap-4 bg-[#FFFFFF] border border-[#E8E7E6] p-5
-                hover:border-[#E8541A]/35 hover:shadow-[0_8px_28px_rgba(232,84,26,0.09)]
+                hover:border-[#FC8814]/35 hover:shadow-[0_8px_28px_rgba(232,84,26,0.09)]
                 transition-all duration-300 relative overflow-hidden"
               whileHover={{ y: -3 }}
             >
@@ -364,7 +355,7 @@ export default function DocumentsSection() {
               <motion.button
                 className="flex-shrink-0 w-9 h-9 flex items-center justify-center
                   border border-[#EDE5D0] text-[#7A6E5F] rounded-sm
-                  group-hover:border-[#E8541A] group-hover:bg-[#E8541A] group-hover:text-[#FDFAF5]
+                  group-hover:border-[#FC8814] group-hover:bg-[#FC8814] group-hover:text-[#FDFAF5]
                   transition-all duration-250"
                 whileTap={{ scale: 0.9 }}
                 aria-label="Download"
@@ -393,7 +384,7 @@ export default function DocumentsSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12
-            bg-[#0D1B3E] p-7 md:p-9"
+            bg-[#87888c] p-7 md:p-9"
         >
           <div>
             <h4
@@ -411,7 +402,7 @@ export default function DocumentsSection() {
           </div>
           <motion.a
             href="#contact-us"
-            className="flex-shrink-0 inline-flex items-center gap-2 bg-[#E8541A] text-[#FDFAF5]
+            className="flex-shrink-0 inline-flex items-center gap-2 bg-[#FC8814] text-[#FDFAF5]
               text-[0.75rem] font-black tracking-[0.16em] uppercase px-7 py-4 no-underline
               hover:bg-[#F4712E] transition-colors duration-200"
             style={{
