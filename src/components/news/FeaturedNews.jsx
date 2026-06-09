@@ -12,18 +12,18 @@ export default function FeaturedNews() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="uppercase tracking-[0.3em] text-[#C8972B] text-sm font-semibold">
+          <span className="uppercase tracking-[0.3em] text-[#FC8814] text-sm font-semibold">
             Featured Story
           </span>
 
           <h2
-            className="mt-4 text-4xl md:text-5xl text-[#0D1B3E]"
+            className="mt-4 text-4xl md:text-5xl text-[#333333]"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             Highlighted News & Announcements
           </h2>
 
-          <div className="w-24 h-1 bg-[#E8541A] mx-auto mt-6 rounded-full" />
+          <div className="w-24 h-1 bg-[#FC8814] mx-auto mt-6 rounded-full" />
         </motion.div>
 
         {/* Featured Card */}
@@ -43,7 +43,7 @@ export default function FeaturedNews() {
             />
 
             <div className="absolute top-6 left-6">
-              <span className="bg-[#E8541A] text-white px-5 py-2 rounded-full text-sm font-medium">
+              <span className="bg-[#FC8814] text-white px-5 py-2 rounded-full text-sm font-medium">
                 Featured Update
               </span>
             </div>
@@ -51,13 +51,13 @@ export default function FeaturedNews() {
 
           {/* Content */}
           <div className="p-8 md:p-12 flex flex-col justify-center">
-            <div className="flex items-center gap-3 text-[#C8972B] mb-4">
+            <div className="flex items-center gap-3 text-[#FC8814] mb-4">
               <CalendarDays size={18} />
               <span className="text-sm font-medium">June 10, 2026</span>
             </div>
 
             <h3
-              className="text-3xl md:text-4xl text-[#0D1B3E] leading-tight"
+              className="text-3xl md:text-4xl text-[#333333] leading-tight"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
               Major Infrastructure Development Initiative Approved For Regional
@@ -78,7 +78,7 @@ export default function FeaturedNews() {
             </p>
 
             <div className="mt-8">
-              <button className="group bg-[#E8541A] hover:bg-[#C8972B] text-white px-8 py-4 rounded-full flex items-center gap-3 transition-all duration-300">
+              <button className="group bg-[#FC8814] hover:bg-[#333333] text-white px-8 py-4  flex items-center gap-3 transition-all duration-300">
                 Read Full Story
                 <ArrowRight
                   size={18}

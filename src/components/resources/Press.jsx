@@ -94,11 +94,11 @@ const releases = [
 ];
 
 const tagColors = {
-  New: "bg-[#E8541A] text-[#FDFAF5]",
-  Press: "bg-[#0D1B3E] text-[#FDFAF5]",
-  Statement: "bg-[#C9A84C] text-[#0D1B3E]",
-  Announcement: "bg-[#138808] text-[#FDFAF5]",
-  Report: "bg-[#162547] text-[#FDFAF5]",
+  New: "bg-[#FC8814] text-[#FFFFFF]",
+  Press: "bg-[#FC8814] text-[#FFFFFF]",
+  Statement: "bg-[#FC8814] text-[#FFFFFF]",
+  Announcement: "bg-[#FC8814] text-[#FFFFFF]",
+  Report: "bg-[#FC8814] text-[#FFFFFF]",
 };
 
 const fadeUp = (d = 0) => ({
@@ -128,20 +128,20 @@ export default function PressRelease() {
   return (
     <section
       id="press-release"
-      className="relative bg-[#0D1B3E] overflow-hidden py-20 md:py-28"
+      className="relative bg-[#FFFFFF] overflow-hidden py-20 md:py-28"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"
         style={{
           backgroundImage:
-            "linear-gradient(#FDFAF5 1px,transparent 1px),linear-gradient(90deg,#FDFAF5 1px,transparent 1px)",
+            "linear-gradient(#E8E7E6 1px,transparent 1px),linear-gradient(90deg,#E8E7E6 1px,transparent 1px)",
           backgroundSize: "48px 48px",
         }}
       />
       <div
         className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06]"
         style={{
-          background: "radial-gradient(circle,#C9A84C,transparent 70%)",
+          background: "radial-gradient(circle,#FC8814,transparent 70%)",
         }}
       />
 
@@ -156,33 +156,33 @@ export default function PressRelease() {
         >
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-[2px] bg-[#E8541A] rounded" />
+              <span className="w-7 h-[2px] bg-[#FC8814] rounded" />
               <span
-                className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#E8541A]"
+                className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#FC8814]"
                 style={{ fontFamily: "Raleway,sans-serif" }}
               >
                 Official Statements
               </span>
             </div>
             <h2
-              className="text-[2.2rem] md:text-[3rem] font-black text-[#FDFAF5] leading-[1.1]"
+              className="text-[2.2rem] md:text-[3rem] font-black text-[#333333] leading-[1.1]"
               style={{ fontFamily: "'Playfair Display',serif" }}
             >
               Press{" "}
-              <em className="text-[#E8541A] not-italic italic">Releases</em>
+              <em className="text-[#FC8814] not-italic italic">Releases</em>
             </h2>
           </div>
           {/* Search */}
-          <div className="flex items-center gap-0 border border-[#FDFAF5]/10 bg-[#162547]/60 overflow-hidden min-w-[240px]">
+          <div className="flex items-center gap-0 border border-[#E8E7E6] bg-[#F9F9F9] overflow-hidden min-w-[240px]">
             <div className="px-3 py-[10px]">
               <svg
                 width="14"
                 height="14"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#FDFAF5"
+                stroke="#999999"
                 strokeWidth="2"
-                opacity="0.3"
+                opacity="0.5"
               >
                 <circle cx="11" cy="11" r="8" />
                 <path d="M21 21l-4.35-4.35" />
@@ -193,7 +193,7 @@ export default function PressRelease() {
               placeholder="Search releases..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 bg-transparent text-[#FDFAF5] placeholder-[#FDFAF5]/25 text-[0.82rem] outline-none py-[10px] pr-3"
+              className="flex-1 bg-transparent text-[#333333] placeholder-[#BBBBBB] text-[0.82rem] outline-none py-[10px] pr-3"
               style={{ fontFamily: "Raleway,sans-serif" }}
             />
           </div>
@@ -278,8 +278,8 @@ export default function PressRelease() {
                 className={`group border cursor-pointer overflow-hidden transition-all duration-300
                   ${
                     expanded === r.id
-                      ? "border-[#E8541A]/40 bg-[#162547]"
-                      : "border-[#FDFAF5]/[0.07] bg-[#162547]/40 hover:border-[#E8541A]/25 hover:bg-[#162547]/70"
+                      ? "border-[#FC8814]/40 bg-[#FFFFFF]"
+                      : "border-[#E8E7E6] bg-[#F9F9F9] hover:border-[#FC8814]/25 hover:bg-[#FFFFFF]"
                   }`}
                 onClick={() => setExpanded(expanded === r.id ? null : r.id)}
               >
@@ -287,13 +287,13 @@ export default function PressRelease() {
                   {/* Date col */}
                   <div className="flex-shrink-0 w-16 text-center hidden sm:block">
                     <p
-                      className="text-[0.6rem] font-black tracking-widest uppercase text-[#E8541A]"
+                      className="text-[0.6rem] font-black tracking-widest uppercase text-[#FC8814]"
                       style={{ fontFamily: "Raleway,sans-serif" }}
                     >
                       {r.date.split(" ")[1]}&nbsp;{r.date.split(" ")[2]}
                     </p>
                     <p
-                      className="text-[1.5rem] font-black text-[#FDFAF5]/20 leading-none"
+                      className="text-[1.5rem] font-black text-[#E8E7E6] leading-none"
                       style={{ fontFamily: "'Playfair Display',serif" }}
                     >
                       {r.date.split(" ")[0]}
@@ -301,25 +301,25 @@ export default function PressRelease() {
                   </div>
 
                   {/* Divider */}
-                  <div className="w-[1px] self-stretch bg-[#FDFAF5]/[0.06] hidden sm:block" />
+                  <div className="w-[1px] self-stretch bg-[#E8E7E6] hidden sm:block" />
 
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span
-                        className={`text-[0.55rem] font-black tracking-[0.18em] uppercase px-2 py-[3px] ${tagColors[r.tag] || "bg-[#0D1B3E] text-[#FDFAF5]"}`}
+                        className={`text-[0.55rem] font-black tracking-[0.18em] uppercase px-2 py-[3px] ${tagColors[r.tag] || "bg-[#E8E7E6] text-[#333333]"}`}
                         style={{ fontFamily: "Raleway,sans-serif" }}
                       >
                         {r.tag}
                       </span>
                       <span
-                        className="text-[0.6rem] font-bold text-[#FDFAF5]/25 uppercase tracking-widest"
+                        className="text-[0.6rem] font-bold text-[#999999] uppercase tracking-widest"
                         style={{ fontFamily: "Raleway,sans-serif" }}
                       >
                         {r.cat}
                       </span>
                       <span
-                        className="ml-auto text-[0.6rem] text-[#FDFAF5]/25"
+                        className="ml-auto text-[0.6rem] text-[#BBBBBB]"
                         style={{ fontFamily: "Raleway,sans-serif" }}
                       >
                         📖 {r.readTime}
@@ -327,7 +327,7 @@ export default function PressRelease() {
                     </div>
                     <h3
                       className={`text-[1rem] md:text-[1.1rem] font-black leading-snug transition-colors duration-200
-                      ${expanded === r.id ? "text-[#E8541A]" : "text-[#FDFAF5] group-hover:text-[#E2C06A]"}`}
+                      ${expanded === r.id ? "text-[#FC8814]" : "text-[#333333] group-hover:text-[#FC8814]"}`}
                       style={{ fontFamily: "'Playfair Display',serif" }}
                     >
                       {r.title}
@@ -345,14 +345,14 @@ export default function PressRelease() {
                           }}
                         >
                           <p
-                            className="text-[0.88rem] text-[#FDFAF5]/45 leading-[1.8] mt-3 italic"
+                            className="text-[0.88rem] text-[#666666] leading-[1.8] mt-3 italic"
                             style={{ fontFamily: "'Cormorant Garamond',serif" }}
                           >
                             {r.summary}
                           </p>
-                          <div className="flex items-center gap-4 mt-4 pt-3 border-t border-[#FDFAF5]/[0.07]">
+                          <div className="flex items-center gap-4 mt-4 pt-3 border-t border-[#E8E7E6]">
                             <button
-                              className="text-[0.68rem] font-black tracking-[0.14em] uppercase text-[#E8541A]
+                              className="text-[0.68rem] font-black tracking-[0.14em] uppercase text-[#FC8814]
                               flex items-center gap-2 hover:gap-3 transition-all duration-200"
                               style={{ fontFamily: "Raleway,sans-serif" }}
                             >
@@ -369,8 +369,8 @@ export default function PressRelease() {
                               </svg>
                             </button>
                             <button
-                              className="text-[0.68rem] font-black tracking-[0.14em] uppercase text-[#FDFAF5]/30
-                              flex items-center gap-2 hover:text-[#FDFAF5]/60 transition-all duration-200"
+                              className="text-[0.68rem] font-black tracking-[0.14em] uppercase text-[#999999]
+                              flex items-center gap-2 hover:text-[#FC8814] transition-all duration-200"
                               style={{ fontFamily: "Raleway,sans-serif" }}
                             >
                               <svg
@@ -397,7 +397,7 @@ export default function PressRelease() {
                   <motion.div
                     animate={{ rotate: expanded === r.id ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex-shrink-0 text-[#FDFAF5]/25 group-hover:text-[#E8541A] transition-colors duration-200 mt-1"
+                    className="flex-shrink-0 text-[#BBBBBB] group-hover:text-[#FC8814] transition-colors duration-200 mt-1"
                   >
                     <svg
                       width="16"
@@ -417,7 +417,7 @@ export default function PressRelease() {
 
           {filtered.length === 0 && (
             <div
-              className="text-center py-16 text-[#FDFAF5]/20"
+              className="text-center py-16 text-[#BBBBBB]"
               style={{ fontFamily: "Raleway,sans-serif" }}
             >
               No press releases found.
@@ -434,8 +434,8 @@ export default function PressRelease() {
           className="flex justify-center mt-10"
         >
           <button
-            className="text-[0.75rem] font-black tracking-[0.18em] uppercase text-[#FDFAF5]/40
-            border border-[#FDFAF5]/10 px-8 py-3 hover:border-[#E8541A]/50 hover:text-[#E8541A]
+            className="text-[0.75rem] font-black tracking-[0.18em] uppercase text-[#999999]
+            border border-[#E8E7E6] px-8 py-3 hover:border-[#FC8814] hover:text-[#FC8814]
             transition-all duration-200 flex items-center gap-2"
             style={{ fontFamily: "Raleway,sans-serif" }}
           >

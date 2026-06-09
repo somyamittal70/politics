@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  CalendarDays,
-  MapPin,
-  Clock3,
-  ArrowRight,
-} from "lucide-react";
+import { CalendarDays, MapPin, Clock3, ArrowRight } from "lucide-react";
 
 const events = [
   {
@@ -41,31 +36,36 @@ const events = [
 
 export default function UpcomingEvents() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
+    <section className="py-20 md:py-28 bg-[#FFFFFF] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-14 md:mb-20"
         >
-          <span className="uppercase tracking-[0.3em] text-[#C8972B] text-sm font-semibold">
+          <span
+            className="uppercase tracking-[0.3em] text-[#FC8814] text-[0.65rem] md:text-[0.7rem] font-black"
+            style={{ fontFamily: "Raleway,sans-serif" }}
+          >
             Upcoming Events
           </span>
 
           <h2
-            className="mt-4 text-4xl md:text-5xl text-[#0D1B3E]"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            className="mt-3 md:mt-4 text-3xl md:text-4xl lg:text-5xl text-[#333333] leading-tight"
+            style={{ fontFamily: "'Playfair Display',serif" }}
           >
-            Meet Us In Person
+            Meet Us In{" "}
+            <em className="text-[#FC8814] not-italic italic">Person</em>
           </h2>
 
-          <p className="mt-6 text-gray-600 max-w-2xl mx-auto leading-8">
-            Join upcoming public meetings, conferences,
-            leadership summits, and community engagement
-            programs across the country.
+          <p
+            className="mt-4 md:mt-6 text-[#666666] max-w-2xl mx-auto leading-7 md:leading-8 text-sm md:text-base"
+            style={{ fontFamily: "Raleway,sans-serif" }}
+          >
+            Join upcoming public meetings, conferences, leadership summits, and
+            community engagement programs across the country.
           </p>
         </motion.div>
 
@@ -74,89 +74,115 @@ export default function UpcomingEvents() {
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-[36px] bg-[#0D1B3E] mb-14"
+          className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-[#333333] mb-12 md:mb-16 shadow-xl hover:shadow-2xl transition-all duration-500"
         >
-
           {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-20"
+            className="absolute inset-0 bg-cover bg-center opacity-15"
             style={{
               backgroundImage:
                 "url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600&auto=format&fit=crop')",
             }}
           />
 
-          <div className="relative grid lg:grid-cols-2 gap-10 p-10 md:p-16">
-
-            <div>
-              <span className="inline-flex bg-[#E8541A] text-white px-5 py-2 rounded-full text-sm">
+          <div className="relative grid lg:grid-cols-2 gap-8 md:gap-12 p-6 md:p-10 lg:p-14">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                className="inline-flex bg-[#FC8814] text-[#FFFFFF] px-4 md:px-5 py-2 md:py-2.5 rounded-lg font-black text-[0.65rem] md:text-[0.7rem] tracking-[0.08em] uppercase shadow-lg"
+                style={{ fontFamily: "Raleway,sans-serif" }}
+              >
                 Featured Event
-              </span>
+              </motion.span>
 
               <h3
-                className="mt-6 text-4xl text-white leading-tight"
+                className="mt-4 md:mt-6 text-2xl md:text-3xl lg:text-4xl text-[#FFFFFF] leading-tight font-black"
                 style={{
-                  fontFamily: "Playfair Display, serif",
+                  fontFamily: "'Playfair Display',serif",
                 }}
               >
-                National Vision
-                Conference 2026
+                National Vision Conference 2026
               </h3>
 
-              <p className="mt-6 text-white/80 leading-8">
-                Bringing together policymakers,
-                community leaders, entrepreneurs,
-                and young innovators to discuss
-                sustainable growth, development,
-                and future opportunities.
+              <p
+                className="mt-4 md:mt-6 text-[#FFFFFF]/80 leading-7 md:leading-8 text-sm md:text-base"
+                style={{ fontFamily: "Raleway,sans-serif" }}
+              >
+                Bringing together policymakers, community leaders,
+                entrepreneurs, and young innovators to discuss sustainable
+                growth, development, and future opportunities.
               </p>
 
-              <button className="mt-8 bg-[#C8972B] hover:bg-[#E8541A] text-white px-8 py-4 rounded-full flex items-center gap-3 transition">
+              <motion.button
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="mt-6 md:mt-8 bg-[#FC8814] hover:bg-[#E8741F] text-[#FFFFFF] px-6 md:px-8 py-3 md:py-4 rounded-lg font-black text-[0.7rem] md:text-[0.75rem] tracking-[0.08em] uppercase flex items-center gap-2 md:gap-3 transition-all duration-300 shadow-lg hover:shadow-xl"
+                style={{ fontFamily: "Raleway,sans-serif" }}
+              >
                 Register Now
-                <ArrowRight size={18} />
-              </button>
-            </div>
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </motion.button>
+            </motion.div>
 
-            <div className="flex items-center justify-center">
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[32px] p-8 w-full max-w-sm">
-
-                <div className="text-center border-b border-white/10 pb-6">
-                  <h4 className="text-[#C8972B] text-6xl font-bold">
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center"
+            >
+              <div className="bg-[#FFFFFF]/10 backdrop-blur-xl border border-[#FFFFFF]/20 rounded-2xl md:rounded-3xl p-6 md:p-8 w-full max-w-sm hover:border-[#FC8814]/40 transition-colors duration-300">
+                <div className="text-center border-b border-[#FFFFFF]/10 pb-5 md:pb-6">
+                  <h4
+                    className="text-[#FC8814] text-5xl md:text-6xl font-black leading-none"
+                    style={{ fontFamily: "'Playfair Display',serif" }}
+                  >
                     18
                   </h4>
 
-                  <p className="text-white tracking-[0.3em] uppercase">
+                  <p
+                    className="text-[#FFFFFF] tracking-[0.3em] uppercase text-[0.7rem] md:text-[0.75rem] font-black mt-2"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
                     July
                   </p>
                 </div>
 
-                <div className="space-y-5 mt-6">
-
-                  <div className="flex items-center gap-3 text-white">
-                    <CalendarDays size={18} />
+                <div className="space-y-4 md:space-y-5 mt-5 md:mt-6">
+                  <div
+                    className="flex items-center gap-3 text-[#FFFFFF] text-sm md:text-base"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
+                    <CalendarDays size={18} strokeWidth={1.5} />
                     Saturday, July 18, 2026
                   </div>
 
-                  <div className="flex items-center gap-3 text-white">
-                    <Clock3 size={18} />
+                  <div
+                    className="flex items-center gap-3 text-[#FFFFFF] text-sm md:text-base"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
+                    <Clock3 size={18} strokeWidth={1.5} />
                     09:00 AM
                   </div>
 
-                  <div className="flex items-center gap-3 text-white">
-                    <MapPin size={18} />
+                  <div
+                    className="flex items-center gap-3 text-[#FFFFFF] text-sm md:text-base"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
+                    <MapPin size={18} strokeWidth={1.5} />
                     New Delhi Convention Centre
                   </div>
-
                 </div>
               </div>
-            </div>
-
+            </motion.div>
           </div>
         </motion.div>
 
         {/* Event Cards */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {events.map((event, index) => (
             <motion.div
               key={event.id}
@@ -169,81 +195,99 @@ export default function UpcomingEvents() {
                 y: 0,
               }}
               transition={{
-                delay: index * 0.15,
+                delay: index * 0.1,
+                duration: 0.5,
               }}
               viewport={{ once: true }}
-              className="group bg-[#F7F2E8] rounded-[32px] p-8 hover:shadow-2xl transition-all duration-500"
+              className="group bg-[#FFFFFF] border border-[#E8E7E6] rounded-2xl md:rounded-3xl p-6 md:p-7 hover:shadow-xl transition-all duration-500 hover:border-[#FC8814]/40"
             >
-
-              {/* Date */}
-              <div className="flex items-center gap-5">
-
-                <div className="w-20 h-20 rounded-2xl bg-[#E8541A] text-white flex flex-col items-center justify-center">
-
-                  <span className="text-3xl font-bold">
+              {/* Date + Title */}
+              <div className="flex items-start gap-4 md:gap-5">
+                <motion.div
+                  whileHover={{ scale: 1.08, rotate: 2 }}
+                  className="w-16 md:w-20 h-16 md:h-20 rounded-lg md:rounded-xl bg-[#FC8814] text-[#FFFFFF] flex flex-col items-center justify-center flex-shrink-0 shadow-lg"
+                >
+                  <span
+                    className="text-2xl md:text-3xl font-black leading-none"
+                    style={{ fontFamily: "'Playfair Display',serif" }}
+                  >
                     {event.day}
                   </span>
 
-                  <span className="text-xs tracking-wider">
+                  <span
+                    className="text-[0.55rem] md:text-[0.65rem] tracking-wider font-black mt-1"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
                     {event.month}
                   </span>
-                </div>
+                </motion.div>
 
-                <div>
-                  <span className="text-[#C8972B] uppercase tracking-wider text-sm">
+                <div className="flex-1">
+                  <span
+                    className="text-[#FC8814] uppercase tracking-wider text-[0.6rem] md:text-[0.65rem] font-black"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
                     Upcoming Event
                   </span>
 
                   <h3
-                    className="mt-2 text-xl text-[#0D1B3E]"
+                    className="mt-1 md:mt-2 text-base md:text-lg text-[#333333] font-black leading-snug"
                     style={{
-                      fontFamily:
-                        "Playfair Display, serif",
+                      fontFamily: "'Playfair Display',serif",
                     }}
                   >
                     {event.title}
                   </h3>
                 </div>
-
               </div>
 
-              <p className="mt-6 text-gray-600 leading-7">
+              <p
+                className="mt-4 md:mt-5 text-[#666666] leading-6 md:leading-7 text-[0.85rem] md:text-sm"
+                style={{ fontFamily: "Raleway,sans-serif" }}
+              >
                 {event.description}
               </p>
 
-              <div className="space-y-3 mt-6">
-
-                <div className="flex items-center gap-3 text-gray-600">
+              <div className="space-y-2 md:space-y-3 mt-5 md:mt-6">
+                <div
+                  className="flex items-center gap-3 text-[#666666] text-[0.8rem] md:text-sm"
+                  style={{ fontFamily: "Raleway,sans-serif" }}
+                >
                   <MapPin
                     size={16}
-                    className="text-[#E8541A]"
+                    className="text-[#FC8814] flex-shrink-0"
+                    strokeWidth={1.5}
                   />
-                  {event.location}
+                  <span>{event.location}</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-600">
+                <div
+                  className="flex items-center gap-3 text-[#666666] text-[0.8rem] md:text-sm"
+                  style={{ fontFamily: "Raleway,sans-serif" }}
+                >
                   <Clock3
                     size={16}
-                    className="text-[#E8541A]"
+                    className="text-[#FC8814] flex-shrink-0"
+                    strokeWidth={1.5}
                   />
-                  {event.time}
+                  <span>{event.time}</span>
                 </div>
-
               </div>
 
-              <button className="group mt-8 flex items-center gap-2 text-[#E8541A] hover:text-[#C8972B] transition">
-
+              <motion.button
+                whileHover={{ x: 4 }}
+                className="group mt-5 md:mt-6 flex items-center gap-2 text-[#FC8814] hover:text-[#333333] font-black text-[0.7rem] md:text-[0.75rem] tracking-[0.08em] uppercase transition-colors duration-200"
+                style={{ fontFamily: "Raleway,sans-serif" }}
+              >
                 Learn More
-
                 <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
+                  size={14}
+                  strokeWidth={2.5}
+                  className="group-hover:translate-x-1 transition-transform duration-200"
                 />
-              </button>
-
+              </motion.button>
             </motion.div>
           ))}
-
         </div>
 
         {/* CTA */}
@@ -251,13 +295,18 @@ export default function UpcomingEvents() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          transition={{ delay: 0.3 }}
+          className="text-center mt-12 md:mt-16"
         >
-          <button className="bg-[#0D1B3E] hover:bg-[#E8541A] text-white px-10 py-4 rounded-full transition-all duration-300">
+          <motion.button
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-[#333333] hover:bg-[#FC8814] text-[#FFFFFF] px-8 md:px-10 py-3 md:py-4 rounded-lg font-black text-[0.7rem] md:text-[0.75rem] tracking-[0.1em] uppercase transition-all duration-300 shadow-lg hover:shadow-xl"
+            style={{ fontFamily: "Raleway,sans-serif" }}
+          >
             View All Events
-          </button>
+          </motion.button>
         </motion.div>
-
       </div>
     </section>
   );

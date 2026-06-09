@@ -81,35 +81,36 @@ export default function LatestNews() {
   const [selectedNews, setSelectedNews] = useState(newsData[0]);
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-20 md:py-28 bg-[#FFFFFF]">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between mb-14"
+          className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 gap-6"
         >
           <div>
-            <span className="uppercase tracking-[0.3em] text-[#C8972B] text-sm font-semibold">
+            <span
+              className="uppercase tracking-[0.3em] text-[#FC8814] text-[0.65rem] md:text-[0.7rem] font-black"
+              style={{ fontFamily: "Raleway,sans-serif" }}
+            >
               Latest Updates
             </span>
 
             <h2
-              className="mt-4 text-4xl md:text-5xl text-[#0D1B3E]"
+              className="mt-3 md:mt-4 text-3xl md:text-4xl lg:text-5xl text-[#333333] leading-tight"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              News From The Ground
+              News From The{" "}
+              <em className="text-[#FC8814] not-italic italic">Ground</em>
             </h2>
           </div>
 
-          <button className="mt-6 md:mt-0 text-[#E8541A] flex items-center gap-2 font-medium hover:text-[#C8972B] transition">
-            View All News
-            <ArrowRight size={18} />
-          </button>
+          
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
           {/* Featured News - Left Side */}
           <motion.div
             key={selectedNews.id}
@@ -118,50 +119,70 @@ export default function LatestNews() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2 group"
           >
-            <div className="overflow-hidden rounded-[32px] bg-[#F7F2E8] shadow-xl h-full flex flex-col">
+            <div className="overflow-hidden rounded-2xl md:rounded-3xl bg-[#FFFFFF] border border-[#E8E7E6] shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
               {/* Featured Image */}
-              <div className="overflow-hidden h-[420px]">
+              <div className="overflow-hidden h-[280px] md:h-[380px] lg:h-[420px]">
                 <img
                   src={selectedNews.image}
                   alt={selectedNews.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
 
               {/* Featured Content */}
-              <div className="p-8 md:p-10 flex-grow flex flex-col">
-                <span className="bg-[#E8541A] text-white px-5 py-2 rounded-full text-sm font-semibold w-fit">
+              <div className="p-6 md:p-8 lg:p-10 flex-grow flex flex-col">
+                {/* Category Badge */}
+                <motion.span
+                  className="bg-[#FC8814] text-[#FFFFFF] px-4 md:px-5 py-2 md:py-2.5 rounded-full text-[0.6rem] md:text-[0.7rem] font-black tracking-[0.08em] uppercase w-fit"
+                  style={{ fontFamily: "Raleway,sans-serif" }}
+                  whileHover={{ scale: 1.05 }}
+                >
                   {selectedNews.category}
-                </span>
+                </motion.span>
 
-                <div className="flex items-center gap-3 text-[#C8972B] mt-6">
-                  <CalendarDays size={18} />
-                  <span className="text-sm font-medium">
+                {/* Date */}
+                <div className="flex items-center gap-2 md:gap-3 text-[#FC8814] mt-4 md:mt-6">
+                  <CalendarDays size={16} strokeWidth={2} />
+                  <span
+                    className="text-[0.7rem] md:text-[0.8rem] font-bold tracking-wide uppercase"
+                    style={{ fontFamily: "Raleway,sans-serif" }}
+                  >
                     {selectedNews.date}
                   </span>
                 </div>
 
+                {/* Title */}
                 <h3
-                  className="mt-5 text-3xl md:text-4xl text-[#0D1B3E] leading-tight"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  className="mt-4 md:mt-6 text-2xl md:text-3xl lg:text-4xl text-[#333333] leading-tight"
+                  style={{ fontFamily: "'Playfair Display',serif" }}
                 >
                   {selectedNews.title}
                 </h3>
 
-                <p className="mt-6 text-gray-600 leading-8 flex-grow">
+                {/* Content */}
+                <p
+                  className="mt-4 md:mt-6 text-[#666666] leading-7 md:leading-8 flex-grow text-sm md:text-base"
+                style={{ fontFamily: "Playfair Display, serif" }}
+                >
                   {selectedNews.fullContent}
                 </p>
 
-                <button className="mt-8 bg-[#0D1B3E] hover:bg-[#E8541A] text-white px-8 py-4 rounded-full flex items-center gap-3 transition w-fit">
+                {/* CTA Button */}
+                <motion.button
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="mt-6 md:mt-8 bg-[#FC8814] hover:bg-[#E8741F] text-[#FFFFFF] px-6 md:px-8 py-3 md:py-4  font-black text-[0.7rem] md:text-[0.75rem] tracking-[0.08em] uppercase flex items-center gap-2 md:gap-3 transition-all duration-200 w-fit shadow-md hover:shadow-lg"
+                  style={{ fontFamily: "Playfair Display, serif" }}
+                >
                   Read Full Story
-                  <ArrowRight size={18} />
-                </button>
+                  <ArrowRight size={16} strokeWidth={2.5} />
+                </motion.button>
               </div>
             </div>
           </motion.div>
 
           {/* Side News Tabs - Right Side */}
-          <div className="space-y-4 max-h-[900px] overflow-y-auto pr-2">
+          <div className="space-y-3 md:space-y-4 max-h-[600px] md:max-h-[900px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-[#E8E7E6] scrollbar-track-transparent">
             {newsData.map((news, index) => (
               <motion.button
                 key={news.id}
@@ -170,54 +191,57 @@ export default function LatestNews() {
                 transition={{ delay: index * 0.08 }}
                 viewport={{ once: true }}
                 onClick={() => setSelectedNews(news)}
-                className={`w-full group text-left overflow-hidden rounded-[24px] transition-all duration-300 ${
+                className={`w-full group text-left overflow-hidden rounded-xl md:rounded-2xl transition-all duration-300 ${
                   selectedNews.id === news.id
-                    ? "bg-[#C8972B]/10 border-2 border-[#C8972B] shadow-lg"
-                    : "bg-white border border-[#C8972B]/10 hover:shadow-lg hover:border-[#C8972B]/20"
+                    ? "bg-[#FC8814]/8 border-2 border-[#FC8814] shadow-md"
+                    : "bg-[#FFFFFF] border border-[#E8E7E6] hover:shadow-md hover:border-[#FC8814]/30"
                 }`}
               >
                 <div className="flex">
                   {/* News Image */}
-                  <div className="w-32 h-32 overflow-hidden flex-shrink-0">
+                  <div className="w-28 md:w-32 h-28 md:h-32 overflow-hidden flex-shrink-0">
                     <img
                       src={news.image}
                       alt={news.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
 
                   {/* News Content */}
-                  <div className="p-4 flex flex-col justify-center flex-grow">
+                  <div className="p-3 md:p-4 flex flex-col justify-center flex-grow">
                     <span
-                      className={`text-xs uppercase tracking-wider font-semibold transition ${
-                        selectedNews.id === news.id
-                          ? "text-[#E8541A]"
-                          : "text-[#E8541A]"
-                      }`}
+                      className="text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.08em] font-black text-[#FC8814] transition"
+                      style={{ fontFamily: "Raleway,sans-serif" }}
                     >
                       {news.category}
                     </span>
 
                     <h4
-                      className={`mt-2 font-semibold line-clamp-2 transition text-sm ${
+                      className={`mt-1 md:mt-2 font-black line-clamp-2 transition text-xs md:text-sm ${
                         selectedNews.id === news.id
-                          ? "text-[#0D1B3E]"
-                          : "text-[#0D1B3E] group-hover:text-[#C8972B]"
+                          ? "text-[#333333]"
+                          : "text-[#333333] group-hover:text-[#FC8814]"
                       }`}
-                      style={{ fontFamily: "Playfair Display, serif" }}
+                      style={{ fontFamily: "'Playfair Display',serif" }}
                     >
                       {news.title}
                     </h4>
 
-                    <div className="flex items-center gap-2 mt-3 text-xs text-gray-500">
-                      <CalendarDays size={14} />
+                    <div
+                      className="flex items-center gap-1.5 md:gap-2 mt-2 md:mt-3 text-[0.55rem] md:text-[0.65rem] text-[#999999]"
+                      style={{ fontFamily: "Raleway,sans-serif" }}
+                    >
+                      <CalendarDays size={12} strokeWidth={2} />
                       {news.date}
                     </div>
                   </div>
 
                   {/* Active Indicator */}
                   {selectedNews.id === news.id && (
-                    <div className="w-1 bg-[#E8541A]" />
+                    <motion.div
+                      layoutId="activeIndicator"
+                      className="w-1 bg-[#FC8814]"
+                    />
                   )}
                 </div>
               </motion.button>
