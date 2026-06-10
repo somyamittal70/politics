@@ -147,7 +147,7 @@ export default function ContactSection() {
                   <Phone className="text-[#FC8814]" />
                   <div>
                     <h4 className="font-semibold text-[#FC8814]">Phone</h4>
-                    <p className="text-gray-600">+91 98765 43210</p>
+                    <p className="text-gray-600">+91 9768047680</p>
                   </div>
                 </div>
 
@@ -155,7 +155,7 @@ export default function ContactSection() {
                   <Mail className="text-[#FC8814]" />
                   <div>
                     <h4 className="font-semibold text-[#FC8814]">Email</h4>
-                    <p className="text-gray-600">contact@example.com</p>
+                    <p className="text-gray-600">ssinghdham@gmail.com</p>
                   </div>
                 </div>
               </div>

@@ -2,7 +2,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function WhatsAppFloat() {
-  const phoneNumber = "918826606869";
+  const phoneNumber = "+919768047680";
 
   const message =
     "Hi, I am interested in interior design services. Please share details about consultation, pricing, and project timelines.";

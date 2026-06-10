@@ -186,12 +186,12 @@ export default function ContactHero() {
                   {
                     icon: Phone,
                     title: "Call Us",
-                    value: "+91 98765 43210",
+                    value: "+91 9768047680",
                   },
                   {
                     icon: Mail,
                     title: "Email Us",
-                    value: "contact@example.com",
+                    value: "ssinghdham@gmail.com",
                   },
                   {
                     icon: MapPin,
