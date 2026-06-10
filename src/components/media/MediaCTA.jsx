@@ -12,7 +12,7 @@ export default function MediaCTA() {
   return (
     <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#1a1a1a]">
       {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-[#fc8814]/10 rounded-full blur-[80px] lg:blur-[120px]" />
+      <div className="absolute top-0 left-0 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-[#C8972B]/10 rounded-full blur-[80px] lg:blur-[120px]" />
 
       <div className="absolute bottom-0 right-0 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-[#E8541A]/10 rounded-full blur-[80px] lg:blur-[120px]" />
 
@@ -38,7 +38,7 @@ export default function MediaCTA() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             {/* Left Content */}
             <div>
-              <span className="uppercase tracking-[0.25em] text-[#fc8814] text-xs sm:text-sm font-semibold">
+              <span className="uppercase tracking-[0.25em] text-[#C8972B] text-xs sm:text-sm font-semibold">
                 Media Resources
               </span>
 
@@ -57,7 +57,7 @@ export default function MediaCTA() {
                 }}
               >
                 Need Official
-                <span className="block text-[#fc8814]">Media Assets?</span>
+                <span className="block text-[#C8972B]">Media Assets?</span>
               </h2>
 
               <p className="mt-5 sm:mt-6 text-white/70 text-sm sm:text-base lg:text-lg leading-7 sm:leading-8 max-w-xl">
@@ -71,7 +71,7 @@ export default function MediaCTA() {
                 <button
                   className="
                     w-full sm:w-auto
-                    bg-[#fc8814]
+                    bg-[#C8972B]
                     hover:bg-[#E8541A]
                     text-white
                     px-6 lg:px-8
@@ -89,8 +89,8 @@ export default function MediaCTA() {
                 <button
                   className="
                     w-full sm:w-auto
-                    border border-[#fc8814]
-                    hover:bg-[#fc8814]
+                    border border-[#C8972B]
+                    hover:bg-[#C8972B]
                     text-white
                     px-6 lg:px-8
                     py-3.5 lg:py-4
@@ -113,7 +113,7 @@ export default function MediaCTA() {
                   icon: Camera,
                   value: "500+",
                   label: "Official Photos",
-                  color: "#fc8814",
+                  color: "#C8972B",
                 },
                 {
                   icon: Video,
@@ -125,7 +125,7 @@ export default function MediaCTA() {
                   icon: Newspaper,
                   value: "50+",
                   label: "Press Releases",
-                  color: "#fc8814",
+                  color: "#C8972B",
                 },
               ].map((item, index) => (
                 <div
@@ -176,7 +176,7 @@ export default function MediaCTA() {
               className="
                 flex items-center
                 gap-2
-                text-[#fc8814]
+                text-[#C8972B]
                 hover:text-[#E8541A]
                 transition
                 font-medium
