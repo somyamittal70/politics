@@ -68,18 +68,10 @@ export default function AboutHero() {
         />
       </motion.div>
 
-      {/* Gradient overlays */}
-      <div
-        className="absolute inset-0 z-[1]"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255, 255, 255, 0.55) 55%, rgba(255,255,255,0.75) 100%)",
-        }}
-      />
-      <div
-        className="absolute bottom-0 left-0 right-0 h-40 z-[2]"
-        style={{ background: "linear-gradient(to top, #FFFFFF, transparent)" }}
-      />
+      
+       {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-[#1A1A1A]/32" />
+     
 
       {/* Tricolor top bar */}
       <motion.div
@@ -123,7 +115,7 @@ export default function AboutHero() {
               {/* Name */}
               <motion.h1
                 variants={fadeUp}
-                className="font-black text-[#1a1a1a] leading-[0.95] sm:leading-[1.0] mb-2 sm:mb-3"
+                className="font-black text-white leading-[0.95] sm:leading-[1.0] mb-2 sm:mb-3"
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontSize: "clamp(2rem, 6vw, 6rem)",

@@ -153,15 +153,15 @@ export default function ConsultationModal({ isOpen, onClose }) {
               className="relative bg-white w-full max-w-sm rounded-[20px] overflow-hidden shadow-2xl"
             >
               {/* Header */}
-              <div className="bg-[#0D1B3E] p-4">
+              <div className="bg-[#1a1a1a]/90 p-4">
                 <button
                   onClick={onClose}
-                  className="absolute top-3 right-3 text-white hover:text-[#C8972B] transition"
+                  className="absolute top-3 right-3 text-white hover:text-[#FC8814] transition"
                 >
                   <X size={20} />
                 </button>
 
-                <span className="uppercase tracking-[0.15em] text-[#C8972B] text-xs font-semibold">
+                <span className="uppercase tracking-[0.15em] text-[#FC8814] text-xs font-semibold">
                   Consultation
                 </span>
 
@@ -189,7 +189,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <div className="relative">
                     <User
                       size={14}
-                      className="absolute left-3 top-2.5 text-[#C8972B]"
+                      className="absolute left-3 top-2.5 text-[#FC8814]"
                     />
                     <input
                       type="text"
@@ -201,7 +201,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       className={`w-full bg-white pl-10 pr-3 py-2 rounded-lg text-xs border-2 outline-none transition ${
                         errors.name && touched.name
                           ? "border-red-500"
-                          : "border-gray-200 focus:border-[#C8972B]"
+                          : "border-gray-200 focus:border-[#FC8814]"
                       }`}
                     />
                   </div>
@@ -218,7 +218,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <div className="relative">
                     <Mail
                       size={14}
-                      className="absolute left-3 top-2.5 text-[#C8972B]"
+                      className="absolute left-3 top-2.5 text-[#FC8814]"
                     />
                     <input
                       type="email"
@@ -230,7 +230,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       className={`w-full bg-white pl-10 pr-3 py-2 rounded-lg text-xs border-2 outline-none transition ${
                         errors.email && touched.email
                           ? "border-red-500"
-                          : "border-gray-200 focus:border-[#C8972B]"
+                          : "border-gray-200 focus:border-[#FC8814]"
                       }`}
                     />
                   </div>
@@ -247,7 +247,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <div className="relative">
                     <Phone
                       size={14}
-                      className="absolute left-3 top-2.5 text-[#C8972B]"
+                      className="absolute left-3 top-2.5 text-[#FC8814]"
                     />
                     <input
                       type="tel"
@@ -259,7 +259,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       className={`w-full bg-white pl-10 pr-3 py-2 rounded-lg text-xs border-2 outline-none transition ${
                         errors.phone && touched.phone
                           ? "border-red-500"
-                          : "border-gray-200 focus:border-[#C8972B]"
+                          : "border-gray-200 focus:border-[#FC8814]"
                       }`}
                     />
                   </div>
@@ -276,7 +276,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <div className="relative">
                     <MapPin
                       size={14}
-                      className="absolute left-3 top-2.5 text-[#C8972B]"
+                      className="absolute left-3 top-2.5 text-[#FC8814]"
                     />
                     <input
                       type="text"
@@ -288,7 +288,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       className={`w-full bg-white pl-10 pr-3 py-2 rounded-lg text-xs border-2 outline-none transition ${
                         errors.location && touched.location
                           ? "border-red-500"
-                          : "border-gray-200 focus:border-[#C8972B]"
+                          : "border-gray-200 focus:border-[#FC8814]"
                       }`}
                     />
                   </div>
@@ -312,7 +312,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     className={`w-full bg-white px-3 py-2 rounded-lg text-xs border-2 outline-none transition resize-none ${
                       errors.message && touched.message
                         ? "border-red-500"
-                        : "border-gray-200 focus:border-[#C8972B]"
+                        : "border-gray-200 focus:border-[#FC8814]"
                     }`}
                   />
                   {errors.message && touched.message && (
@@ -338,7 +338,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     duration-300
                     ${
                       isFormValid
-                        ? "bg-[#E8541A] hover:bg-[#C8972B] cursor-pointer"
+                        ? "bg-[#f08418] hover:bg-[#FC8814] cursor-pointer"
                         : "bg-gray-400 cursor-not-allowed opacity-60"
                     }
                   `}
