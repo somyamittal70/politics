@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import img from "../../assets/desktop_image.png";
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 36 },
@@ -54,18 +55,56 @@ function SectionHeader({ label, title, accent }) {
   );
 }
 
+/**
+ * CountUp - animates a number from 0 to `target` whenever `trigger` becomes true.
+ * Resets back to 0 if `trigger` becomes false (e.g. element scrolls out of view
+ * if you set `once: false` on useInView), so it can replay on re-entry.
+ */
+function CountUp({ target, suffix = "", duration = 1500, trigger }) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!trigger) {
+      setValue(0);
+      return;
+    }
+
+    let startTime = null;
+    let frame;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      setValue(Math.floor(eased * target));
+
+      if (progress < 1) {
+        frame = requestAnimationFrame(step);
+      } else {
+        setValue(target);
+      }
+    };
+
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, [trigger, target, duration]);
+
+  return <>{value}{suffix}</>;
+}
+
 export default function PersonalInfo() {
   const bioRef = useRef(null);
   const statsRef = useRef(null);
 
   const bioInView = useInView(bioRef, { once: true, margin: "-80px" });
-  const statsInView = useInView(statsRef, { once: true, margin: "-80px" });
+  // once: false -> countdown replays every time user scrolls back into this section
+  const statsInView = useInView(statsRef, { once: false, margin: "-80px" });
 
   const achievements = [
-    { number: "30+", label: "Years in Public Service" },
-    { number: "8+", label: "Major Electoral Victories" },
-    { number: "100+", label: "Communities Served" },
-    { number: "1M+", label: "People Impacted" },
+    { target: 30, suffix: "+", label: "Years in Public Service" },
+    { target: 8, suffix: "+", label: "Major Electoral Victories" },
+    { target: 100, suffix: "+", label: "Communities Served" },
+    { target: 1, suffix: "M+", label: "People Impacted" },
   ];
 
   return (
@@ -134,7 +173,7 @@ export default function PersonalInfo() {
               {/* Image container */}
               <div className="relative z-10 overflow-hidden rounded-[4px] bg-white border border-[#080F22]/8 shadow-sm">
                 <motion.img
-                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=900&q=80"
+                  src={img}
                   alt="Political Leader"
                   className="w-full object-cover object-center"
                   style={{
@@ -359,7 +398,12 @@ export default function PersonalInfo() {
                     className="text-[2.4rem] md:text-[3rem] font-black text-[#E8541A] leading-none mb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    {stat.number}
+                    <CountUp
+                      target={stat.target}
+                      suffix={stat.suffix}
+                      trigger={statsInView}
+                      duration={1500 + index * 200}
+                    />
                   </p>
                   <p className="text-[0.85rem] md:text-[0.95rem] font-semibold text-[#080F22]">
                     {stat.label}
