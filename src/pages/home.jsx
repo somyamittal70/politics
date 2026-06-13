@@ -1,24 +1,29 @@
-import React from "react";
-import { useState } from 'react'
+
 import HeroSection from "../components/home/Hero";
 import AboutSection from "../components/home/About ";
-import PressSection from "../components/home/Press";
-import EventsSection from "../components/home/Events";
-import MyJourney from "../components/home/MyJourney";
-import GallerySection from "../components/home/Gallery";
+import Activities from "../components/home/Activities";
 import ContactSection from "../components/home/Contact";
+import Vision from "../components/home/Vision"
+import Publication from "../components/home/Publication";
+import Campaigns from "../components/home/Campaigns";
+import Imapct from "../components/home/Imapct";
+import News from "../components/home/News";
+import Media from "../components/home/Media"
 
 function Home() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <>
     <HeroSection />
     <AboutSection />
-    <PressSection />
-    <EventsSection />
-    <MyJourney />
-    <GallerySection />
+    <Vision/>
+    <Activities/>
+    <Publication/>
+    <Campaigns/>
+    <Media/>
+    <Imapct/>
+    <News/> 
     <ContactSection />
     </>
   )

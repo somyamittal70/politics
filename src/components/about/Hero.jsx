@@ -108,7 +108,7 @@ export default function AboutHero() {
                   className="text-[0.6rem] sm:text-[0.65rem] font-black tracking-[0.28em] sm:tracking-[0.32em] uppercase text-[#fc8814]"
                   style={{ fontFamily: "Raleway, sans-serif" }}
                 >
-                  About the Leader
+                About Sandeep Singh Dham
                 </span>
               </motion.div>
 
@@ -121,7 +121,7 @@ export default function AboutHero() {
                   fontSize: "clamp(2rem, 6vw, 6rem)",
                 }}
               >
-                Amit <em className="text-[#fc8814] not-italic italic">Shah</em>
+               About Sandeep  <em className="text-[#fc8814] not-italic italic">Singh Dham</em>
                 <br />
               </motion.h1>
 
@@ -156,7 +156,7 @@ export default function AboutHero() {
               <motion.div
                 variants={fadeUp}
                 className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
-              >
+              > 
                 <motion.a
                   href="#personal-info"
                   className="inline-flex items-center justify-center sm:justify-start gap-2 bg-[#fc8814] text-white
@@ -170,7 +170,7 @@ export default function AboutHero() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  Explore Story
+                  • Public Service
                   <svg
                     width="12"
                     height="12"
@@ -180,20 +180,60 @@ export default function AboutHero() {
                     strokeWidth="2.5"
                     className="hidden sm:block"
                   >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </motion.a>
                 <motion.a
-                  href="#achievements"
-                  className="inline-flex items-center justify-center sm:justify-start border border-[#fc8814]/45 text-[#fc8814]
+                  href="#personal-info"
+                  className="inline-flex items-center justify-center sm:justify-start gap-2 bg-[#fc8814] text-white
                     text-[0.7rem] sm:text-[0.78rem] font-black tracking-[0.14em] sm:tracking-[0.16em] uppercase px-5 sm:px-7 py-3 sm:py-4 no-underline w-full sm:w-auto
-                    hover:bg-[#fc8814]/10 hover:border-[#fc8814] transition-all duration-200"
-                  style={{ fontFamily: "Raleway, sans-serif" }}
+                    hover:bg-[#e07610] transition-colors duration-200"
+                  style={{
+                    fontFamily: "Raleway, sans-serif",
+                    clipPath:
+                      "polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))",
+                  }}
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  Achievements
+                  • Community Engagement
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    className="hidden sm:block"
+                  >
+                  </svg>
                 </motion.a>
+                <motion.a
+                  href="#personal-info"
+                  className="inline-flex items-center justify-center sm:justify-start gap-2 bg-[#fc8814] text-white
+                    text-[0.7rem] sm:text-[0.78rem] font-black tracking-[0.14em] sm:tracking-[0.16em] uppercase px-5 sm:px-7 py-3 sm:py-4 no-underline w-full sm:w-auto
+                    hover:bg-[#e07610] transition-colors duration-200"
+                  style={{
+                    fontFamily: "Raleway, sans-serif",
+                    clipPath:
+                      "polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))",
+                  }}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  • Author
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    className="hidden sm:block"
+                  >
+                   
+                  </svg>
+                </motion.a>
+                
               </motion.div>
             </motion.div>
           )}

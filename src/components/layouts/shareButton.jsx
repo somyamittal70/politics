@@ -2,10 +2,10 @@ import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function WhatsAppFloat() {
-  const phoneNumber = "+919768047680";
+  const phoneNumber = "+91 9768047680";
 
   const message =
-    "Hi, I am interested in interior design services. Please share details about consultation, pricing, and project timelines.";
+    "Hi,  Please share details about consultation, pricing, and project timelines.";
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message,

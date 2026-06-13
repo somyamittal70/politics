@@ -1,399 +1,375 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
-const details = [
-  { label: "Full Name",     value: "Amit Anil Chandra Shah" },
-  { label: "Date of Birth", value: "22 October 1964" },
-  { label: "Place of Birth",value: "Mumbai, Maharashtra" },
-  { label: "Hometown",      value: "Mansa, Gujarat" },
-  { label: "Education",     value: "B.Sc. Biochemistry, Gujarat University" },
-  { label: "Spouse",        value: "Sonal Shah" },
-  { label: "Children",      value: "Jay Shah (Son)" },
-  { label: "Languages",     value: "Hindi, Gujarati, English" },
-  { label: "Religion",      value: "Hindu" },
-  { label: "Constituency",  value: "Gandhinagar, Gujarat" },
-];
-
-const timeline = [
-  { year: "1964", title: "Born in Mumbai",      desc: "Born to Gujarati parents in Mumbai. Raised with deep-rooted values of discipline and patriotism." },
-  { year: "1980", title: "Student Activism",    desc: "Joined ABVP and became an active student leader, building his foundation in public service." },
-  { year: "1982", title: "Started Family",      desc: "Married Sonal Shah and began a family life that remained the moral compass of his public journey." },
-  { year: "1987", title: "Joined BJP",          desc: "Became a full-time BJP worker and RSS swayamsevak, rising through the grassroots of Indian politics." },
-  { year: "1995", title: "First Cabinet Role",  desc: "Became Minister of State for Home, Finance & Prohibition in the Gujarat state government." },
-];
+import { FiArrowRight } from "react-icons/fi";
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 36 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.7, delay, ease: [0.22,1,0.36,1] } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
+  },
 });
 
 const fadeIn = (delay = 0) => ({
   hidden: { opacity: 0 },
-  show:   { opacity: 1, transition: { duration: 0.9, delay, ease: "easeOut" } },
+  show: { opacity: 1, transition: { duration: 0.9, delay, ease: "easeOut" } },
+});
+
+const scaleIn = (delay = 0) => ({
+  hidden: { opacity: 0, scale: 0.95 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
+  },
 });
 
 function SectionHeader({ label, title, accent }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
-    <div ref={ref}>
-      <motion.div variants={fadeUp(0)} initial="hidden" animate={inView ? "show" : "hidden"}
-        className="flex items-center gap-3 mb-3">
-        <span className="w-7 h-[2px] bg-[#fc8814] rounded" />
-        <span className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-[#fc8814]"
-          style={{ fontFamily: "Raleway, sans-serif" }}>{label}</span>
+    <div ref={ref} className="mb-12 md:mb-16">
+      <motion.div
+        variants={fadeUp(0)}
+        initial="hidden"
+        animate={inView ? "show" : "hidden"}
+        className="flex items-center gap-3 mb-4"
+      >
+        <span className="w-8 h-[2px] bg-[#E8541A] rounded" />
+        <span className="text-[0.7rem] font-black tracking-[0.35em] uppercase text-[#E8541A]">
+          {label}
+        </span>
       </motion.div>
-      <motion.h2 variants={fadeUp(0.08)} initial="hidden" animate={inView ? "show" : "hidden"}
-        className="text-[2.2rem] md:text-[3rem] font-black text-[#1a1a1a] leading-[1.1]"
-        style={{ fontFamily: "'Playfair Display', serif" }}>
-        {title} <em className="text-[#fc8814] not-italic italic">{accent}</em>
+      <motion.h2
+        variants={fadeUp(0.08)}
+        initial="hidden"
+        animate={inView ? "show" : "hidden"}
+        className="text-[2.4rem] md:text-[3.2rem] font-black text-[#080F22] leading-[1.15]"
+        style={{ fontFamily: "'Playfair Display', serif" }}
+      >
+        {title} <em className="text-[#E8541A] not-italic italic">{accent}</em>
       </motion.h2>
     </div>
   );
 }
 
 export default function PersonalInfo() {
-  const bioRef    = useRef(null);
-  const detailRef = useRef(null);
-  const tlRef     = useRef(null);
+  const bioRef = useRef(null);
+  const statsRef = useRef(null);
 
-  const bioInView    = useInView(bioRef,    { once: true, margin: "-80px" });
-  const detailInView = useInView(detailRef, { once: true, margin: "-80px" });
-  const tlInView     = useInView(tlRef,     { once: true, margin: "-80px" });
+  const bioInView = useInView(bioRef, { once: true, margin: "-80px" });
+  const statsInView = useInView(statsRef, { once: true, margin: "-80px" });
+
+  const achievements = [
+    { number: "30+", label: "Years in Public Service" },
+    { number: "8+", label: "Major Electoral Victories" },
+    { number: "100+", label: "Communities Served" },
+    { number: "1M+", label: "People Impacted" },
+  ];
 
   return (
-    <section id="personal-info" className="relative bg-[#f5f5f5] overflow-hidden py-20 md:py-28">
-
-      {/* Watermark */}
-      <div className="pointer-events-none select-none absolute top-1/2 left-1/2
-          -translate-x-1/2 -translate-y-1/2 text-[8rem] md:text-[13rem] font-black
-          text-[#1a1a1a]/[0.03] whitespace-nowrap leading-none z-0"
-        style={{ fontFamily: "'Playfair Display', serif" }}>
-        LIFE
+    <section
+      id="personal-info"
+      className="relative bg-gradient-to-b from-white to-[#FAFAFA] overflow-hidden py-24 md:py-32"
+    >
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute top-20 right-0 w-[500px] h-[500px] rounded-full opacity-[0.02]"
+          style={{
+            background: "radial-gradient(circle, #E8541A, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute bottom-32 left-0 w-[400px] h-[400px] rounded-full opacity-[0.02]"
+          style={{
+            background: "radial-gradient(circle, #080F22, transparent 70%)",
+          }}
+        />
       </div>
 
-      <div className="relative z-10 max-w-[1280px] mx-auto px-5 md:px-10 lg:px-16">
-
-        {/* ── MAGAZINE BIO BLOCK ── */}
-        <div ref={bioRef} className="mb-20 md:mb-28">
-
-          {/* Dot-grid texture overlay */}
-          <div
-            className="pointer-events-none absolute inset-0 opacity-[0.035]"
-            style={{
-              backgroundImage: "radial-gradient(circle, #1a1a1a 1px, transparent 1px)",
-              backgroundSize: "28px 28px",
-            }}
-          />
-
-          {/* Giant editorial issue number */}
-          <motion.div
-            variants={fadeIn(0)}
-            initial="hidden"
-            animate={bioInView ? "show" : "hidden"}
-            className="pointer-events-none select-none absolute top-0 right-0
-              text-[10rem] md:text-[16rem] font-black leading-none
-              text-[#1a1a1a]/[0.04] pr-4"
-            style={{ fontFamily: "'Playfair Display', serif", lineHeight: 0.85 }}
-          >
-            01
-          </motion.div>
-
-          {/* Top strip: Category + Rule */}
+      <div className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
+        {/* ── MAIN BIO SECTION ── */}
+        <div ref={bioRef} className="mb-24 md:mb-32">
+          {/* Top decorative strip */}
           <motion.div
             variants={fadeUp(0)}
             initial="hidden"
             animate={bioInView ? "show" : "hidden"}
-            className="flex items-center gap-4 mb-8"
+            className="flex items-center gap-4 mb-12 md:mb-16"
           >
-            <span
-              className="text-[0.6rem] font-black tracking-[0.35em] uppercase text-white bg-[#fc8814] px-3 py-[5px]"
+            <div
+              className="text-[0.65rem] font-black tracking-[0.35em] uppercase text-white bg-[#E8541A] px-4 py-2 rounded-[2px]"
               style={{ fontFamily: "Raleway, sans-serif" }}
             >
-              Cover Story
-            </span>
-            <div className="flex-1 h-[1px] bg-[#1a1a1a]/15" />
-            <span
-              className="text-[0.6rem] font-bold tracking-[0.25em] uppercase text-[#1a1a1a]/30"
-              style={{ fontFamily: "Raleway, sans-serif" }}
-            >
-              Personal Profile
-            </span>
+              About the Leader
+            </div>
+            <div className="h-[1px] flex-1 bg-gradient-to-r from-[#E8541A] to-transparent" />
           </motion.div>
 
-          {/* Main editorial grid */}
-          <div className="grid grid-cols-12 gap-x-6 md:gap-x-10 gap-y-8">
-
-            {/* Tall image — 5 cols */}
+          {/* Main grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.3fr] gap-8 md:gap-12 lg:gap-16 items-start">
+            {/* ── LEFT: IMAGE SECTION ── */}
             <motion.div
-              variants={fadeIn(0.1)}
+              variants={scaleIn(0.1)}
               initial="hidden"
               animate={bioInView ? "show" : "hidden"}
-              className="col-span-12 md:col-span-5 relative"
+              className="relative group"
             >
-              {/* Tricolor side bar */}
+              {/* Decorative frame elements */}
+              <div className="absolute -top-6 -left-6 w-16 h-16 border-t-[3px] border-l-[3px] border-[#E8541A]/40 z-0 pointer-events-none" />
+              <div className="absolute -bottom-6 -right-6 w-16 h-16 border-b-[3px] border-r-[3px] border-[#080F22]/20 z-0 pointer-events-none" />
+
+              {/* Tricolor accent bar */}
               <div
-                className="absolute -left-4 top-[8%] bottom-[8%] w-[4px] rounded z-10"
+                className="absolute -left-5 top-[5%] bottom-[5%] w-1 rounded-full z-20"
                 style={{
                   background:
-                    "linear-gradient(to bottom,#FF9933 0%,#FF9933 33%,#e8e7e6 33%,#e8e7e6 66%,#138808 66%,#138808 100%)",
+                    "linear-gradient(to bottom, #E8541A 0%, #E8541A 35%, #FFFFFF 35%, #FFFFFF 65%, #138808 65%, #138808 100%)",
+                  boxShadow: "0 8px 24px rgba(232, 84, 26, 0.15)",
                 }}
               />
 
-              {/* Shadow offset block */}
-              <div className="absolute -bottom-3 -right-3 left-3 top-3 bg-[#fc8814]/20 z-0" />
-
-              {/* Image */}
-              <div className="relative z-[1] overflow-hidden">
+              {/* Image container */}
+              <div className="relative z-10 overflow-hidden rounded-[4px] bg-white border border-[#080F22]/8 shadow-sm">
                 <motion.img
                   src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=900&q=80"
-                  alt="Amit Shah"
-                  className="w-full object-cover object-top"
-                  style={{ height: "clamp(400px, 60vw, 640px)", filter: "saturate(0.88)" }}
-                  whileHover={{ scale: 1.03 }}
+                  alt="Political Leader"
+                  className="w-full object-cover object-center"
+                  style={{
+                    height: "clamp(420px, 55vw, 640px)",
+                    filter: "brightness(1.02) contrast(1.08)",
+                  }}
+                  whileHover={{ scale: 1.04 }}
                   transition={{ duration: 0.6 }}
                 />
-                <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#1a1a1a]/60 to-transparent" />
 
-                {/* Floating "Since 1980" */}
+                {/* Gradient overlay */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#080F22]/70 via-[#080F22]/30 to-transparent" />
+
+                {/* Badge overlay */}
                 <motion.div
-                  className="absolute bottom-5 left-5"
-                  initial={{ opacity: 0, y: 12 }}
+                  className="absolute bottom-6 left-6 z-20"
+                  initial={{ opacity: 0, y: 20 }}
                   animate={bioInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.55, duration: 0.6 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
                 >
-                  <span
-                    className="text-[0.58rem] font-black tracking-[0.3em] uppercase text-[#e8e7e6]/60 block mb-[2px]"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
-                  >
-                    In Public Life Since
-                  </span>
-                  <span
-                    className="text-[2rem] font-black text-[#fc8814] leading-none"
+                  <p className="text-[0.65rem] font-black tracking-[0.3em] uppercase text-white/70 mb-2">
+                    In Public Service Since
+                  </p>
+                  <p
+                    className="text-[3rem] font-black text-[#E8541A] leading-none drop-shadow-lg"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    1980
-                  </span>
+                    1995
+                  </p>
                 </motion.div>
               </div>
 
-              {/* Caption */}
-              <motion.p
-                variants={fadeUp(0.4)}
+              {/* Info card below image */}
+              <motion.div
+                variants={fadeUp(0.25)}
                 initial="hidden"
                 animate={bioInView ? "show" : "hidden"}
-                className="text-[0.72rem] text-[#1a1a1a]/40 mt-3 leading-snug italic pl-4"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                className="mt-6 p-5 bg-white border border-[#080F22]/10 rounded-[4px] shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                Amit Shah — Union Home Minister & Senior BJP Leader. Gandhinagar, Gujarat.
-              </motion.p>
+                <p className="text-[0.7rem] font-black tracking-[0.25em] uppercase text-[#E8541A] mb-2">
+                  Key Focus Areas
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <p className="text-[0.75rem] text-[#080F22]/60 mb-1">
+                      Public Service
+                    </p>
+                    <p className="text-[0.95rem] font-semibold text-[#080F22]">
+                      30+ Years
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[0.75rem] text-[#080F22]/60 mb-1">
+                      Communities
+                    </p>
+                    <p className="text-[0.95rem] font-semibold text-[#080F22]">
+                      100+
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
 
-            {/* Content — 7 cols */}
-            <div className="col-span-12 md:col-span-7 flex flex-col gap-6">
-
-              {/* Headline block */}
+            {/* ── RIGHT: CONTENT SECTION ── */}
+            <div className="flex flex-col gap-8">
+              {/* Main headline */}
               <motion.div
-                variants={fadeUp(0.12)}
+                variants={fadeUp(0.15)}
                 initial="hidden"
                 animate={bioInView ? "show" : "hidden"}
               >
-                <p
-                  className="text-[0.6rem] font-black tracking-[0.3em] uppercase text-[#fc8814] mb-2"
-                  style={{ fontFamily: "Raleway, sans-serif" }}
-                >
+                <p className="text-[0.7rem] font-black tracking-[0.35em] uppercase text-[#E8541A] mb-3">
                   Who He Is
                 </p>
                 <h2
-                  className="text-[2.6rem] md:text-[3.4rem] lg:text-[4rem] font-black text-[#1a1a1a] leading-[0.95] mb-1"
+                  className="text-[2.8rem] md:text-[3.6rem] font-black text-[#080F22] leading-[1.1] mb-2"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  The Man <br />
-                  Behind the <em className="text-[#fc8814] italic not-italic">Mission</em>
+                  A Leader <br className="hidden md:block" />
+                  Driven by{" "}
+                  <em className="text-[#E8541A] not-italic italic">Purpose</em>
                 </h2>
-                <div className="flex items-center gap-3 mt-4">
-                  <div className="w-8 h-[2px] bg-[#fc8814]" />
-                  <span
-                    className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#1a1a1a]/40"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
-                  >
-                    Amit Anil Chandra Shah · Born 22 Oct 1964
+                <div className="flex items-center gap-3 mt-5">
+                  <div className="w-10 h-[2px] bg-[#E8541A]" />
+                  <span className="text-[0.75rem] font-bold tracking-[0.2em] uppercase text-[#080F22]/50">
+                    Sandeep Singh Dhama
                   </span>
                 </div>
               </motion.div>
 
-              {/* Pull quote */}
+              {/* Enhanced quote block */}
               <motion.blockquote
-                variants={fadeUp(0.2)}
+                variants={fadeUp(0.23)}
                 initial="hidden"
                 animate={bioInView ? "show" : "hidden"}
-                className="relative border-l-[3px] border-[#fc8814] pl-6 py-3 bg-[#fc8814]/[0.06]"
+                className="relative p-7 md:p-8 bg-gradient-to-br from-[#E8541A]/8 to-[#E8541A]/3 border-l-4 border-[#E8541A] rounded-[4px] backdrop-blur-sm"
               >
-                <span
-                  className="absolute -top-4 -left-1 text-[5rem] leading-none text-[#fc8814]/25 select-none"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                <svg
+                  className="absolute top-4 left-4 w-8 h-8 text-[#E8541A]/20"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  "
-                </span>
+                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-4.716-5-7-5-6 0-8.333 4-8.333 4h4C2.25 2 5 4 6.002 4.972C6.5 6 6.667 8 5.999 9.5 5 11 3 12.222 3 15c0 4.667 3.667 6 7 6s6.5-2.333 6.5-5c-.023-.468-.203-1.234-.203-2.5s1.675-5.5 1.675-5.5c.43-1.745.693-3.521.693-5.5 0-1.792-.227-3.456-.904-5" />
+                </svg>
                 <p
-                  className="text-[1.15rem] md:text-[1.25rem] text-[#1a1a1a] leading-relaxed italic relative z-[1]"
+                  className="text-[1.1rem] md:text-[1.25rem] text-[#080F22] leading-relaxed italic relative z-10"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
-                  Born in the city of dreams, shaped by the land of Sardar Patel — Amit Shah's
-                  story is that of every dedicated son of the soil.
+                  Sandeep Singh Dhama is actively engaged in public service,
+                  community development, and citizen-focused initiatives. With a
+                  strong belief in the power of collective participation, he has
+                  consistently worked towards bringing people together through
+                  social, educational, environmental, and community-driven
+                  programs.
                 </p>
               </motion.blockquote>
 
-              {/* Body copy — 2-col newspaper */}
+              {/* Additional content paragraphs */}
               <motion.div
-                variants={fadeUp(0.28)}
+                variants={fadeUp(0.3)}
                 initial="hidden"
                 animate={bioInView ? "show" : "hidden"}
-                className="columns-1 sm:columns-2 gap-6"
+                className="space-y-4"
               >
-                <p
-                  className="text-[1rem] text-[#3a3a3a] leading-[1.9] mb-4 break-inside-avoid"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
-                  Amit Shah was born on October 22, 1964, in Mumbai, Maharashtra, to a Gujarati family
-                  rooted in the Vaishnava tradition. His early education in Ahmedabad instilled in him
-                  strong values of discipline, nationalism, and seva.
+                <p className="text-[1rem] text-[#080F22]/75 leading-relaxed">
+                  Over the years, he has been associated with various activities
+                  aimed at encouraging public awareness, community engagement,
+                  and social responsibility. His approach is centered on
+                  understanding the concerns of citizens, promoting constructive
+                  dialogue, and supporting initiatives that contribute to
+                  positive change at the grassroots level.
                 </p>
-                <p
-                  className="text-[1rem] text-[#3a3a3a] leading-[1.9] break-inside-avoid"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
-                  He completed his graduation in Biochemistry from Gujarat University. Though he began
-                  his career in the family's PVC pipe business, the call of public service proved
-                  irresistible — channelling his entrepreneurial mindset into building the BJP into one
-                  of the most formidable political organisations in the world.
+                <p className="text-[1rem] text-[#080F22]/75 leading-relaxed">
+                  Education, youth participation, environmental awareness, and
+                  community welfare remain among his key areas of focus. Through
+                  regular outreach programs and social initiatives, he continues
+                  to encourage greater involvement of citizens in activities
+                  that strengthen society and foster shared responsibility.
                 </p>
               </motion.div>
 
-              {/* Quick-facts ticker strip */}
+              {/* Author info highlight */}
               <motion.div
-                variants={fadeUp(0.36)}
+                variants={fadeUp(0.37)}
                 initial="hidden"
                 animate={bioInView ? "show" : "hidden"}
-                className="border-t border-b border-[#1a1a1a]/10 py-4 flex flex-wrap gap-x-8 gap-y-2"
+                className="p-6 bg-white border border-[#E8541A]/20 rounded-[4px] hover:border-[#E8541A]/40 transition-all duration-300"
               >
-                {[
-                  { label: "Hometown",     value: "Mansa, Gujarat" },
-                  { label: "Spouse",       value: "Sonal Shah" },
-                  { label: "Son",          value: "Jay Shah" },
-                  { label: "Languages",    value: "Hindi · Gujarati · English" },
-                  { label: "Constituency", value: "Gandhinagar, Gujarat" },
-                ].map((f, i) => (
-                  <div key={i} className="flex items-baseline gap-2">
-                    <span
-                      className="text-[0.55rem] font-black tracking-[0.2em] uppercase text-[#fc8814]"
-                      style={{ fontFamily: "Raleway, sans-serif" }}
-                    >
-                      {f.label}
-                    </span>
-                    <span
-                      className="text-[0.82rem] font-semibold text-[#1a1a1a]"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
-                    >
-                      {f.value}
-                    </span>
+                <div className="flex items-start gap-4">
+                  <div className="text-3xl">📚</div>
+                  <div className="flex-1">
+                    <p className="text-[0.7rem] font-black tracking-[0.25em] uppercase text-[#E8541A] mb-2">
+                      Published Author
+                    </p>
+                    <p className="text-[0.95rem] font-semibold text-[#080F22] mb-2">
+                      "Why Bharat Needs Modi: Now & Beyond"
+                    </p>
+                    <p className="text-[0.85rem] text-[#080F22]/65">
+                      Through his writing, he seeks to contribute to discussions
+                      on leadership, governance, and the future direction of
+                      Bharat.
+                    </p>
                   </div>
-                ))}
+                </div>
               </motion.div>
+
+              {/* CTA Button */}
+              <motion.button
+                variants={fadeUp(0.42)}
+                initial="hidden"
+                animate={bioInView ? "show" : "hidden"}
+                className="mt-2 flex items-center gap-2 px-6 py-4 bg-[#E8541A] hover:bg-[#F4712E] text-white 
+                  font-black text-[0.9rem] tracking-[0.12em] uppercase rounded-[3px]
+                  transition-all duration-300 shadow-sm hover:shadow-lg w-fit group"
+              >
+                Read His Vision
+                <FiArrowRight
+                  className="group-hover:translate-x-1 transition-transform"
+                  size={18}
+                />
+              </motion.button>
             </div>
           </div>
         </div>
 
-        {/* ── DETAILS GRID ── */}
-        <div ref={detailRef} className="mb-20 md:mb-28">
-          <SectionHeader label="At a Glance" title="Personal" accent="Details" />
+        {/* ── ACHIEVEMENTS SECTION ── */}
+        <motion.div
+          ref={statsRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.8 }}
+          className="mt-24 md:mt-32 pt-20 md:pt-24 border-t border-[#080F22]/10"
+        >
+          <div className="mb-12">
+            <p className="text-[0.7rem] font-black tracking-[0.35em] uppercase text-[#E8541A] mb-3">
+              Impact & Achievements
+            </p>
+            <h3
+              className="text-[2.2rem] md:text-[3rem] font-black text-[#080F22] leading-[1.15]"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Three Decades of{" "}
+              <em className="text-[#E8541A] not-italic italic">Service</em>
+            </h3>
+          </div>
 
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mt-10"
-            initial="hidden"
-            animate={detailInView ? "show" : "hidden"}
-            variants={{ show: { transition: { staggerChildren: 0.07 } } }}
-          >
-            {details.map((d, i) => (
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {achievements.map((stat, index) => (
               <motion.div
-                key={i}
-                variants={fadeUp(0)}
-                className="group bg-white border border-[#e8e7e6] p-5 rounded-sm
-                  hover:border-[#fc8814]/40 hover:shadow-[0_8px_24px_rgba(252,136,20,0.08)]
-                  transition-all duration-300 hover:-translate-y-1"
+                key={index}
+                variants={scaleIn(index * 0.08)}
+                initial="hidden"
+                animate={statsInView ? "show" : "hidden"}
+                className="group relative p-6 md:p-8 bg-white border border-[#080F22]/10 rounded-[4px]
+                  hover:border-[#E8541A]/40 hover:shadow-[0_12px_32px_rgba(232,84,26,0.08)]
+                  transition-all duration-300"
+                whileHover={{ y: -4 }}
               >
-                <p className="text-[0.58rem] font-black tracking-[0.22em] uppercase text-[#fc8814] mb-2"
-                  style={{ fontFamily: "Raleway, sans-serif" }}>{d.label}</p>
-                <p className="text-[0.9rem] font-semibold text-[#1a1a1a] leading-snug"
-                  style={{ fontFamily: "'Playfair Display', serif" }}>{d.value}</p>
+                <div className="text-center">
+                  <p
+                    className="text-[2.4rem] md:text-[3rem] font-black text-[#E8541A] leading-none mb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    {stat.number}
+                  </p>
+                  <p className="text-[0.85rem] md:text-[0.95rem] font-semibold text-[#080F22]">
+                    {stat.label}
+                  </p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#E8541A] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-
-        {/* ── EARLY LIFE TIMELINE ── */}
-        <div ref={tlRef}>
-          <SectionHeader label="Early Years" title="Life" accent="Timeline" />
-
-          <div className="relative mt-12">
-            {/* Vertical line */}
-            <motion.div
-              className="absolute left-[11px] md:left-1/2 top-0 bottom-0 w-[2px] bg-[#e8e7e6] hidden sm:block"
-              initial={{ scaleY: 0, originY: 0 }}
-              animate={tlInView ? { scaleY: 1 } : {}}
-              transition={{ duration: 1.2, ease: [0.22,1,0.36,1], delay: 0.2 }}
-            />
-
-            <div className="flex flex-col gap-10">
-              {timeline.map((item, i) => {
-                const isLeft = i % 2 === 0;
-                return (
-                  <motion.div
-                    key={i}
-                    variants={fadeUp(i * 0.12)}
-                    initial="hidden"
-                    animate={tlInView ? "show" : "hidden"}
-                    className={`relative flex flex-col sm:flex-row items-start
-                      ${isLeft ? "sm:flex-row" : "sm:flex-row-reverse"}
-                      gap-4 sm:gap-8`}
-                  >
-                    {/* Card */}
-                    <div className={`flex-1 sm:max-w-[calc(50%-2rem)] ${isLeft ? "sm:text-right sm:pr-4" : "sm:text-left sm:pl-4 sm:ml-auto"}`}>
-                      <motion.div
-                        className="bg-white border border-[#e8e7e6] p-5 rounded-sm
-                          hover:border-[#fc8814]/30 hover:shadow-[0_6px_20px_rgba(252,136,20,0.07)]
-                          transition-all duration-300 group"
-                        whileHover={{ y: -3 }}
-                      >
-                        <span className="text-[0.58rem] font-black tracking-[0.22em] uppercase text-[#fc8814] block mb-1"
-                          style={{ fontFamily: "Raleway, sans-serif" }}>{item.year}</span>
-                        <h4 className="text-[1.05rem] font-black text-[#1a1a1a] mb-1"
-                          style={{ fontFamily: "'Playfair Display', serif" }}>{item.title}</h4>
-                        <p className="text-[0.88rem] text-[#5a5a5a] leading-relaxed"
-                          style={{ fontFamily: "'Cormorant Garamond', serif" }}>{item.desc}</p>
-                      </motion.div>
-                    </div>
-
-                    {/* Center dot */}
-                    <motion.div
-                      className="hidden sm:flex absolute left-1/2 top-5 -translate-x-1/2 w-6 h-6 rounded-full
-                        border-2 border-[#fc8814] bg-[#f5f5f5] items-center justify-center z-10"
-                      initial={{ scale: 0 }}
-                      animate={tlInView ? { scale: 1 } : {}}
-                      transition={{ delay: 0.3 + i * 0.1, type: "spring", stiffness: 200 }}
-                    >
-                      <span className="w-[8px] h-[8px] rounded-full bg-[#fc8814]" />
-                    </motion.div>
-
-                    {/* Spacer */}
-                    <div className="hidden sm:block flex-1" />
-                  </motion.div>
-                );
-              })}
-            </div>
           </div>
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

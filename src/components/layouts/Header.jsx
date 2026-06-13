@@ -69,17 +69,17 @@ export default function Header() {
 
               <div>
                 <h2
-                  className="text-[#333333] font-black text-base md:text-lg leading-tight"
+                  className="text-[#333333] font-black text-base md:text-md leading-tight"
                    style={{ fontFamily: "Playfair Display,sans-serif" }}
                 >
-                  AMIT SHAH
+                  Sandeep Singh 
                 </h2>
-                <p
+                {/* <p
                   className="text-[#FC8814] text-[0.65rem] md:text-[0.7rem] font-bold tracking-wider uppercase"
                   style={{ fontFamily: "Raleway,sans-serif" }}
                 >
                   Home Minister
-                </p>
+                </p> */}
               </div>
             </NavLink>
 
