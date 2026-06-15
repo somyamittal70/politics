@@ -217,36 +217,7 @@ export default function AboutSection() {
               </motion.a>
             </motion.div>
 
-            {/* Additional trust element */}
-            <motion.div
-              variants={fadeUp(0.35)}
-              initial="hidden"
-              animate={inView ? "show" : "hidden"}
-              className="mt-12 pt-8 border-t border-[#080F22]/10"
-            >
-              <p className="text-[0.75rem] text-[#080F22]/50 font-bold tracking-[0.2em] uppercase mb-4">
-                Recognition
-              </p>
-              <div className="flex items-center gap-6">
-                <div className="flex flex-col">
-                  <span className="text-[1.8rem] font-black text-[#E8541A]">
-                    30+
-                  </span>
-                  <span className="text-[0.75rem] text-[#080F22]/60 font-semibold">
-                    Years in Service
-                  </span>
-                </div>
-                <div className="w-[1px] h-12 bg-[#080F22]/10" />
-                <div className="flex flex-col">
-                  <span className="text-[1.8rem] font-black text-[#E8541A]">
-                    100+
-                  </span>
-                  <span className="text-[0.75rem] text-[#080F22]/60 font-semibold">
-                    Communities Served
-                  </span>
-                </div>
-              </div>
-            </motion.div>
+           
           </motion.div>
         </div>
       </div>
