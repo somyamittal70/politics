@@ -1,5 +1,5 @@
 import Hero from '../components/media/Hero';
-import FeaturedVideo from '../components/media/FeaturedVideo';
+import Announcements from '../components/media/Announcements';
 import PhotoGallery from '../components/media/PhotoGallery';
 import VideoGallery from '../components/media/VideoGallery';
 import PressConference from '../components/media/PressConference';
@@ -11,7 +11,7 @@ export default function MediaPage() {
   return (
     <>
       <Hero />
-      <FeaturedVideo />
+      <Announcements />
       <PhotoGallery />
       <VideoGallery />
       <PressConference />
