@@ -1,6 +1,6 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ChevronDown, Award, Users, MapPin, Calendar } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 /* ─── ANIMATION VARIANTS ─────────────────────────────────── */
 const fadeUp = (d = 0) => ({
@@ -20,86 +20,24 @@ const fadeLeft = (d = 0) => ({
   },
 });
 
-/* ─── COUNTER HOOK ───────────────────────────────────────── */
-function useCounter(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numeric = parseInt(target.replace(/[^0-9]/g, ""));
-    if (!numeric) return;
-    let startTime = null;
-    const step = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numeric));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  const suffix = target.replace(/[0-9]/g, "");
-  return count + suffix;
-}
-
-/* ─── STAT ITEM ──────────────────────────────────────────── */
-function StatItem({ stat, index, animate }) {
-  const display = useCounter(stat.num, 1600 + index * 100, animate);
-  const Icon = stat.Icon;
-  return (
-    <motion.div
-      variants={fadeUp(0.6 + index * 0.08)}
-      initial="hidden"
-      animate={animate ? "show" : "hidden"}
-      className="group flex-1 relative flex flex-col items-center justify-center gap-2
-        py-6 px-4 border-r border-white/[0.06] last:border-r-0
-        hover:bg-white/[0.03] transition-colors duration-300 cursor-default"
-    >
-      {/* top accent line */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[2px] opacity-0
-          group-hover:opacity-100 transition-opacity duration-300"
-        style={{ background: stat.color }}
-      />
-
-      <Icon
-        size={16}
-        strokeWidth={1.5}
-        className="mb-1 opacity-50 group-hover:opacity-100 transition-opacity duration-300"
-        style={{ color: stat.color }}
-      />
-
-      <span
-        className="text-[2.2rem] md:text-[2.6rem] font-black leading-none tabular-nums"
-        style={{ fontFamily: "'Playfair Display', serif", color: stat.color }}
-      >
-        {display}
-      </span>
-
-      <span
-        className="text-[0.6rem] font-black tracking-[0.2em] uppercase text-white/40
-          group-hover:text-white/65 transition-colors duration-300"
-        style={{ fontFamily: "Raleway, sans-serif" }}
-      >
-        {stat.label}
-      </span>
-    </motion.div>
-  );
-}
-
 /* ─── MAIN COMPONENT ─────────────────────────────────────── */
-export default function ActivitiesHero() {
+export default function InitiativesHero() {
   const heroRef = useRef(null);
   const inView = useInView(heroRef, { once: true, margin: "-40px" });
-  const [activeTab, setActiveTab] = useState("Overview");
 
   const BG_IMAGE =
     "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=1800&q=80";
+
+  // ── Subheading block ka background photo ──
+  // Aap is URL ko apni marzi ki community/grassroots photo se replace kar sakte ho
+  const SUB_BG_IMAGE =
+    "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1600&q=70";
 
   return (
     <section
       ref={heroRef}
       className="relative w-full min-h-screen flex flex-col overflow-hidden"
-      style={{ fontFamily: "Playfair Display,sans-serif" }}
+      style={{ fontFamily: "Playfair Display, sans-serif" }}
     >
       {/* ── BACKGROUND IMAGE + OVERLAYS ── */}
       <div className="absolute inset-0 z-0">
@@ -109,7 +47,7 @@ export default function ActivitiesHero() {
           className="w-full h-full object-cover object-center"
         />
         {/* dark primary overlay */}
-        <div className="absolute inset-0 bg-[#1a1a1a]/92" />
+        <div className="absolute inset-0 bg-[#1a1a1a]/90" />
         {/* left-side vignette */}
         <div
           className="absolute inset-0"
@@ -169,23 +107,21 @@ export default function ActivitiesHero() {
             className="text-[0.65rem] font-black tracking-[0.32em] uppercase text-[#fc8814]"
             style={{ fontFamily: "Playfair Display, sans-serif" }}
           >
-            Activities & Initiatives
+            Activities &amp; Initiatives
           </span>
         </motion.div>
 
         {/* Hero Title */}
-        <div className="mb-4">
-          <motion.h1
-            variants={fadeUp(0.08)}
-            initial="hidden"
-            animate={inView ? "show" : "hidden"}
-            className="text-[1rem] sm:text-[2rem] md:text-[4rem] lg:text-[6.5rem]
-              font-black leading-[0.88] text-[#e8e7e6]"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Activities
-          </motion.h1>
-        </div>
+        <motion.h1
+          variants={fadeUp(0.08)}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          className="text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6.5rem]
+            font-black leading-[0.88] text-[#e8e7e6] mb-4"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          Initiatives
+        </motion.h1>
 
         {/* Subtitle rule */}
         <motion.div
@@ -207,18 +143,80 @@ export default function ActivitiesHero() {
           </span>
         </motion.div>
 
-        {/* Quote / tagline */}
-        <motion.p
-          variants={fadeUp(0.24)}
+        {/* ── SUBHEADING BLOCK WITH OWN PHOTO BACKGROUND ── */}
+        <motion.div
+          variants={fadeUp(0.34)}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="text-[1.05rem] md:text-[1.2rem] italic text-white/55 leading-[1.85] max-w-lg mb-10"
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          className="relative overflow-hidden border-l-2 border-[#fc8814] mb-8"
         >
-          "A tireless advocate for Bharat's security, cultural heritage, and
-          grassroots development — bridging governance with the people it
-          serves."
-        </motion.p>
+          {/* Photo background for this block */}
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `url(${SUB_BG_IMAGE})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center top",
+              filter: "brightness(0.22) saturate(0.7)",
+            }}
+          />
+          {/* Gradient overlay */}
+          <div
+            className="absolute inset-0 z-[1]"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0.55) 100%)",
+            }}
+          />
+
+          {/* Block content */}
+          <div className="relative z-[2] py-7 px-8">
+            {/* Section label */}
+            <p
+              className="text-[0.6rem] font-black tracking-[0.3em] uppercase text-[#fc8814] mb-3"
+              style={{ fontFamily: "Raleway, sans-serif" }}
+            >
+              Community Initiatives &amp; Public Participation
+            </p>
+
+            {/* Sub heading title */}
+            <h2
+              className="text-[1.15rem] md:text-[1.55rem] font-bold leading-[1.3] text-[#e8e7e6] mb-3 max-w-2xl"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Working Together for Community Development, Citizen Engagement,
+              Youth Empowerment and Public Welfare
+            </h2>
+
+            {/* Italics tagline */}
+            <p
+              className="text-[0.95rem] md:text-[1.05rem] italic text-white/55 leading-[1.8] max-w-xl mb-4"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              "Grassroots action, inclusive governance and empowered citizens —
+              the foundations of a stronger Bharat."
+            </p>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2">
+              {[
+                "Community Development",
+                "Citizen Engagement",
+                "Youth Empowerment",
+                "Public Welfare",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[0.58rem] font-black tracking-[0.2em] uppercase
+                    px-3 py-1 border border-[#fc8814]/35 text-[#fc8814]/80 bg-[#fc8814]/06"
+                  style={{ fontFamily: "Raleway, sans-serif" }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

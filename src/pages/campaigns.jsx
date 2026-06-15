@@ -1,9 +1,8 @@
 import React from "react";
 import { useState } from 'react'
-import RalliesEvents from "../components/activities/Rallies";
-import ParliamentaryWork from "../components/activities/Parliamentary";
-import SocialWelfare from "../components/activities/Socialwelfare";
-import CommunityOutreach from "../components/activities/Community";
+import RalliesEvents from "../components/activities/PastPrograms";
+import SocialWelfare from "../components/activities/Upcomingprograms";
+import CommunityOutreach from "../components/activities/Impactreach";
 import ActivitiesHero from "../components/activities/HeroSection";
 import CampaignsHero from "../components/campaigns/Hero";
 import CampaignsList from "../components/campaigns/List";
